@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0px;margin: 0px;list-style: none;}
+        table{
+            margin: 0 auto;
+            border: 3px solid #ccc;
+            border-spacing: 0px;
+        }
+
+        th,td{
+            padding: 5px 10px;
+            text-align: left;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <form action="#">
+            <table>
+                <tr>
+                    <td>用户名：</td>
+                    <td>
+                        <input type="text" name="userName" id="userName">
+                        <span id="nameCheckSpan"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td>
+                        <input type="password" name="pwd" id="pwd">
+                        <img src="image/open.png" alt="" style="width: 20px;" id="eye">
+                        <span id="pwdCheckSpan"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>手机号：</td>
+                    <td>
+                        <input type="text" name="phoneNo" id="phoneNo">
+                        <span id="phoneCheckSpan"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>年龄：</td>
+                    <td>
+                        <input type="text" name="ageNo" id="ageNo">
+                        <span id="ageCheckSpan"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>邮箱：</td>
+                    <td>
+                        <input type="text" name="emailNo" id="emailNo">
+                        <span id="emailCheckSpan"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="注册">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+<script>
+    let userInput=document.querySelector("#userName");
+    let pwdInput=document.querySelector("#pwd");
+    let phoneInput=document.querySelector("#phoneNo");
+    let ageInput=document.querySelector("#ageNo");
+    let emailInput=document.querySelector("#emailNo");
+    let nameSpan=document.querySelector("#nameCheckSpan");
+    let pwdSpan=document.querySelector("#pwdCheckSpan");
+    let phoneSpan=document.querySelector("#phoneCheckSpan");
+    let ageSpan=document.querySelector("#ageCheckSpan");
+    let emailSpan=document.querySelector("#emailCheckSpan");
+    let eye=document.querySelector("#eye");
+    //单行文本框  光标进入的时候触发聚焦事件
+    userInput.onfocus=function(){
+        console.log("111");
+        //span显示一个提示
+        nameSpan.innerHTML="用户名格式:xxxxx";
+        nameSpan.style.color="grey";
+    }
+    
+    //单行文本框失去焦点的时候触发失焦事件
+    userInput.onblur=function(){
+        // console.log("222");
+        //获取输入框里面的value
+        let name =this.value;
+        console.log(name);
+        //将value进行正则验证，判断是否符合要求，在span里面给出提示
+        //用户名格式：不少于6个字符，首个字符是字母或者汉字，其他任意
+        let reg=/^(([a-zA-Z]|[\u4E00-\u9FA5]))(([a-zA-Z0-9]|[\u4E00-\u9FA5]){5,})$/;
+        if(reg.test(name)){
+            nameSpan.innerHTML="用户名可用";
+            nameSpan.style.color="green"
+        }else{
+            nameSpan.innerHTML="用户名不可用";
+            nameSpan.style.color="red"
+        }
+    }
+    
+    //密码
+    pwdInput.onfocus=function(){
+        pwdSpan.innerHTML="密码格式:xxxxx";
+        pwdSpan.style.color="grey";
+    }
+    pwdInput.onblur=function(){
+        let name =this.value;
+        let reg=/^[A-Z]\w{5,}$/;
+        if(reg.test(name)){
+            pwdSpan.innerHTML="密码可用";
+            pwdSpan.style.color="green"
+        }else{
+            pwdSpan.innerHTML="密码不可用";
+            pwdSpan.style.color="red"
+        }
+    }
+    let flag=0;
+        eye.onclick=function(){
+            //点击一次后 flag一定要变化
+            if(flag==0){
+                pwdInput.type='text'; 
+                eye.src="image/close.png";
+                flag=1;//赋值操作 
+            }else{
+                pwdInput.type='password';  
+                eye.src="image/open.png";  
+                flag=0;   
+            }
+        }
+
+    //手机号
+    phoneInput.onfocus=function(){
+        phoneSpan.innerHTML="手机号格式:xxxxxxxxxxx";
+        phoneSpan.style.color="grey";
+    }
+    phoneInput.onblur=function(){
+        let name =this.value;
+        let reg=/^[1][3-9]\d{9}$/;
+        if(reg.test(name)){
+            phoneSpan.innerHTML="手机号可用";
+            phoneSpan.style.color="green"
+        }else{
+            phoneSpan.innerHTML="手机号不可用";
+            phoneSpan.style.color="red"
+        }
+    }
+
+    //年龄
+    ageInput.onfocus=function(){
+        ageSpan.innerHTML="年龄:20-129";
+        ageSpan.style.color="grey";
+    }
+    ageInput.onblur=function(){
+        let name =this.value;
+        let reg=/^(([2-9]\d)|(1[0-2]\d))$/g;
+        if(reg.test(name)){
+            ageSpan.innerHTML="年龄可用";
+            ageSpan.style.color="green";
+        }else{
+            ageSpan.innerHTML="年龄不可用";
+            ageSpan.style.color="red";
+        }
+    }
+
+    //邮箱
+    emailInput.onfocus=function(){
+        emailSpan.innerHTML="邮箱格式:xxxx@xxx.cn";
+        emailSpan.style.color="grey";
+    }
+    emailInput.onblur=function(){
+        let name =this.value;
+        let reg=/^[a-zA-Z]+\d+@[a-zA-Z]+.cn$/;
+        if(reg.test(name)){
+            emailSpan.innerHTML="邮箱可用";
+            emailSpan.style.color="green"
+        }else{
+            emailSpan.innerHTML="邮箱不可用";
+            emailSpan.style.color="red";
+        }
+    }
+
+    
+</script>
+</html>

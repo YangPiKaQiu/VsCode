@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //声明小狗类
+    let Dog = class Dog {
+
+        //属性:静态特征
+        name;
+        age;
+        type;
+        color = "黄色”;
+        //静态属性1
+        static legs = 4;//四条腿
+
+
+        //构造方法:初始化数据
+        constructor(name, age, type) {
+            this.name = name;
+            this.age = age;
+            this.type = type;
+        }
+        //方法:动态行为
+        playDisc() {
+            console.log(this.name + "狗狗会接飞盘...");
+        }
+        eat() {
+            console.log(this.name + "狗狗喜欢吃骨头...");
+        }
+        intro() {
+            console.log(`自我介绍：${this.name}狗狗，今年${this.age}岁，是一只${this.type}犬`);
+            //类模板里面调用方法需要添加this关键字
+            this.eat();
+            this.playDisc();
+            //静态属性需要类名.属性名调用,静态资源不属于实例私有，共享资源.
+            console.log("狗狗腿的个数+Dog.legs");
+            Dog.legs=3;
+        }
+    }
+    //创建小狗实例   new Dog()的时候，默认会执行constructor(name, age, type)构造方法
+    let d1 = new Dog("旺财", 3, "比熊");
+    d1.intro();
+    // d1.eat();
+    // d1.playDisc();
+
+    let d2 = new Dog("小白", 3, "田园犬");
+    d1.intro();
+
+</script>
+
+</html>

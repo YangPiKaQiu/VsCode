@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 表示抽样获得10个样本
+        for (var i = 1, a = 0, b = 0; i <= 10; i++) {
+            var old = Number(prompt("请输入第" + i + "个人的年龄"));
+            //判断年龄是否大于30岁，如果大于30岁计数
+            if (old >= 30) {
+                a++;   //a:表示30岁人的个数
+            }
+        }
+        var id=a / 10 * 100;  //30岁以上人的占比
+        console.log("30岁以上占比:" + id + "%,30岁以下占比:" + (100 - id) + "%'");
+
+    </script>
+</body>
+
+</html>

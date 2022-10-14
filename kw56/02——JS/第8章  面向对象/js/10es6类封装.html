@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //创建类模板
+    class Student{
+        name;
+        age;
+        gender;
+
+        //构造方法
+        constructor(name,age,gender) {}
+   
+        //定义getter(读取)  和setter(写)方法对属性进行获取 和 赋值
+
+        setName(name){
+            this.name=name;
+        }
+    
+        getName(){
+            return this.name;
+        }
+        //赋值年龄的时候存在赋值的合理化
+        setAge(age){
+            //判断
+            if(age<0 || age>120){
+                return 18;
+            }else{
+                this.age=age;
+            }
+        }
+    
+        getAge() {
+            return this.age;
+        }
+
+        setGender(gender){
+            this.gender=gender;
+        }
+        
+        getGender() {
+            return this.gender;
+        }
+        //打印学生信息
+        intro(){
+            console.log(this.name+"---"+this.age+"---"+this.gender);
+        }
+    
+    }
+
+    //实例化学生对象
+    let wuYue=new Student();
+    wuYue.setName("哈哈");
+    wuYue.setAge("20");
+    wuYue.setGender("女");
+    console.log(wuYue.getName(),wuYue.getAge(),wuYue.getGender(),);
+    wuYue.intro();
+
+</script>
+</html>

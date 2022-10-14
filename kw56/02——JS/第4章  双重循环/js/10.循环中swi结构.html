@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var n = 1;
+        while (true) {
+            console.log("进入while循环------");
+            switch (n) {
+                case 1:
+                    console.log("11111111")
+                    continue;//此处continue不应该存在，
+                //但是switch在while循环体里面，那么continue相当于跳出该循环体
+                case 2:
+                    console.log("22222222")
+                    break;
+                case 3:
+                    console.log("33333333")
+                    break;
+                case 4:
+                    console.log("44444444")
+                    break;
+            }//switch块结束
+            console.log("跳出switch语句块...");
+            break;
+        }//while块结束
+        console.log("跳出while语句块...");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五星好评</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            position: relative;
+            width: 400px;
+            height: 20px;
+            display: flex;
+            margin: 60px auto;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        span {
+            width: 130px;
+        }
+
+        .xing {
+            margin-right: 10px;
+        }
+
+        .xing li {
+            width: 19px;
+            height: 19px;
+            background: url(img/star.png) no-repeat;
+            margin: 0 2px;
+        }
+
+        .active {
+            cursor: pointer;
+            background-position: 0 -28px !important;
+        }
+
+        .clickActive {
+            background-position: 0 -28px !important;
+        }
+
+        .text {
+            position: relative;
+
+        }
+
+        .text li {
+            position: absolute;
+            top: 8px;
+            width: 50px;
+            height: 50px;
+            font-size: 10px;
+            display: none;
+            border: 1px solid yellowgreen;
+            padding: 5px;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .text li:nth-of-type(1) {
+            left: -10px;
+        }
+
+        .text li:nth-of-type(2) {
+            left: 10px;
+        }
+
+        .text li:nth-of-type(3) {
+            left: 35px;
+        }
+
+        .text li:nth-of-type(4) {
+            left: 60px;
+        }
+
+        .text li:nth-of-type(5) {
+            left: 80px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <span>点击星星就能打分</span>
+        <div>
+            <ul class="xing">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul class="text">
+                <li>一星 代表**1</li>
+                <li>两星 代表**2</li>
+                <li>三星 代表**3</li>
+                <li>四星 代表**4</li>
+                <li>五星 代表**5</li>
+            </ul>
+        </div>
+        <p></p>
+    </div>
+
+    <script>
+        $(function () {
+            // 鼠标滑过显示星星背景和文字
+            $('.xing li').hover(function () {
+                $(this).addClass('active').prevAll().addClass('active')
+                $('.text li').eq($(this).index()).show()
+            }, function () {
+                $(this).removeClass('active').prevAll().removeClass('active')
+                $('.text li').eq($(this).index()).hide()
+            })
+
+            // 当鼠标点击是触发
+            $('.xing li').click(function () {
+                $(this).addClass('clickActive').prevAll().addClass('clickActive')
+                $('p').html(($(this).index() + 1) + $('.text li').eq($(this).index()).html())
+                if ($(this).hasClass('clickActive')) {
+                    $(this).nextAll().removeClass('clickActive')
+                }
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

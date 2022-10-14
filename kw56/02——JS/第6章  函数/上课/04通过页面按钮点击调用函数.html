@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/utils.js"></script>
+</head>
+
+<body>
+    <!-- 点击事件
+         当点击按钮的时候，调用方法，执行方法里面的功能，从而显示在浏览器后台...
+    -->  
+    <button onclick="getJuice('百香果','芒果','雪梨')">榨汁</button>
+    <button id="zhaBtn">榨汁2</button>
+</body>
+<script>
+    //当页面加载的时候
+    window.onload = function () {
+        // let zhaBtn = document.querySelector("#zhaBtn");
+
+        //通过榨汁2按钮的点击，触发getJuice函数
+        //没有方法名：匿名函数，只在特定情况下调用，不需要被重复调用
+        zhaBtn.onclick = function () {
+            console.log("榨汁机开始.....");
+            console.log("获得一杯果汁");
+        }
+    }
+        //以上结构：函数表达式------可以转换成箭头函数
+</script>
+
+</html>

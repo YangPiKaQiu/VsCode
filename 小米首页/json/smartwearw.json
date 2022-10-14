@@ -1,0 +1,23 @@
+[
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011906_e7f02b803d3da16ec56a611e790243ba.png?thumb=1&w=200&h=200&f=webp&q=90",
+        "type": "小米手环7 Pro",
+        "dexc": "48dB智能动态降噪｜骨声纹通话降噪 | 独立空间音频",
+        "price": "399",
+        "falsePrice":""
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202205240036_9a8fbf274c0d419c5a0a49ef67cdd7c8.png?thumb=1&w=200&h=200&f=webp&q=90",
+        "type": "小米手环7",
+        "dexc": "40dB自适应降噪 ｜空间音频 ｜ HiFi高保真音质",
+        "price": "249",
+        "falsePrice":""
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202205240036_9a8fbf274c0d419c5a0a49ef67cdd7c8.png?thumb=1&w=200&h=200&f=webp&q=90",
+        "type": "小米手环7 NFC版 ",
+        "dexc": "1.62″AMOLED 跑道屏 | 四大专业运动数据分析 | 活力竞赛·好友PK",
+        "price": "299",
+        "falsePrice":""
+    }
+]

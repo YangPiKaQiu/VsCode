@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            border: 4px solid red;
+            margin: 20px 0px;
+            /* 给父级盒子做一个定位
+            static    默认的 没有效果
+            relative    相对定位  有效果 子元素会参照father盒子，并且father盒子不会改位置
+            fixed   固定定位  有效果 */
+            width: 100%;
+            position: relative;
+        }
+
+        .father>div {
+            height: 50px;
+            border: 1px solid blue;
+            margin-bottom: 30px;
+
+        }
+
+        /* position：static;  默认值     不定位
+        position：reletive;   相对定位    先对定位  相对于本身定位
+        position：absolute;    绝对定位   相对于已经定位的最近一个元素
+        position：fixed;   固定定位    相对于浏览器 */
+
+
+        .first {
+            background-color: blue;
+        }
+
+        .second {
+            background-color: yellow;
+            /* 添加绝对定位
+            添加绝对定位之后，元素脱离标准文档流，自己位置不保留，后面的元素取代它的位置
+            绝对定位之后，如果元素本来是一个行元素可以设置宽和高
+            偏移的参照物，离它最近的一个已经定位的祖先元素，如果所有的祖先元素都没有定位，会参照浏览器进行定位*/
+            position: absolute;
+            width: 100px;
+            /* bottom: calc(50% - (25px)); */
+            top: 0px;
+            left: 0px;
+        }
+        .third {
+            background-color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="first">1</div>
+        <div class="second">2</div>
+        <div class="third">3</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 表单元素被包含在form的标签里面 
+        action:表示提交表单到目标位置,可以是服务器的地址,也可以是一个页面
+        method：表示提交的方式  get(暴露提交信息)  post(隐藏提交信息)-->
+    <form action="success.html" method="get">
+        <table border="1px" cellspacing="0">
+            <tr>
+                <td>用户名:</td>
+                <td>
+                    <input maxlength="8" size="5" type="text" name="userName" id="userName">
+                </td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td>
+                    <input type="password" name="password" id="password">
+                </td>
+            </tr>
+            <!-- 单选按钮需要分组,同一组只能选一个,name的值相同为同一组 ,checked表示默认选中-->
+            <tr>
+                <td>男：<input type="radio" name="sex" id="male" value="male" checked></td>
+                <td>女：<input type="radio" name="sex" id="female" value="female"> </td>
+            <tr>
+                <!-- 多选框可以选择多个,可以取消,checked表示默认选中 -->
+                <td>兴趣：</td>
+                <td> 看书：<input type="checkbox" name="intersting" value="book" checked>
+                    打球: <input type="checkbox" name="intersting" value="ball" checked>
+                    听音乐:<input type="checkbox" name="intersting" value="music">
+                </td>
+            </tr>
+            <tr>
+                <!-- 下拉列表框   disabled表示禁用-->
+                <td>职业</td>
+                <td>
+                    <select name="zhiye" id="mySel" size="3">
+                        <option value="0">—职业—</option>
+                        <option value="1" disabled>学生</option>
+                        <option value="2">主播</option>
+                        <option value="3">老师</option>
+                        <option value="4" selected>外卖员</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>简介：</td>
+                <td>
+                    <textarea name="jianjie" id="jianjie" cols="30" rows="10"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>上传身份证:</td>
+                <td><input type="file" name="identity" id="identity"></td>
+            </tr>
+            <tr>
+                <input type="hidden" name="pass" value="abcdofg">
+            </tr>
+            <tr>
+                <!-- 此处type=submit 自动提交表单,但是并不是所有的按钮都能够自动提交表单
+                    type=button 一般按钮,不能自动提交,需要通过js脚本进行操作
+                    type=image 图片按钮,可以自动提交
+                    <button></button>按钮可以自动提交-->
+
+                <!-- <td><input type="submit" value="注册"></td> -->
+                <!-- <td><input type="button" value="注册2"></td> -->
+                <td> <button>注册按钮</button></td>
+                <!-- <td><input type="image" src="../image/renren.gif" alt="123"></td> -->
+                <td>
+                    <input type="reset" value="重置">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            margin-bottom: 10px;
+
+        }
+
+        span {
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+            /* 设置span元素为块元素，高度和宽度可以被修改，但是不能在一行显示 */
+            /* display:block; */
+            /* 如何让span既可以改变宽度和高度，又可以和div在一行中显示 */
+            display: inline-block;
+            display: none;
+        }
+
+        /* 总结：如果元素在一行中排列，并且能够修改宽度和高度，需要设置所有元素属性display：inline-block; */
+
+        /* display:block;   变成块元素
+           display：inline-block；  变成行内块元素
+           display：inline；   变成行元素
+           display：none   不显示   */
+
+        /* 特例 input默认的是行内块元素 */
+        input{width: 150px;
+             height:40px}
+    </style>
+</head>
+
+<body>
+    <input type="texta"><a href="#">哈哈哈</a>
+    <!-- 利用display属性改变元素为块元素，行元素，行内块元素 -->
+    <div>我是div，我是块元素</div>
+    <span>我是span，我是行元素</span>
+</body>
+
+</html>

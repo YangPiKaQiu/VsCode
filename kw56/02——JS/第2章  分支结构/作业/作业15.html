@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a = Number(prompt('请输入a：'));
+        // var b = Number(prompt('请输入b：'));
+        // var c = Number(prompt('请输入c：'));
+        // var e;
+        // if (a > b) {
+        //     d = a;
+        //     a = b;
+        //     b = d;
+        // }
+        // if (a > c) {
+        //     e = a;
+        //     a = c;
+        //     c = e;
+        // }
+        // if (b > c) {
+        //     f = b;
+        //     b = c;
+        //     c = f;
+        //     alert(a + '<' + b + '<' + c);
+        // } else {
+        //     alert(a + '<' + b + '<' + c);
+        // }
+
+        var a = parseInt(prompt('请输入第一个数：'));
+        var b = parseInt(prompt('请输入第二个数：'));
+        var c = parseInt(prompt('请输入第三个数：'));
+        console.log(a,b,c);
+      
+        // 排序操作
+        // 1.比较a和b  大的数放到b里面
+        if(a>b){
+            var temp;
+            temp=a;
+            a=b;
+            b=temp;
+        }
+        // 2.比较b和c,大的数放在c里面,至此获得了最大的数放到了c里面
+        if(b>c){
+            var temp;
+            temp=b;
+            b=c;
+            c=temp;
+        }
+        // 3.比较a和b  大的数放到b里面
+        if(b>c){
+            var temp;
+            temp=a;
+            a=b;
+            b=temp;
+        }
+        console.log("排序之后:");
+        console.log(a,b,c);
+       var w=6;
+       var e=8;
+       e=w
+       console.log(w,e); 
+
+
+
+   </script>
+</body>
+</html>

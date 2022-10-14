@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var key = Number(prompt("请输入产品产品编号："));
+        var num = Number(prompt("请输入产品金额："));
+        switch (key) {
+            case 1:
+                if (num >= 500) {
+                    console.log(num * 0.12);
+                }
+
+                else if (num >= 300) {
+                    console.log(num * 0.02);
+                }
+
+                else {
+                    console.log(num * 0.02);
+                }
+                break;
+            case 2:
+                if (num >= 2000) { console.log(num * 0.1); }
+                else if (num >= 1500) {
+                    console.log(num * 0.02);
+                }
+                else { console.log(num); }
+
+                break;
+            case 3:
+                if (num >= 5000) { console.log(num * 0.1);}
+                else if (num >= 2500) { num * 0.05 }
+                else { console.log(num); }
+                break;
+            default:
+                console.log("重新输入金额");
+                break;
+        }
+    </script>
+</body>
+
+</html>

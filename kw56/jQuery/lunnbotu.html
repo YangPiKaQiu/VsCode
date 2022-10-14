@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            position: relative;
+            width: 400px;
+            height: 266px;
+            margin: 50px auto;
+            /* border: 1px solid #000; */
+        }
+
+        .box img {
+            border: 0;
+            width: 100%;
+        }
+
+        .pageInfo ul {
+            position: absolute;
+            left: 50%;
+            bottom: 8px;
+            transform: translateX(-50%);
+            display: flex;
+
+        }
+
+        .pageInfo li {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 0 5px;
+            background: #fff;
+        }
+
+        .left,
+        .right {
+            width: 30px;
+            height: 50px;
+            background: rgba(222, 190, 190, 0.6);
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFFFFF;
+            font-size: 30px;
+            font-weight: lighter;
+            display: none;
+        }
+
+        .left {
+            left: 0;
+            border-radius: 0 30px 30px 0;
+
+        }
+
+        .right {
+            right: 0;
+            border-radius: 30px 0 0 30px;
+        }
+
+        .active {
+            background-color: orangered !important;
+            /* 提升优先级  ！important */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="img/sun.jpeg" alt="" id="imgO">
+        <div class="pageInfo">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="left">&lt;</div>
+        <div class="right">&gt;</div>
+    </div>
+    <script>
+        const imgSrc = ["img/sun.jpeg", "img/bolt.jpeg", "img/cloud.jpeg", "img/snow.jpeg", "img/rain.jpeg"]
+        let pos = 0
+
+        //创建定时器切换下一张图片
+        let time = setInterval(() => {
+            next()
+        }, 2000)
+        // 点击切换下一张
+        $(".right").click(function () {
+            next()
+        })
+        // 点击切换上一张
+        $(".left").click(function () {
+            pre()
+        })
+        //切换下一张图片 
+        function next() {
+            activePage()
+            if (pos >= imgSrc.length - 1) {
+                pos = 0;
+            } else {
+                pos++;
+            }
+            $("#imgO").attr('src', imgSrc[pos])
+            activePage(pos)
+        }
+
+        // 创建 图片切换变换小点
+        function activePage(pos) {
+            $('.pageInfo ul li').eq(pos).addClass('active').siblings().removeClass("active");
+        }
+
+        //上一张图片
+        function pre() {
+            //如果当前index已经到0，给他重新赋值数组最大长度-1
+            if (pos <= 0) {
+                pos = imgSrc.length - 1
+            } else {
+                pos--;
+            }
+            $("#imgO").attr('src', imgSrc[pos])
+            //分页按钮高亮
+            activePage(pos);
+        }
+        $('.box').hover(function () {
+            clearInterval(time)
+            $('.left,.right').show()
+        },
+            function () {
+                let time = setInterval(() => {
+                    next()
+                }, 2000)
+                $('.left,.right').hide()
+            }
+        )
+    </script>
+</body>
+
+</html>

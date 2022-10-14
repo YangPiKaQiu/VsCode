@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var nums = [33, 23, 24, 3, 16, 99, 123, 88];
+        console.log(nums);
+
+        //利用sort方法排序
+        //从小到大:
+        nums.sort(function (a, b) { return a - b });
+        console.log(nums);
+        //从大到小:
+        nums.sort(function (a, b) { return b - a });
+        console.log(nums);
+
+
+        //自己写冒泡排序
+        function mySort(arr) {
+            //外层循环表示比较轮次  length - 1
+            for (var i = 0; i < arr.length - 1; i++) {
+                //内层循环表示每轮比较的次数  length-1-i
+                for (var j = 0; j < arr.length - 1 - i; j++) {
+                    //比较相邻的两个元素，前一个数大于后一个数，交换
+                    var temp;
+                    if (arr[j] > arr[j + 1]) {
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        var nums2 = [33, 13, 24, 3, 16, 99, 123, 88];
+        //调用方法
+        mySort(nums2);
+        console.log(nums2);
+
+
+        //冒泡排序  
+        var arr = [5, 4, 3, 2, 1];   5
+        for (var i = 0; i <= arr.length - 1; i++) {//外层循环管趟数
+            for (var j = 0; j < arr.length - i - 1; j++) {
+                //内部交换两变量的值  前一个和后面一个相比较
+                if (arr[j] > arr[j + 1]) {//大于号是从小到大，改小于号就是从大到小
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+
+
+    </script>
+</body>
+
+</html>

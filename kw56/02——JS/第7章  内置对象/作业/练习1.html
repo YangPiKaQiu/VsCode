@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    let arr = ["America", "Greece", "Britain", "Canada", "China", "Eqypt"];
+
+    //1.对数组中的每一个元素(字符串)进行判断--- 是否包含“a"或者“A"
+    for (var i = 0, count = 0; i < arr.length; i++) {
+        //     //1. 使用indexOf判断，如果没有该字母返回-1
+        //     if (arr[i].indexOf("a") !== -1 || arr[i].indexOf("A") !== -1) {
+        //         count++;
+
+        if (arr[i].includes("a") || arr[i].includes("A")) {
+            count++;
+        } //2.使用includes()判断是否包含
+       
+    }
+
+    console.log("包含小a或者大A的字符串的个数是:" + count);
+</script>
+
+</html>

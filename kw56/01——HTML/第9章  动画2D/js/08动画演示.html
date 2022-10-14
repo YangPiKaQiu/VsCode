@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+
+        /* 调用关键帧 */
+        div:hover {
+            animation: changeDiv 5s linear 2s 2;
+
+        }
+
+        /* 关键帧 */
+        @keyframes changeDiv {
+            0% {
+                width: 100px;
+                height: 100px;
+                transform: rotate(60deg) scale(1);
+                background-color: white;
+            }
+
+            33% {
+                width:130px;
+                height: 130px;
+                transform: rotate(60deg);
+                background-color: green;
+            }
+
+            66% {
+                width:180px;
+                height: 180px;
+                transform: rotate(30deg);
+                background-color: rgb(0, 13, 128);
+            }
+
+            100% {
+                width: 100px;
+                height: 100px;
+                transform: rotate(30deg);
+                background-color: rgb(105, 128, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+
+</html>

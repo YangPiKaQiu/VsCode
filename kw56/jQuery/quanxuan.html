@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <style>
+        td {
+            padding: 5px 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td id="inputAll">全选</td>
+            <td id="noInputAll">全不选</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="checkbox" id=""></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="checkbox" id=""></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="checkbox" id=""></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="checkbox" id=""></td>
+        </tr>
+    </table>
+
+    <script>
+        /*  $('input').click(function () {
+             if ($('input').prop("checked") == "checked") {
+                 $('input').removeProp('checked')
+             }
+             $(this).prop('checked', 'checked ')
+         }) */
+        $('#inputAll').click(function () {
+            $('input').prop('checked', true)
+        })
+        $('#noInputAll').click(function () {
+
+            $('input').prop('checked', false)
+
+        })
+    </script>
+</body>
+
+</html>

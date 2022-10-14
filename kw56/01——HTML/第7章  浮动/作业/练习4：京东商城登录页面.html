@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: 0px;
+        }
+
+        /* 中间大盒子 */
+        .wrap {
+            width: 990px;
+            margin: 0 auto;
+            /* border: 1px solid blue; */
+        }
+
+        header {
+            height: 87px;
+            line-height: 87px;
+            background: url(../img/logo1\ \(1\).png) no-repeat 158px center;
+        }
+
+
+
+        header>h2 {
+            padding-left: 345px;
+            color: #666666;
+            font-weight: 500;
+        }
+
+        /* 中间部分登录的盒子 */
+        .login-box {
+            background: url(../img/banner.png) no-repeat center center;
+            height: 475px;
+        }
+
+        /* 中间部分登录表单的盒子 */
+        .login-from {
+            width: 350px;
+            height: 280px;
+            box-sizing: border-box;
+            background-color: white;
+            float: right;
+            margin: 20px 50px 0px 0px;
+        }
+
+        /* 中间的整个部分的盒子 */
+        .contain {
+            background-color: #E93854;
+        }
+
+        .link {
+            text-align: center;
+        }
+
+        .link {
+            text-align: center;
+            color: #666666;
+            font-size: 12px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .link a {
+            margin: 0px 5px 0px 5px;
+            text-decoration: none;
+            font-size: 12px;
+            color: #666666;
+        }
+
+        .copy {
+            text-align: center;
+        }
+
+        /* 白色表单里面的样式设置 */
+        .login-from {
+            padding: 20px;
+        }
+
+        .login-from>h2 {
+            color: #7d6666;
+            font-size: 20px;
+            font-weight: 500;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .login-from>h2>a {
+            color: red;
+            font-size: 12px;
+            float: right;
+            text-decoration: none;
+            background: url(../img/icon5.jpg) no-repeat left center;
+            padding-left: 19px;
+        }
+
+        .login-from>h2>a:hover {
+            text-decoration: underline;
+        }
+
+        /* 表单里面的登录和密码的单行文本框 */
+        .login-icon {
+            float: left;
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            border: 1px solid #ccc;
+            /* 只显示上下不显示左右 */
+            border-right: none;
+
+        }
+
+        .username>.login-icon {
+            background: url(../img/icon1.jpg) no-repeat center center;
+        }
+
+        .password>.login-icon {
+            background: url(../img/icon2.jpg) no-repeat center center;
+        }
+
+        /* 去除浮动的影响 login-div里面和label里面的input */
+        .login-div {
+            overflow: auto;
+            margin: 15px 0px 0px;
+        }
+
+        /* 调整input的宽度和高度,边框颜色,和字体大小 */
+        .login-input {
+            width: 268px;
+            height: 38px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            color: #888;
+        }
+
+        /* 自动登录 */
+        .login-tips {
+            font-size: 12px;
+            color: #999;
+            line-height: 25px;
+            height: 25px;
+
+        }
+
+        .login-tips>a {
+            font-size: 12px;
+            color: #999;
+            text-decoration: none;
+            float: right;
+        }
+
+        .login-tips>input {
+            /* 垂直居中 */
+            vertical-align: middle;
+        }
+
+        /* 鼠标点击上去文字变色 */
+        .login-tips>a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+        /* 登录按钮 */
+        #login-btn {
+            font-size: 16px;
+            color: aliceblue;
+            height: 35px;
+            line-height: 35px;
+            display: block;
+            background: #e4393c;
+            text-align: center;
+            text-decoration: none;
+            margin: 20px 0px;
+        }
+
+        #login-btn:hover {
+            background: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="wrap">
+        <h2>欢迎登录</h2>
+    </header>
+    <!-- 中间部分 -->
+    <article class="contain">
+        <div class="wrap">
+            <div class="login-box">
+                <div class="login-from">
+                    <h2>京东会员<a href="">立即注册</a></h2>
+                    <form id="login-form" action="" method="post">
+                        <!-- 登录名 -->
+                        <div class="username login-div">
+                            <label for="ueser" class="login-icon"></label>
+                            <input type="text" placeholder="邮箱/用户名/已验证手机" id="ueser" class="login-input">
+                        </div>
+                        <!-- 登录密码 -->
+                        <div class="password login-div">
+                            <label for="pwd" class="login-icon"></label>
+                            <input type="text" id="pwd" class="login-input">
+                        </div>
+                        <div class="login-tips">
+                            <input type="checkbox" name="" id="">
+                            <label for="autoLogin">自动登录</label>
+                            <a href="#">忘记密码？</a>
+                        </div>
+                        <a href="#" id="login-btn">登录</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- 底部 -->
+    <footer class="wrap">
+        <div class="link">
+            <a href="">关于我们</a> |
+            <a href="">联系我们</a> |
+            <a href="">人才招聘</a> |
+            <a href="">商家入驻</a> |
+            <a href="">广告服务</a> |
+            <a href="">手机京东</a> |
+            <a href="">友情链接</a> |
+            <a href="">销售联盟</a> |
+            <a href="">京东社区</a> |
+            <a href="">京东公益</a> |
+            <a href="">English Site</a>
+        </div>
+        <div class="copy">
+            Copyright?2004-2017 京东JD.com 版权所有
+        </div>
+    </footer>
+</body>
+</html>

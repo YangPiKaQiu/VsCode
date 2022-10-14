@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    function Dogs(variety, age, mood, uname) {
+        this.variety = variety;
+        this.age = age;
+        this.mood = mood;
+        this.name = uname;
+        this.skill = function () {
+            if (mood == '很好') {
+                console.log(`
+                        输入信息错误，这只狗今天心情很好!
+                        名字叫${uname}的心情${mood} ，开心的围着主人身边转
+                        名字叫${uname}的心情${mood} ，开心的汪汪叫
+                        `);
+            }
+            if (mood == "不好") {
+                console.log(`
+                        名字叫${uname}的心情${mood} ，伤心的一动不动
+                        名字叫${uname}的心情${mood},伤心的呜呜叫
+                        `);
+            }
+        }
+    }
+    let gbq = new Dogs('贵宾犬', 12, '很好', '甜心');
+    gbq.skill();
+    let myq = new Dogs('德国牧羊犬', 10, '不好', '太子');
+    myq.skill();
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        //  定义一个数组,里面存放星期一、星期二.....知道星期日(共七天),在控制台输出：星期日
+
+        // var week=["星期一","星期二","星期三","星期四","星期五","星期六","星期日"];
+        // document.write(week[6]);
+
+
+
+
+        // 请将["关羽","张飞","马超","赵云","黄忠","刘备","姜维"]数组里的元素依次打印到控制台
+
+        // var week=["关羽","张飞","马超","赵云","黄忠","刘备","姜维"];
+        // for(var i=0;i<7;i++){
+        //     document.write(week[i]);
+        // }
+
+
+
+        // 求数组[2,6,1,7,4]里面所有元素的和以及平均值
+
+        // var sum=0;
+        // var average=0;
+        // var num=[2,6,1,7,4];
+        // for (var i=0;i<num.length;i++){
+        //     sum=sum+num[i];
+        // }
+        // document.write("数组[2,6,1,7,4]里面所有元素的和是:"+sum+"</br>");
+        // average=sum/num.length;
+        // document.write("数组[2,6,1,7,4]里面所有元素的平均值是:"+average);
+
+
+
+
+         //求数组[2,6,1,77,52,25,7]中最大的值
+
+        //  var arr=[2,6,1,77,52,25,7];
+        //  var max=arr[0];
+        //  for(var i=1;i<arr.length;i++){
+        //      if(arr[i]>max){
+        //          max=arr[i];
+        //      }
+        //  }
+        //  document.write("该数组里面的最大值是："+max);
+
+
+         //求数组[2,6,1,77,52,25,7]中最小的值
+
+        //  var arr=[2,6,1,77,52,25,7];
+        //  var min=arr[0];
+        //  for(var i=1;i<arr.length;i++){
+        //      if(arr[i]<min){
+        //          min=arr[i];
+        //      }
+        //  }
+        //  document.write("该数组里面的最小值是："+min);
+
+
+
+
+        //  将数组["red","green","blue","pink"]转换为字符串,并用|或其他符号分割
+
+        // var arr=["red","green","blue","pink"];
+        // var str="";
+        // for(var i=0;i<arr.length;i++){
+        //     str=str+arr[i]+"|";
+        // }
+        // document.write(str);
+
+
+
+        //新建一个数组，里面存放10个整数（1~10）
+        // var arr=[];
+        // for(var i=0;i<10;i++){
+        //     // arr=i    不要直接给数组名赋值,否则以前的元素都没了
+        //     arr[i]=i+1;
+        // }
+        // document.write(arr);
+
+
+
+        // 将数组[2,0,6,1,77,0,52,0,25,7]中大于等于10的元素选出来,放入新数组
+        var arr=[2,0,6,1,77,0,52,0,25,7];
+        var newArr=[];
+        var j=0;
+        for(var i=0;i<=arr.length;i++){
+            if(arr[i]>=10){
+                newArr[j]=arr[i];
+                j++;
+            }
+        }
+        document.write(newArr);
+
+    </script>
+</body>
+
+</html>

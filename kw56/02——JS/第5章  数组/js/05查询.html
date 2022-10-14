@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var dogs = [" 金毛", "二哈", "泰迪", "萨摩", "阿拉斯加", "中华田园犬"];
+        //1.查询指定元素
+        console.log(dogs[1]);
+
+        //2.查询全部元素并打印
+        console.log(dogs);
+        //----使用for循环对数组进行遍历操作
+        for (var i = 0; i < dogs.length; i++) {
+            dogs[i] += "狗";
+            console.log(dogs[i]);
+        }
+
+        //3.找出二哈的索引下标  indexOf查找到返回元素下标，没有则返回-1
+        var index = dogs.indexOf("二哈狗");
+        console.log(index);
+
+        //4.查询最大最小值
+        var nums = [2, 33, 14, 66, 122, 38, 33, 66];
+        var max = nums[0];
+        var min = nums[0];
+        for (var j = 0; j < nums.length; j++) {
+            if (max < nums[j]) {
+                max = nums[j];
+            }
+            if (min > nums[j]) {
+                min = nums[j];
+            }
+        }
+        console.log("最大值是：" + max, "最小值是：" + min);
+
+
+        //5.查询是否包含指定的值
+        let isExsits = nums.includes(66);
+        console.log(isExsits);
+
+
+        //6.元素最后出现的位置  输出下标
+        // let lastIndex = nums.lastIndex0f(33);
+        // console.log(lastIndex);
+
+
+        //7.另一种循环for-in，针对于集合的一种迭代方式；
+        //for(var k=0;k<nums.length;k++)
+        var nums = [2, 33, 14, 66, 122, 38, 33, 66];
+        for (var k in nums) {
+            console.log(nums[k]);
+        }
+
+    </script>
+</body>
+
+</html>

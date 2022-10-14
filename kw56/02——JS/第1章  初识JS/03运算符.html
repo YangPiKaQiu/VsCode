@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script type="text/javaScript">
+    // 1.赋值运算符 =   +=   -=    *=    /=   %=
+    /*
+    数学中=表示结果  1+1=?  从左向右  计算出结果
+    代码中: var name="tom" :  从右向左  传值给变量
+    var 变量名=表达式；  把表达式计算出来的结果传递给变量
+    表达式：操作数和运算符的组合，最终会得到一个结果
+    */
+    var sum=5;
+        sum +=10;    //+= sum =sum+10,然后将计算的结果赋值给sum变量
+        sum +=15;
+    console.log(sum);
+
+
+    var num=10;
+    num*=2  //num=num*2
+    num/=2  //nume=num/2
+    console.log(num);
+        
+
+    // 取余数  10/3=3余1
+    var yu=10%3;
+    console.log(yu);
+
+    // 除的结果
+    var shang=10/3;
+    console.log(shang);
+
+
+    // 2.算术运算符  + - * /  % ()  ++  --
+    // 混合运算
+    var  a=15;
+    var  b=20;
+    var result=(a/3+b)*3    // 右边表达式
+    console.log(result);
+
+    //++
+    var i=0;
+    i++;  //i=i+1
+    console.log(i);   //此处i是1
+    console.log(i++);  //此处i是1   console.log(1);  i+1;
+    console.log(i);  //此处i是2
+    console.log(++i);  //此处i是3    log(i+1)
+    //总结：++放在前面表示先加1再赋值，++在后面表示先赋值后加1
+    // 如果在表达式里面,或者输出语句里面执行++i 或者i++两者是有区别的
+    // 如果单独一句话i++,i++;最后结果是没有区别的
+ 
+
+
+    // 3.关系运算符  > < >=  <=   ==   ===  !=   !==
+    var zhangCcore=88;
+    var liSCore=99;
+    console.log("张三的成绩比李四的高吗？"+(zhangCcore>liSCore))
+    console.log("张三的成绩比李四的低吗？"+(zhangCcore<liSCore))
+    //"张三的成绩比李四的低吗？+88" < 99  ===  > false
+
+    // == 和 ===
+    var wangweifht=120;
+    var liweight="120";
+    console.log("王和李两个人的体重是否相等？"+(wangwight == liweight));
+
+
+     //  4.逻辑运算符  （与  或  非） &&  ||  ！
+     /*
+     乌龟寿命比大象长  &&   大象的体重比乌龟中   真
+     乌龟寿命比大象长  &&   大象的体重比乌龟轻   假
+
+     乌龟寿命比大象长  &&   大象的体重比乌龟中   真
+     乌龟寿命比大象长  &&   大象的体重比乌龟轻   真
+
+     ！乌龟寿命比大象长  假
+     */
+
+
+    var A=10,B=20,C=30,D=40,E=50;
+        result=A<B  &&  C>D;
+        console.log(result);
+
+    //逻辑与
+    var count=0;
+    result = A>B && (++count)<C;
+    //短路与：与运算&& 表示两边都是真才能获得真，计算机判断左边为假，右边不会执行
+    console.log(count);
+    console.log(result);
+
+    var count=0;
+    result = A>B && (++count)<C;
+    //短路或：或运算&& 只要有一边为真结果就是真，计算机判断出左边是真，右边不会执行
+    console.log(count);
+    console.log(result);
+
+    //运算符优先级
+    /*
+      小明考试体育、js
+      如果js考了90分以上并且体育考了80以上  通过
+      或者js考了100分，并且体育考了60以上 通过
+    */
+   var peScore=80;
+   var jsScore=100;
+   isSuccess=peScore>=80 && jsScore>= 90||peScore>=60 && jsScore>= 100;
+   //ture && ture || ture && ture
+   console.log(isSuccess);
+    
+
+   /*
+   1.优先级最高（）
+   2.算术运算符  先乘除后加减
+   3.关系运算符
+   4.逻辑运算符 && > ||
+   5.赋值运算符 =
+   */
+
+</script>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            /* border: 1px solid red; */
+        }
+
+        header .box1 {
+            background-color: #FFC100;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        header .box1 div:nth-of-type(1) span {
+            font-size: 15px;
+        }
+
+        header .box1 div:nth-of-type(1) img {
+            width: 10px;
+            margin-left: 5px;
+        }
+
+        header .box1 div i img {
+            width: 15px;
+            margin-bottom: -2px;
+            margin-right: 5px;
+        }
+
+        header .box1 div:nth-of-type(2) span {
+            font-size: 15px;
+            color: #ACA9A4;
+        }
+
+        header .box1 div:nth-of-type(2) {
+            width: 230px;
+            line-height: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        header .box1 div:nth-of-type(3) img {
+            width: 30px;
+        }
+
+        header .box2 {
+            background-color: black;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        header .box2 div img {
+            width: 35px;
+        }
+
+        header .box2 div:nth-of-type(1) {
+            width: 10vw;
+            margin-left: 2vw;
+        }
+
+        header .box2 div:nth-of-type(2) {
+            flex: 1;
+            color: white;
+
+        }
+
+        header .box2 div:nth-of-type(2) p {
+            font-size: 3vw;
+            line-height: 5vw;
+        }
+
+        header .box2 div:nth-of-type(3) {
+            color: black;
+            font-size: 10px;
+            background: #FFC100;
+            padding: 1.5vw 3.5vw;
+            border-radius: 8px;
+            margin-right: 2vw;
+        }
+
+        header .box3 {
+            height: 180px;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        header .box3 div {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        header .box3 img {
+            width: 50px;
+        }
+
+        header .box3 p {
+            font-size: 8px;
+            padding-top: 10px;
+        }
+
+        section .ground {
+            height: 15px;
+            background-color: #F5F5F5;
+        }
+
+        section h3 {
+            margin: 20px 20px 10px;
+        }
+
+        section .box5 img {
+            width: 15vw;
+
+        }
+
+        section .box5 {
+            border-top: 2px solid #f3efef;
+            padding: 5px 15px;
+            display: flex;
+        }
+
+        section .box6 {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+
+        }
+
+        section .box6 p:nth-of-type(1) {
+            font-size: 15px;
+        }
+
+        section .box6 p:nth-of-type(3) {
+            margin-top: 10px;
+        }
+
+        section .box6 p:nth-of-type(3) span {
+            color: red;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="box1">
+            <div><span>南京</span><img src="img/xiala.png" alt=""></div>
+            <div><i><img src="img/sousuo.png" alt=""></i><span>请输入商家名、品类或者商圈</span></div>
+            <div><img src="img/logo2.png" alt=""></div>
+        </div>
+        <div class="box2">
+            <div><img src="img/logo1.png" alt=""><span></span></div>
+            <div>省钱利器&nbsp;购物利器<p>吃喝玩乐尽在美团</p>
+            </div>
+            <div>去APP</div>
+        </div>
+        <div class="box3">
+            <div>
+                <img src="img/1.png" alt="">
+                <p>美食</p>
+            </div>
+            <div>
+                <img src="img/2.png" alt="">
+                <p>猫眼电影</p>
+            </div>
+            <div>
+                <img src="img/3.png" alt="">
+                <p>酒店</p>
+            </div>
+            <div>
+                <img src="img/4.png" alt="">
+                <p>休闲娱乐</p>
+            </div>
+            <div>
+                <img src="img/5.png" alt="">
+                <p>外卖</p>
+            </div>
+            <div>
+                <img src="img/6.png" alt="">
+                <p>KTV</p>
+            </div>
+            <div>
+                <img src="img/7.png" alt="">
+                <p>周边游</p>
+            </div>
+            <div>
+                <img src="img/8.png" alt="">
+                <p>丽人</p>
+            </div>
+            <div>
+                <img src="img/9.png" alt="">
+                <p>母婴亲子</p>
+            </div>
+            <div>
+                <img src="img/10.png" alt="">
+                <p>全部分类</p>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="ground"></div>
+        <div class="box4">
+            <h3>猜你喜欢</h3>
+            <div class="box5">
+                <img src="img/01.jpg" alt="">
+                <div class="box6">
+                    <p>蜜雪冰城</p>
+                    <p>[多城市]招牌柠檬水</p>
+                    <p><span>3.5元</span>&nbsp;&nbsp;门市价￥4</p>
+                </div>
+            </div>
+            <div class="box5">
+                <img src="img/02.jpg" alt="">
+                <div class="box6">
+                    <p>华莱士-全鸡汉堡</p>
+                    <p>[多城市]牛气冲天三件套</p>
+                    <p><span>13.5元</span>&nbsp;&nbsp;门市价￥25</p>
+                </div>
+            </div>
+            <div class="box5">
+                <img src="img/03.jpg" alt="">
+                <div class="box6">
+                    <p>茶百道</p>
+                    <p>[多城市]爆品-冷萃茶2选1</p>
+                    <p><span>6.66元</span>&nbsp;&nbsp;门市价￥8</p>
+                </div>
+            </div>
+            <div class="box5">
+                <img src="img/04.jpg" alt="">
+                <div class="box6">
+                    <p>先启半步颠小酒馆</p>
+                    <p>[新街口地区]红糖冰粉</p>
+                    <p><span>1元</span>&nbsp;&nbsp;门市价￥10</p>
+                </div>
+            </div>
+            <div class="box5">
+                <img src="img/05.jpg" alt="">
+                <div class="box6">
+                    <p>小厨娘淮扬菜</p>
+                    <p>[多城市]红豆丸子嫩豆花</p>
+                    <p><span>2元</span>&nbsp;&nbsp;门市价￥8</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

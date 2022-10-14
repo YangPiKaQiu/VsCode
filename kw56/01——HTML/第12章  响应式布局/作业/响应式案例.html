@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .top {
+            display: flex;
+        }
+
+        .top>div {
+            width: 50%;
+
+        }
+
+        .top img {
+            width: 100%;
+        }
+
+        .right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .right>div {
+            width: 48%;
+            padding: 20px;
+            /* border: 1px solid blue; */
+        }
+
+
+        /* 屏幕的宽度小于768px顶部分成两行
+        left 上   right 下
+         */
+        @media screen and (max-width:768px) {
+            .top {
+                flex-wrap: wrap;
+            }
+
+            .top>.left {
+                width: 100%;
+            }
+
+            .top>.right {
+                width: 100%;
+            }
+        }
+
+        /* 下半部分 */
+        .bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .content {
+            width: 234;
+            padding: 10px;
+            border: 1px solid grey;
+            box-shadow: 0px 0px 10px grey;
+            border-radius: 5px;
+            box-sizing: border-box;
+            width: 24%;
+            margin: 10px 0px;
+        }
+
+        .content img {
+            width: 100%;
+        }
+
+        .content p {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: gray;
+            line-height: 25px;
+        }
+
+        /* 底部响应式 
+        大于  1024px  显示2个 23%
+        768---1024        3个 32%
+        420---768         2个 48%
+        小于420           1个 90%
+        */
+        @media screen and (min-width:1024px) {
+            .content {
+                width: 23%
+            }
+        }
+
+        @media screen and (min-width:768px) and (max-width:1024px) {
+            .content {
+                width: 32%
+            }
+            /* 删除最后两面 */
+            .bottom>div:nth-of-type(7) {
+                display: none;
+            }
+            .bottom>div:nth-of-type(8) {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width:420px) and (max-width:768px) {
+            .content {
+                width: 48%
+            }
+
+        }
+
+        @media screen and (max-width:420px) {
+            .content {
+                width: 90%
+            }
+
+            .bottom {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="left">
+            <div><img src="../img/bann.jpg" alt=""></div>
+        </div>
+        <div class="right">
+            <div><img src="../img/ph.png" alt=""></div>
+            <div><img src="../img/tv.png" alt=""></div>
+        </div>
+    </div>
+    <!-- 下半部分 -->
+    <div class="bottom">
+        <div class="content">
+            <div>
+                <img src="../img/pic1.jpg" alt="">
+                <p>摄影图片展</p>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../img/pic2.jpg" alt="">
+                <p>摄影图片展</p>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../img/pic3.jpg" alt="">
+                <p>摄影图片展</p>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../img/pic4.jpg" alt="">
+                <p>摄影图片展</p>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../img/pic5.jpg" alt="">
+                <p>摄影图片展</p>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../img/pic6.jpg" alt="">
+                <p>摄影图片展</p>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../img/pic7.jpg" alt="">
+                <p>摄影图片展</p>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../img/pic8.jpg" alt="">
+                <p>摄影图片展</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

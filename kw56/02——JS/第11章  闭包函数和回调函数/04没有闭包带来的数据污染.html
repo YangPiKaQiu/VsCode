@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //一个函数里面再定义一个函数，返回值是里面的函数，再函数的外部通过一种函数表达式的方式调用
+    function out(a, b) {
+        return a + b;
+    }
+    //函数外部定义两个变量
+    let num1 = 100, num2 = 50;
+    console.log(out(num1, num2));
+
+    num1 = 999, num2 = 666;
+    console.log(out(num1, num2));
+
+
+    //变量num1 , num2用过即丢
+    console.log(out(num1, num2));
+
+
+
+
+
+</script>
+
+</html>

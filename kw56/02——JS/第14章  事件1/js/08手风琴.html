@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 镜像渐变 */
+            background: radial-gradient(circle at top center, #718497, #29323c);
+        }
+
+        .box {
+            width: 900px;
+            height: 400px;
+            display: flex;
+        }
+
+        .item {
+            width: 60px;
+            border-radius: 30px;
+            margin: 10px;
+            /* 设置背景图片的尺寸 */
+            background-size: cover;
+            /* 背景定位 */
+            background-position: center;
+            /* 溢出隐藏 */
+            overflow: hidden;
+            /* 相对定位 */
+            position: relative;
+            transition: all 0.5s linear;
+        }
+
+        .item .content {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 10px;
+            right: 0;
+            /* 设置字体图标和文本横向排列 */
+            display: flex;
+        }
+
+        .item .content .icon {
+            width: 40px;
+            min-width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            margin-left: 10px;
+        }
+
+        .item .content .text {
+            width: calc(100% - 80px);
+            /* border: 1px red solid; */
+            margin-left: 10px;
+            /* 盒子溢出隐藏 */
+            overflow: hidden;
+            /* 文本是否截断 */
+            text-overflow: ellipsis;
+            /* 设置文本换行 */
+            white-space: nowrap;
+        }
+
+        .item .content .text .tit {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .item .content .text .desc {
+            font-size: 14px;
+            color: white;
+            /* 盒子溢出隐藏 */
+            overflow: hidden;
+            /* 文本是否截断 */
+            text-overflow: ellipsis;
+            /* 设置文本换行 */
+            white-space: nowrap;
+        }
+
+        .item:nth-child(1) .icon {
+            color: gold;
+        }
+
+        .item:nth-child(2) .icon {
+            color: #CCC;
+        }
+
+        .item:nth-child(3) .icon {
+            color: blue;
+        }
+
+        .item:nth-child(4) .icon {
+            color: red;
+        }
+
+        .item:nth-child(5) .icon {
+            color: gray;
+        }
+
+        .item .shadow {
+            height: 100px;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+        }
+
+        .item.active .shadow {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 60%, transparent);
+        }
+
+        .item.active {
+            flex: 1;
+            margin: 0px
+        }
+
+        .item.active .text {
+            opacity: 1;
+        }
+
+        .item.active .content {
+            bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="item " style="background-image:url(../img/sun.jpeg) ;">
+            <!-- 此处阴影部分，点击显示时候渲染效果 -->
+            <div class="shadow"></div>
+            <div class="content">
+                <!-- 文字图表 -->
+                <div class="icon">
+                    <i class="fa fa-sun-o" aria-hidden="true"></i>
+                </div>
+                <!-- 文本：标题  描述 -->
+                <div class="text">
+                    <div class="tit">这是标题</div>
+                    <div class="desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus iusto rem
+                        voluptas odio porro amet assumenda hic natus! Itaque provident voluptas impedit est accusantium,
+                        quam consequatur quasi blanditiis ea maiores.</div>
+                </div>
+            </div>
+        </div>
+        <div class="item active" style="background-image:url(../img/cloud.jpeg) ;">
+            <!-- 此处阴影部分，点击显示时候渲染效果 -->
+            <div class="shadow"></div>
+            <div class="content">
+                <!-- 字体图表 -->
+                <div class="icon">
+                    <i class="fa fa-cloud aria-hidden=" true"></i>
+                </div>
+                <!-- 文本：标题  描述 -->
+                <div class="text">
+                    <div class="tit">这是标题</div>
+                    <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo at
+                        reprehenderit voluptatem accusantium maiores eaque aliquam. Illum placeat quasi pariatur iure
+                        quibusdam possimus ipsum ab. Distinctio enim ab nam autem.</div>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="background-image:url(../img/rain.jpeg) ;">
+            <!-- 此处阴影部分，点击显示时候渲染效果 -->
+            <div class="shadow"></div>
+            <div class="content">
+                <!-- 文字图表 -->
+                <div class="icon">
+                    <i class="fa fa-tint" aria-hidden="true"></i>
+                </div>
+                <!-- 文本：标题  描述 -->
+                <div class="text">
+                    <div class="tit">这是标题</div>
+                    <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo at
+                        reprehenderit voluptatem accusantium maiores eaque aliquam. Illum placeat quasi pariatur iure
+                        quibusdam possimus ipsum ab. Distinctio enim ab nam autem.</div>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="background-image:url(../img/bolt.jpeg) ;">
+            <!-- 此处阴影部分，点击显示时候渲染效果 -->
+            <div class="shadow"></div>
+            <div class="content">
+                <!-- 文字图表 -->
+                <div class="icon">
+                    <i class="fa fa-bolt" aria-hidden="true"></i>
+                </div>
+                <!-- 文本：标题  描述 -->
+                <div class="text">
+                    <div class="tit">这是标题</div>
+                    <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo at
+                        reprehenderit voluptatem accusantium maiores eaque aliquam. Illum placeat quasi pariatur iure
+                        quibusdam possimus ipsum ab. Distinctio enim ab nam autem.</div>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="background-image:url(../img/snow.jpeg) ;">
+            <!-- 此处阴影部分，点击显示时候渲染效果 -->
+            <div class="shadow"></div>
+            <div class="content">
+                <!-- 文字图表 -->
+                <div class="icon">
+                    <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+                </div>
+                <!-- 文本：标题  描述 -->
+                <div class="text">
+                    <div class="tit">这是标题</div>
+                    <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo at
+                        reprehenderit voluptatem accusantium maiores eaque aliquam. Illum placeat quasi pariatur iure
+                        quibusdam possimus ipsum ab. Distinctio enim ab nam autem.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //选择dom元素
+    let items = document.querySelectorAll(".item");
+    //方法样式添加active
+    function addActive() {
+        //classList能够获取当前dom对象中的样式的集合[item,active]
+        //addClass()方法向集合中添加样式，removeClass()方法从集合中移出样式
+        // console.log(this.classList);
+        items.forEach(item => {
+            item.classList.remove("active")
+        })
+
+        //给被点击的dom元素添加active样式
+        this.classList.add("active")
+    }
+    //给每个item增加点击事件
+    items.forEach(item => {
+        item.addEventListener('click', addActive)
+    })
+</script>
+
+</html>

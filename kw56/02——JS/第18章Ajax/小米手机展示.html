@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        .box {
+            background-color: #aaa;
+            width: 1100px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 3px solid red;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .item {
+            border: 1px solid blue;
+            padding: 20px 5px;
+            width: 20%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 5px;
+        }
+
+        .item img {
+            width: 100%;
+        }
+
+        .item .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item .info .type {
+            color: rgb(31, 30, 30);
+            font-size: 18px;
+            margin: 5px 0px;
+        }
+
+        .item .info .desc {
+            color: #a7a7a7;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .item .info .price {
+            font-size: 18px;
+            color: orangered;
+            margin-bottom: 30px;
+        }
+        li{
+            height: 50px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- <div class="item">
+            <div class="img">
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202209261921_a1b840c267bd26bcf4dc654d52f259e5.png?thumb=1&w=200&h=200&f=webp&q=90"
+                    alt="">
+            </div>
+            <div class="info">
+                <div class="type">XiaoMi Civi 2</div>
+                <div class="desc">仿生双屏|氛围人像</div>
+                <div class="price">2399元起</div>
+            </div>
+        </div> -->
+    </div>
+    <div class="box2">
+
+    </div>
+</body>
+<script>
+    //全局变量
+    let itemsDiv;
+    let boxDiv = document.querySelector(".box");
+    //1.创建xhr对象
+    let xhr = new XMLHttpRequest();
+
+
+    //2.创建请求
+    xhr.open("get", "./json/phone.json");
+
+    //3.xhr响应事件  onreadystatechange
+    xhr.onreadystatechange = function () {
+        // alert('111')
+        //4.根据完成状态获取服务器响应给我的数据
+        if (xhr.status === 200 && xhr.readyState === 4) {
+            //因为返回的数据是字符串，转换程object对象
+            let data = JSON.parse(xhr.responseText);
+            console.log(data);
+            //5.根据返回的数组对象，渲染页面dom(div.box)
+            itemsDiv = data.map((item, index) => {
+                return `
+                <div class="item">
+                 <div class="img">
+                     <img src="${item.img}"alt="">
+                 </div>
+                 <div class="info">
+                    <div class="type">${item.type}</div>
+                    <div class="desc">${item.desc}</div>
+                    <div class="price">${item.price}元起</div>
+                 </div>
+               </div>
+                 `;
+            })
+            //渲染页面
+            console.log(typeof itemsDiv);
+            boxDiv.innerHTML = itemsDiv.join('');
+        }
+    }
+    //发送请求
+    xhr.send();
+
+</script>
+
+</html>

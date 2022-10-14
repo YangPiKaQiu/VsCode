@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //函数表达式
+    let fn = function () {
+        return 190;
+    }
+    // console.log(fn);
+
+    //改成箭头函数
+    let fn2 = () => {
+        return 100;
+    }
+    // console.log(fn2);
+
+
+    //箭头函数里面带参数
+    let fn3 = (n) => {
+        return n;
+    }
+    console.log(fn3(10000));
+
+
+    //如果箭头函数有一个参数并且方法体里面只有一句返回值的语句可以简写
+    //省略括号，省略return
+    let fn4 = n => n;
+    console.log(fn4(99));
+
+
+    //如果不带参数据号不能省略，如果带一个以上的参数，括号不能省略
+    let fn5 = (a, b) => a + b;
+    console.log(fn5(1, 2));
+
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       //计数器：记录80分以上的学生人数
+       var count=0;
+       //比率
+       var rate=0;
+       //总人数
+       var n=5;
+
+       for(var i=1;i<=n;i++){
+           //录入成绩
+           var score=parseFloat(prompt("请输入成绩:"));
+           //判断如果成绩低于80分，跳过本次循环，执行下一次
+           if(score<80){continue;
+        }
+        count++;
+       }
+       rate=count/n*100+"%"
+   </script> 
+</body>
+</html>

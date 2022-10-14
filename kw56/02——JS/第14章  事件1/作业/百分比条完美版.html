@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            border: 1px dashed #ccc;
+            height: 30px;
+            font-size: 15px;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .box {
+            width: 450px;
+            padding: 10px;
+            margin: 30px auto;
+            border: 1px dashed red;
+        }
+
+        .progress {
+            position: relative;
+            display: block;
+            /*  条子长度 */
+            width: 160px;
+            height: 12px;
+            /* border: 1px solid #ccc; */
+            background: #EDEDED;
+        }
+
+        li>div {
+            /* border: 1px solid #000; */
+            width: 250px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 12px;
+        }
+
+        .fillContent {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 0px;
+            height: 12px;
+            /* background-color: greenyellow; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h4>你被“最美乡村女校长”感动了吗(必选)</h4>
+        <ul>
+            <li>很感动，她很美<div>
+                    <div class="progress">
+                        <div class="fillContent "></div>
+                    </div>
+                    <i>11</i>
+                </div>
+            </li>
+            <li>很感动，她很美<div>
+                    <div class="progress">
+                        <div class="fillContent "></div>
+                    </div><i>11</i>
+                </div>
+            </li>
+            <li>没感觉，这样的事很多<div>
+                    <div class="progress">
+                        <div class="fillContent "></div>
+                    </div><i>11</i>
+                </div>
+            </li>
+            <li>不感动，可能是炒作<div>
+                    <div class="progress">
+                        <div class="fillContent "></div>
+                    </div><i>11</i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        //获取元素
+        let progress = document.querySelectorAll('.progress'); //获取第一个div我们获取的是数组  对照类名
+        let fillContent = document.querySelectorAll('.fillContent'); // 获取第二个div 我们获取的是数组
+        let iobj = document.querySelectorAll('i');  //获取所有 i 标签  
+        //获取盒子宽度
+        let w = progress[0].clientWidth;
+        // 我们是从数据库中读取数据，所以我们定义一个静态数据 ，有四个进度条，我们定义四个数用数组来给定
+        //新建数组
+        let arr = [30, 101, 120, 160]; //一个数据对应一个进度条   30对应第一个 i
+        // 在i标签中显示数据   我们获取的都是数组所以我们要遍历数组循环
+        for (let i = 0; i < arr.length; i++) {  //遍历数组
+            //这里我们要加上百分比数据
+            iobj[i].innerHTML = (Math.round(arr[i] / w * 10000) / 100.00) + '%' + ' ' + arr[i];  //把数字显示在i标签中
+        }
+        //数据显示完了，下面就要显示进度条多少
+        //我们也要遍历四个进度条 
+        for (let i = 0; i < arr.length; i++) {
+            //设置进度条长度，也就是盒子宽度的增加
+            fillContent[i].style.width = arr[i] + 'px';  //宽度增加
+            //求百分比
+            let bai = Math.round(arr[i] / w * 10000) / 100.00;
+            //更改盒子背景颜色  根据数据的大小来设置区间
+            if (bai >= 0 && bai <= 50) {
+                fillContent[i].style.background = 'red'
+            }
+             if (bai > 50 && bai <= 70) {
+                fillContent[i].style.background = 'pink'
+            }
+             if (bai > 70 && bai <= 90) {
+                fillContent[i].style.background = 'blue'
+            }
+             if (bai > 90 && bai <= 100) {
+                fillContent[i].style.background = 'greenyellow'
+            }
+
+        }
+        //有一个bug就是没有保留两位小数  后面进行优化
+    </script>
+</body>
+
+</html>

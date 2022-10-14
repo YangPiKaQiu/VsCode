@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var num
+       do{
+          num=parseInt(prompt("请输入一个整数:"));
+          //根据整数的值输出相应的内容： 例如 1---MON  2---TUE
+          switch(num){
+              case 1:
+                  console.log("MON");
+                  break;
+              case 2:
+                  console.log("TUE");
+                  break;
+              case 3:
+                  console.log("WED");
+                  break;
+              case 4:
+                  console.log("MON");
+                  break;
+              case 5:
+                  console.log("FAI");
+                  break;
+              case 6:
+                  console.log("SAT");
+                  break;
+              case 7:
+                  console.log("SUM");
+                  break;
+             default:
+                 console.log("输入不合法,不是星期几!");
+          }
+       }while(num!=0);
+       console.log("程序结束");
+
+    </script>
+</body>
+</html>

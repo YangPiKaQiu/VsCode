@@ -1,0 +1,138 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+/* 左边分类设置 */
+.ificaty {
+  position: absolute;
+  left: 0px;
+  height: 460px;
+  width: 236px;
+  background-color: rgba(110, 110, 110, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ificaty div {
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  padding-left: 30px;
+  font-size: 14px;
+}
+
+.ificatyAcive {
+  background-color: #ff6700;
+}
+
+/* 左边分类框  */
+.ificatyPhone {
+  width: 990px;
+  height: 460px;
+  background-color: white;
+  position: absolute;
+  left: 236px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  display: none;
+  z-index: 9999;
+  box-shadow: 1px 1px 1px #cecdcd;
+}
+.ificatyPhone4 {
+  width: 743px;
+}
+.ificatyPhone5 {
+  width: 743px;
+}
+.ificatyPhone7 {
+  width: 743px;
+}
+.ificatyPhone8 {
+  width: 495px;
+}
+.ificatyPhone9 {
+  width: 743px;
+}
+.ificatyPhone10 {
+  width: 743px;
+}
+.ificatyPhoneDiv {
+  height: 76px;
+  line-height: 76px;
+  text-align: center;
+  display: flex;
+  /* border: 1px blue solid; */
+}
+.ificatyPhoneDiv1 {
+  padding: 0px 10px;
+  height: 76px;
+}
+.ificatyPhoneDiv1 img {
+  height: 40px;
+  width: 40px;
+  vertical-align: middle;
+}
+.ificatyPhoneDiv2 {
+  font-size: 14px;
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 右边轮播图设置 */
+.lunbotu {
+  margin: auto;
+  width: 1226px;
+  height: 460px;
+  position: relative;
+}
+/* 分页按钮设置 */
+.lunbotu-btn ul {
+  display: flex;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.lunbotu-btn ul li {
+  width: 5px;
+  height: 5px;
+  margin: 0px 5px;
+  background-color: #919192;
+  border: #b4b4b5 2.5px solid;
+  border-radius: 50%;
+}
+.lunbotu-btn ul .lunbotu-btn-active {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* 轮播图片设置 */
+.lunbotu-img img {
+  width: 100%;
+  height: 460px;
+}
+
+/* 箭头设置 */
+.lunbotu-arrow {
+  width: 42px;
+  height: 70px;
+  line-height: 50px;
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  bottom: calc(50% - 25px);
+  background: url(image/icon-slides.png) no-repeat center center;
+}
+.lunbotu-arrowLeft {
+  left: 236px;
+}
+.lunbotu-arrowRight {
+  right: 0px;
+}
+.lunbotu:hover {
+  cursor: pointer;
+}

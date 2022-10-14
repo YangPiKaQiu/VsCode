@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 20px auto;
+
+            /* 设置大盒子为弹性盒子 */
+            display: flex;
+
+            /* 设置主轴方向 */
+            flex-direction: row;
+        }
+
+        /* 项目属性：项目就是弹性盒子里面的元素
+          order：定义子元素的排列顺序，数值越小，排列越靠前，默认为0
+        flex-grow：定义子元素的放大比例，默认为0，即如果存在剩余空间，也不放大
+                         简写：flex：1
+        flex：是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+        align-self：允许单个子元素有与其他子元素不一样的对齐方式，可覆盖align-items属性
+                          默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretc
+        flex-shrink：定义子元素的缩小比例，默认为1，即如果空间不足，该子元素将缩小。
+       flex-basis：定义在分配多余空间之前，子元素占据的主轴空间（main size）浏览器根据这个属性，计算主
+                         轴是否有多余空间。它的默认值为auto，即子元素的本来大小*/
+        .box>div:nth-of-type(3) {
+            background-color: red;
+            order: 0;
+            flex: 2;
+            align-self: center;
+        }
+
+        .box>div:nth-of-type(1),
+        .box>div:nth-of-type(2),
+        .box>div:nth-of-type(4) {
+            flex: 1;
+        }
+
+
+        .box>div {
+            /* width: 100px; */
+            height: 100px;
+            border: 1px dashed blue;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="small">1</div>
+        <div class="small">2</div>
+        <div class="small">3</div>
+        <div class="small">4</div>
+        <!-- <div class="small">5</div>
+        <div class="small">6</div>
+        <div class="small">7</div>
+        <div class="small">8</div> -->
+    </div>
+</body>
+
+</html>

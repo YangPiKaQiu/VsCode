@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("101-200之间的素数为："+"<br/>")
+        for(var i=101,k=0;i<=200;i++){
+            for(var j=2;j<=i;j++){
+                if(i%j==0){
+                    break;
+                }
+            }
+            if(i==j){
+                    document.write(i+"<br/>");
+                    k++;
+                }
+        }
+        document.write("101-200之间的素数为："+k);
+    </script>
+</body>
+</html>

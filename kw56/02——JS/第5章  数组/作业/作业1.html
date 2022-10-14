@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.小明参加歌手比赛，评委组给出10个成绩，去掉一个最高分，去掉一个最低分，求平均分
+        // var score[] = [78, 90, 67, 64, 89, 98, 68, 97, 90, 97, 65]
+
+        var score = [78, 90, 67, 64, 89, 98, 68, 97, 90, 97, 65];
+        score.sort(function (a, b) { return a - b });
+        score.pop();
+        score.shift();
+        // console.log(score);
+        var sum = 0;
+        var average = 0;
+        for (var i = 0; i < score.length; i++) {
+            sum = sum + score[i];
+        }
+        average = sum / score.length;
+        document.write("平均分是:" + average);
+
+    </script>
+</body>
+
+</html>

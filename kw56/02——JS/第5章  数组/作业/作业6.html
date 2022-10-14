@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 6.改进第二题：向字符数组中插入一个字符，保持原来的排序规则
+
+        var arr = ["a", "c", "u", "b", "e", "p", "f", "z"];
+        console.log("原数组为:" + arr);
+        
+        arr.sort();
+        console.log("升序排序为:" + arr);
+        arr.splice(2, 0, "g");
+        console.log(arr);
+
+        arr.reverse();
+        console.log("降序排序为"+arr);
+        arr.splice(2, 0, "t");
+        console.log(arr);
+        
+
+    </script>
+</body>
+
+</html>

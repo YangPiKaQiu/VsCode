@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //1.使用字面量创建对象  {}表示对象   []表示数组----json写法
+    let desk = {
+        "size": "150*50*90",
+        "color": "白色",
+        "price": 280,
+        "material": "铁质",
+        "use": function () {
+            console.log("可以摆放任意的物品！");
+        }
+    }
+     //使用桌子对象
+     console.log(`我买了一个桌子：
+               尺寸:${desk.size}
+               颜色:${desk.color}
+               价格:${desk.price}
+               材质:${desk.material}
+               `);
+    desk.use();
+
+</script>
+
+</html>

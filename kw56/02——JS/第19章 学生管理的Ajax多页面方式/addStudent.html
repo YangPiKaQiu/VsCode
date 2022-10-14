@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加页面</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at top, rgb(233, 223, 233), rgb(219, 191, 213));
+        }
+
+        .add {
+            border: 1px solid #000;
+            padding: 20px;
+            border-radius: 15px;
+            background: #fff;
+        }
+
+        caption {
+            font-family: '隶书';
+            font-size: 40px;
+        }
+
+        td {
+            font-size: 20px;
+            margin: 0 10px;
+        }
+
+        tr {
+            line-height: 3em;
+        }
+
+        input {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 80px;
+            height: 30px;
+            margin: 0 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button:hover {
+            background: green;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="add">
+        <table>
+            <caption>添加学生</caption>
+            <tr>
+                <td>姓名：</td>
+                <td>
+                    <input type="text" name="addName" id="addName">
+                </td>
+            </tr>
+            <tr>
+                <td>年龄：</td>
+                <td>
+                    <input type="text" name="addAge" id="addAge">
+                </td>
+            </tr>
+            <tr>
+                <td>性别：</td>
+                <td>
+                    <input type="text" name="addSex" id="addSex">
+                </td>
+            </tr>
+            <tr>
+                <td>分数：</td>
+                <td>
+                    <input type="text" name="addScore" id="addScore">
+                </td>
+            <tr>
+                <td colspan="2" align="center">
+                    <button id="addBtn">添加</button>
+                    <button id="addReset" onclick="window.history.back">返回</button>
+                </td>
+            </tr>
+            </tr>
+        </table>
+    </div>
+    <script>
+        /*
+         添加学生
+             {
+                "stuIndex": 0,
+                "stuId": 100,
+                "stuName": "张三",
+                "stuAge": 18,
+                "stuSex": "男",
+                "stuScore": 99.5
+            }
+        */
+        //2、点击添加按钮的时候
+        const addBtn = document.querySelector("#addBtn")
+        addBtn.onclick = function () {
+            //1.获取添加数据
+            let stuName = document.querySelector("#addName").value;
+            let stuAge = document.querySelector("#addAge").value;
+            let stuSex = document.querySelector("#addSex").value;
+            let stuScore = document.querySelector("#addScore").value;
+            let data = {
+                "stuName": stuName,
+                "stuAge": stuAge,
+                "stuSex": stuSex,
+                "stuScore": stuScore
+            }
+            //2.发送ajax请求
+            let xhr = new XMLHttpRequest();
+            xhr.open("post", 'http://localhost:8080/kw53test/addStudent');
+            xhr.setRequestHeader("Content-type", "application/json");  //设置请求头的类型
+            // 如果请求头设置错误会出现  415 错误
+            //3.事件
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(xhr.responseText);
+                }
+            }
+            //4.发送
+            //传送的json对象需要转换成字符串的形式发送
+            let dataStr = JSON.stringify(data)
+            console.log(dataStr);
+            xhr.send(dataStr)
+            window.location.href = "showStudent.html"
+        }
+
+
+
+
+
+
+//         //生成随机颜色
+// const body = document.querySelector('body')
+// function bgcolor() {
+//   const randomHex = () =>
+//     `#${Math.floor(Math.random() * 0xffffff)
+//       .toString(16)
+//       .padEnd(6, '0')}`
+//   body.style.background = randomHex()
+// }
+// setInterval(bgcolor, 100)
+    </script>
+</body>
+
+</html>

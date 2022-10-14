@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 先判断再执行
+        /*
+        循环体：上机编写程序
+        条件：老师检查是否合格
+        */
+        // var isPass = false;
+        // while (!isPass) {
+        //      console.log("上机编写程序");
+
+        //      var choice=prompt("老师检查是否合格？(y/n)");
+        //      if(choice=="y"){
+        //          isPass=true;
+        //     }
+        // }
+        // console.log("过关");
+
+
+        //必须做一次试卷
+
+        //先执行再判断：
+        var isPass;   //undefined
+
+        //计算1-50之间偶数的和  使用do-while
+        var i = 1;
+        do {
+
+            if (i % 2 == 0) {
+                sum += i;
+            }
+        } while (i <= 50);
+        console.log("1-50之间偶数和是"+sum);
+
+
+    </script>
+</body>
+
+</html>

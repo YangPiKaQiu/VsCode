@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        .big {
+            width: 500px;
+            height: 500px;
+            border: 2px solid blue;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .small {
+            width: 308px;
+            height: 308px;
+            border: 2px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .small:hover {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="big">
+        <div class="small">haha</div>
+    </div>
+</body>
+<script>
+    //    事件委托:内层的元素不绑定事件，交给外层的元素去执行相应的事件
+
+    let big = document.querySelector(".big");
+    let small = document.querySelector(".small");
+
+
+    //大盒子绑定事件，如何获取具体被点击的dom元素
+    big.onclick = function (e) {
+        console.log("111"); 
+        console.log(e.target);
+        console.log(e.target.innerHTML);
+    }
+
+</script>
+
+</html>

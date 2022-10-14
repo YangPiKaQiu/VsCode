@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .box {
+            background-color: black;
+            width: 960px;
+            height: 600px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .zm {
+            width: 30px;
+            height: 30px;
+            background-color: pink;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            position: absolute;
+            top: 0;
+            /* left最左边  0px   left 最右边 930px*/
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- <div class="zm"></div> -->
+    </div>
+</body>
+<script>
+    //1.产生字母div，使用定时器间隔产生
+    //2.随机生成背景颜色
+    //3.随机产生26大写字母
+    //4.字母出现位置随机
+    //5.字母持续下落
+    //6.判断落地
+    //7.监听键盘按键，判断按下字母是否匹配，如果匹配，消除字母
+
+    let box = document.querySelector('.box')
+    let zmList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    // console.log(zmList[9]);
+
+    //定时随机产生字母
+    let t1 = setInterval(() => {
+        //创建字母div  <div class="zm"></div>
+        let zmdiv = document.createElement('div');
+        zmdiv.className = 'zm';
+        //随机生成水平位置
+        zmdiv.style.left = Math.floor(Math.random() * 930) + 'px';
+        //随机产生盒子颜色
+        zmdiv.style.backgroundColor = geColor();
+        zmdiv.innerHTML = zmList[Math.floor(Math.random() * 26)]
+        box.appendChild(zmdiv);
+    }, 1000);
+
+    //持续下落
+    let move = 0;
+    let t2 = setInterval(() => {
+        let boxHeight = box.innerHeight;
+        let zmDivs = document.querySelectorAll('.zm');
+
+        //判断触底
+        zmDivs.forEach(item => {
+            if (item.offsetTop >= 570) {
+                gameover();
+            }
+        })
+
+        //offsetTop是一个只读属性
+        zmDivs.forEach(item => {
+            //修改item的top点
+            item.style.top = item.offsetTop + 10 + 'px';
+        })
+
+    }, 1000)
+
+
+    //封装一个方法游戏结束
+    function gameover() {
+        alert('游戏结束');
+        clearInterval(t1);
+        clearInterval(t2);
+    }
+    //封装一个方法，随即产生颜色十六进制的字符串
+    function geColor() {
+        let str = "#";
+        let color = '0123456789ABCDEF';
+        for (let i = 0; i < 6; i++) {
+            //随即产生十六进制数字，添加到str字符中
+            let l = color[Math.floor(Math.random() * 16)];
+            str += l;
+        }
+        return str
+
+    }
+
+    //给每个字母绑定键盘事件
+    window.onkeydown = function (e) {
+        //判断
+        let { key } = e;
+        let allzm = document.querySelectorAll('.zm');
+        allzm.forEach(item => {
+            if (item.innerHTML === key.toUpperCase()) {
+                //删除item
+                item.remove();
+            }
+        })
+    }
+</script>
+
+</html>

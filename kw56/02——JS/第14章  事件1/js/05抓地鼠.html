@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{padding: 0px;margin: 0px;list-style: none;}
+    #start,#end{
+        display: inline-block;
+        margin-left: 20px;
+        width: 100px;
+        height: 50px;
+        border: 2px solid black;
+        font-size: 25px;
+        font-weight: bold;
+        padding: 10px;
+        line-height: 50px;
+        color:aqua ;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div id="start">开始游戏</div>
+    <div id="end">结束游戏</div>
+    <select id="selLevel">
+        <option value="5000">普通</option>;
+        <option value="2000">一般</option>;
+        <option value="1000">高级</option>;
+        <option value="100">地狱</option>;
+    </select>
+</body>
+<script>
+    //全局定时器对象
+    let t1;
+
+    //全局等级变量
+    let level=2000;
+
+    //开始方法
+    function start(){
+       t1= setInterval(()=>{
+        //创建地鼠dom对象 <div><img src="xxx.jpg"></div>
+        //对div地鼠  随机的在页面中出现，添加绝对定位，
+        let mouse=document.createElement("div");
+        mouse.style.position="absolute";//添加绝对定位之后，就可以通过top left 
+        mouse.innerHTML='<img src="../img/dishu.jpg" width="100px" height="100px">';
+        mouse.style.left=Math.floor(Math.random()*(window.innerWidth-100))+"px";
+        mouse.style.top=Math.floor(Math.random()*(window.innerHeight-100))+"px";
+
+        //添加到body里面
+        document.querySelector("body").appendChild(mouse)
+
+        //给mouse对象添加点击事件
+        mouse.onclick=function(){
+            this.remove();
+        }
+       },level)
+    };
+
+    //结束方法
+    function end(){
+        clearInterval(t1)
+    }
+    //1.获取相关的dom元素对象
+    let ostart=document.querySelector("#start");
+    let oend=document.querySelector("#end"); 
+    
+    //2.绑定事件
+    ostart.onclick=start;
+    oend.onclick=end;
+    
+    //获取选择等级下拉列表
+    let selLevel=document.querySelector("#selLevel");
+    //如何获取选中的下拉项
+    //绑定事件
+    selLevel.onchange=function(){
+        console.log(this.value);
+        level=this.value;
+    }
+</script>
+</html>

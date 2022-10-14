@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        /* 设置固定定位，行元素也可以设置宽度和高度 */
+        .first {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        .second {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            /* 绝对定位在没有祖先元素设置了定位的情况下也会参照浏览器窗口，
+            但是这个窗口是第一视口 */
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="first">1</span>
+    <span class="second">2</span>
+</body>
+
+</html>

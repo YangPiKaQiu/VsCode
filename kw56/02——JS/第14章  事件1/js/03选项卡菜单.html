@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        .box {
+            border: 2px solid black;
+            width: 500px;
+            margin: 20px auto;
+
+
+        }
+
+        ul {
+            display: flex;
+            height: 50px;
+        }
+
+        ul li {
+            flex: 1;
+            background-color: purple;
+            border: 2px white solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        ol {
+            height: 300px;
+            background-color: aqua;
+            position: relative;
+        }
+
+        ol li {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        /* 选项卡中的active样式 */
+        ul li.active {
+            background-color: orange;
+        }
+
+        ol li.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            font-weight: bold;
+            color: green;
+            font-family: "幼圆";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li class="active">选项一</li>
+            <li>选项二</li>
+            <li>选项三</li>
+        </ul>
+        <ol>
+            <li class="active">教育改变生活</li>
+            <li>学海无涯苦作舟</li>
+            <li>好好学习,天天向上</li>
+        </ol>
+    </div>
+</body>
+<script>
+    //1.获取选项卡数据
+    let tabs = document.querySelectorAll("ul li");
+
+    //2.获取选项卡内容数组
+    let items = document.querySelectorAll("ol li");
+    console.log(items);
+
+    //3，给每个选项卡绑定点击事件，在事件中选中的索引修改相应的dom对象的样式-添加avtive
+    //注意：其他的项要期初active样式
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].onmouseover = function () {
+            //移除全部active样式
+            tabs.forEach((items) => {
+                items.className = '';
+            })
+            items.forEach((items) => {
+                items.className = '';
+
+            })
+
+            //根据索引将对应的items里面的样式修改
+            tabs[i ].className ="active";
+            items[i].className = "active";
+
+        }
+    }
+
+</script>
+
+</html>

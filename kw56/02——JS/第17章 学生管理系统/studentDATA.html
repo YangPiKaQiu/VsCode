@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 100vw;
+
+        }
+
+        header {
+            padding: 0px 20px;
+            width: 100%;
+            height: 80px;
+            line-height: 80px;
+            background-color: pink;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 0px;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 3px 10px;
+            text-align: center;
+        }
+
+        /* 设置一些常用的样式 */
+        .flex {
+            display: flex;
+        }
+
+        .j-s {
+            justify-content: space-between;
+        }
+
+        .j-c {
+            justify-content: center;
+        }
+
+        .a-c {
+            align-items: center;
+        }
+
+        .contain {
+            padding: 10px;
+        }
+
+        .nav {
+            width: 200px;
+        }
+
+        .nav-item {
+            background-color: blueviolet;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 5px 0px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .nav-item-active {
+            background-color: pink;
+        }
+
+        .nav-item:hover {
+            background-color: skyblue;
+            color: blueviolet;
+        }
+
+        .info {
+            margin-left: 20px;
+            flex: 1;
+        }
+
+        .info-item {
+            padding: 10px;
+            width: 22%;
+        }
+
+        .info-item:nth-child(1) {
+            width: 500px;
+        }
+
+        .info-item-active {
+            border: 3px solid pink;
+        }
+
+        table caption {
+            font-size: 30px;
+            font-weight: bold;
+            padding: 5px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 标题 -->
+        <header>学生管理系统</header>
+        <!-- 内容 -->
+        <div class="contain flex j-s">
+            <!-- 左边导航 -->
+            <div class="nav">
+                <div class="nav-item nav-item-active" data-index="0">
+                    学生列表
+                </div>
+                <div class="nav-item" data-index="1">
+                    新增学生
+                </div>
+                <div class="nav-item" data-index="2">
+                    修改学生
+                </div>
+                <div class="nav-item" data-index="3">
+                    查询学生
+                </div>
+            </div>
+            <!-- 右边 -->
+            <div class="info flex j-s">
+                <div class="info-item info-item-active">
+                    <!-- 显示信息 -->
+                    <table>
+                        <tr>
+                            <caption>学生列表</caption>
+                        </tr>
+                        <thead>
+                            <tr>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="info-item-tbody">
+                            <!--根据数据动态刷新-->
+                            <!-- <tr>
+                        <td></td><td></td><td></td><td></td><td></td></tr> -->
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="info-item">
+                    <!-- 新增学生 -->
+                    <table id="addTable">
+                        <tr>
+                            <caption>新增学生</caption>
+                        </tr>
+                        <tr>
+                            <td>姓名</td>
+                            <td><input type="text" id="addName"></td>
+                        </tr>
+                        <tr>
+                            <td>年龄</td>
+                            <td><input type="text" id="addAge"></td>
+                        </tr>
+                        <tr>
+                            <td>性别</td>
+                            <td><input type="radio" name="gender" value="男">男<input type="radio" name="gender"
+                                    value="女">女</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button onclick="addStudent()">确认增加</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="info-item">
+                    <table id="updateTable">
+                        <tr>
+                            <caption>修改学生</caption>
+                        </tr>
+                        <input type="hidden" value="" id="indexHidden">
+                        <tr>
+                            <td>姓名</td>
+                            <td><input type="text" id="updateName"></td>
+                        </tr>
+                        <tr>
+                            <td>年龄</td>
+                            <td><input type="text" id="updateAge"></td>
+                        </tr>
+                        <tr>
+                            <td>性别</td>
+                            <td><input type="radio" name="gender" value="男">男<input type="radio" name="gender"
+                                    value="女">女</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button id="updateBtn" disabled>确认修改</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="info-item">
+                    <table id="indexTable">
+                        <tr>
+                            <caption>条件查询</caption>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="" id="sea">
+                                    <option value="姓名">姓名</option>
+                                    <option value="年龄">年龄</option>
+                                    <option value="性别">性别</option>
+                                </select>
+                            </td>
+                            <td><input type="text" id="seaInput"></td>
+                            <td><button onclick="seaClick()">查询</button></td>
+                        </tr>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //创建数据
+    let studentList = [
+        {
+            stuNo: '1',
+            stuName: '张三',
+            age: 21,
+            sex: "男"
+        },
+        {
+            stuNo: '2',
+            stuName: '李四',
+            age: 22,
+            sex: "男"
+        },
+        {
+            stuNo: '3',
+            stuName: '王五',
+            age: 23,
+            sex: "男"
+        },
+        {
+            stuNo: '4',
+            stuName: '赵六',
+            age: 24,
+            sex: "男"
+        },
+        {
+            stuNo: '5',
+            stuName: '刘七',
+            age: 25,
+            sex: "男"
+        }
+
+    ]
+
+    //数组长度
+    let lastIndex = studentList.length - 1;
+    //添加假数据到展示列表里面
+    function getStudentInfo() {
+        //获取tbody对象
+        let tbody = document.querySelector(".info-item-tbody");
+
+        // map用法:可以根据一定的规则迭代产生一个新的数组
+        let list = studentList.map((item, index) => {
+            return `<tr>
+                        <td>${item.stuNo}</td>
+                        <td>${item.stuName}</td>
+                        <td>${item.age}</td>
+                        <td>${item.sex}</td>
+                        <td><button data-type="update"; data-index=${index}>修改</button>&nbsp;&nbsp;<button data-type="delete"; data-index=${index} ;" id="delBtn">删除</button></td>
+                    </tr>`;
+        })
+        tbody.innerHTML = list.join('');
+    }
+
+
+    //调用
+    getStudentInfo();
+
+
+    //点击导航菜单
+    function clickNav(e) {
+        //去除其他item样式
+        navitems.forEach(item => {
+            item.classList.remove("nav-item-active");
+        })
+        //去除右边操作框的边框
+        infoitems.forEach(info => {
+            info.classList.remove("info-item-active");
+        })
+        //导航菜单自己高亮，
+        this.classList.add("nav-item-active");
+        //右边操作框对应高亮
+        let i = e.target.dataset.index;
+        infoitems[i].classList.add("info-item-active");
+    }
+    //导航菜单和右边的操作框同步选中,高亮效果
+    //1.选中导航菜单items
+    let navitems = document.querySelectorAll(".nav-item");//2.选中操作框的items
+    let infoitems = document.querySelectorAll(".info-item");
+    navitems.forEach((item, index) => {
+        item.addEventListener("click", clickNav);
+    })
+
+    //点击右边操作框同步左边的导航
+    infoitems.forEach((item, index) => {
+        item.addEventListener("click", function (e) {
+            //去除左边导航和右边操作框的激活样式
+            //去除其他item样式
+            navitems.forEach((item, index) => {
+                item.classList.remove("nav-item-active");
+            })
+            //去除右边操作框的边框
+            infoitems.forEach(info => {
+                info.classList.remove("info-item-active");
+            })
+            //给自己添加
+            // console.log(index);
+            navitems[index].classList.add("nav-item-active");
+            infoitems[index].classList.add("info-item-active");
+        })
+    })
+
+    //添加功能
+    function addStudent() {
+        //获取表格中添加的信息
+        let nameO = document.querySelector("#addName");
+        let ageO = document.querySelector("#addAge");
+        let genders = document.querySelectorAll("#addTable [type='radio']");
+        let name = nameO.value;
+        let age = ageO.value;
+        let gender;
+        genders.forEach(item => {
+            //!哪一个单选按钮被选中，就将里面的value值赋值给gender变量
+            if (item.checked) {
+                gender = item.value;
+            }
+        })
+        // console.log(name, age, gender);
+        //添加到数组中
+        studentList.splice((lastIndex + 1), 1, {
+            stuNo: lastIndex + 2,
+            stuName: name,
+            age: age,
+            sex: gender
+        })
+        //最后一位索引+1
+        lastIndex++;
+        // console.log(studentList);
+        //再次渲染刷新页面tbody
+        getStudentInfo();
+    }
+
+    function del(i) {
+        // console.log(i);
+        let delBtns = document.querySelectorAll("#delBtn");
+        //console.log(delBtno[index]);
+        //删除索引对应的元素
+        delBtns[i].parentNode.parentNode.remove();
+        //数组里面删除对应学生
+        studentList.splice(i, 1);
+        // console.log(studentList);
+        //刷新渲染dom
+        getStudentInfo();
+    }
+
+    //修改功能
+    //通过冒泡事件捕获到点击的修改按钮，再tbody上面绑定点击事件,当点击update按钮的时候会触发到它
+    let mytbody = document.querySelector(".info-item-tbody");
+
+    mytbody.addEventListener("click", getClick)
+
+    function getClick(e) {
+        //阻止冒泡传播
+        e.stopPropagation();
+        let getType = e.target
+
+        //获取点击按钮的类型和索引
+        let btnType = getType.dataset.type;
+        let btnIndex = e.target.dataset.index;
+        // e.stopPropagation();
+        if (btnType === "update") {
+            //做修改操作
+            //修改按钮取消禁用
+            let updateBtn = document.querySelector("#updateBtn");
+            updateBtn.addEventListener("click", upClick)
+
+            updateBtn.removeAttribute("disabled");
+            //取消全部激活样式
+            infoitems.forEach((item, index) => {
+                //去除左边导航和右边操作框的激活样式
+                //去除其他item样式
+                navitems.forEach((item) => {
+                    item.classList.remove("nav-item-active");
+                })
+                //去除右边操作框的边框
+                infoitems.forEach(info => {
+                    info.classList.remove("info-item-active");
+                })
+            });
+            navitems[2].classList.add("nav-item-active");
+            infoitems[2].classList.add("info-item-active");
+            //数据回显到修改操作框里面根据index可以获取对应数组索引下面的对象
+            let s = studentList[btnIndex];
+            document.querySelector("#updateName").value = s.stuName;
+            document.querySelector("#updateAge").value = s.age;
+            document.querySelector("#indexHidden").value = s.stuNo
+            let updateGenders = document.querySelectorAll("#updateTable [type='radio']");
+            updateGenders.forEach((item, index) => {
+                if (item.value === s.sex) {
+                    item.checked = true;
+                }
+            })
+        } else if (btnType === "delete") {
+            //做删除操作
+            let updateBtn = document.querySelector("#delBtn");
+            console.log(updateBtn);
+            updateBtn.parentNode.parentNode.remove()
+        }
+        //确认修改按钮方法
+    }
+
+
+    function upClick(e) {
+        let numIndex = document.querySelector("#indexHidden").value
+        let getsex = ""
+
+        studentList.forEach(item => {
+            if (item.stuNo === numIndex) {
+                item.stuName = document.querySelector("#updateName").value
+                item.age = document.querySelector("#updateAge").value
+                let updateGenders = document.querySelectorAll("#updateTable [type='radio']");
+                updateGenders.forEach((item, index) => {
+                    if (item.checked) {
+                        getsex = item.value;
+                    }
+                })
+                item.sex = getsex
+            }
+        })
+        getStudentInfo();
+    }
+    function seaClick() {
+
+        let cx = document.querySelector("#seaInput");
+        let optionEle = document.getElementsByTagName(`select`)[0].value;
+
+        if (cx != "") {
+            switch (optionEle) {
+                case "姓名":
+
+
+                    let tbody = document.querySelector(".info-item-tbody");
+                    // map用法:可以根据一定的规则迭代产生一个新的数组
+                    let list = studentList.map((item, index) => {
+                        if (item.stuName === cx.value) {
+                            return `<tr>
+                <td>${item.stuNo}</td>
+                <td>${item.stuName}</td>
+                <td>${item.age}</td>
+                <td>${item.sex}</td>
+                <td><button data-type="update"; data-index=${index}>修改</button>&nbsp;&nbsp;<button data-type="delete"; data-index=${index} ;" id="delBtn">删除</button></td>
+            </tr>`;
+                        }
+                    })
+                    console.log();
+                    tbody.innerHTML = list.join('');
+                    break;
+                case "年龄":
+                    let tbody1 = document.querySelector(".info-item-tbody");
+
+                    // map用法:可以根据一定的规则迭代产生一个新的数组
+                    let list1 = studentList.map((item, index) => {
+                        if (item.age === Number(cx.value)) {
+                            return `<tr>
+<td>${item.stuNo}</td>
+<td>${item.stuName}</td>
+<td>${item.age}</td>
+<td>${item.sex}</td>
+<td><button data-type="update"; data-index=${index}>修改</button>&nbsp;&nbsp;<button data-type="delete"; data-index=${index} ;" id="delBtn">删除</button></td>
+</tr>`;
+                        }
+                    })
+                    console.log();
+                    tbody1.innerHTML = list1.join('');
+                    break;
+                case "性别":
+                    let tbody2 = document.querySelector(".info-item-tbody");
+
+                    // map用法:可以根据一定的规则迭代产生一个新的数组
+                    let list2 = studentList.map((item, index) => {
+                        if (item.sex === cx.value) {
+                            return `<tr>
+<td>${item.stuNo}</td>
+<td>${item.stuName}</td>
+<td>${item.age}</td>
+<td>${item.sex}</td>
+<td><button data-type="update"; data-index=${index}>修改</button>&nbsp;&nbsp;<button data-type="delete"; data-index=${index} ;" id="delBtn">删除</button></td>
+</tr>`;
+                        }
+                    })
+                    console.log();
+                    tbody2.innerHTML = list2.join('');
+                    break;
+            }
+
+        }
+
+    }
+
+
+
+
+
+       
+
+
+</script>
+
+</html>

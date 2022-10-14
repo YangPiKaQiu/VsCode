@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 领导让你买烟*/
+
+        // 1.领导给你10块钱，让你买一包烟，但是领导每次都抽中华(45), 问你怎么做 ?
+        //用的数描述这个故事?
+        // console.log("小张，给我买包烟，领导塞了10元给小张");
+        // function buy(money) {
+        //     return "一包中华";
+        // }
+        // console.log("你给领导买了:" + buy(10));
+        // console.log("领导很满意....");
+
+
+        // console.log("--------------------------------");
+        // console.log("小张，给我买包烟");
+        // function buy() {
+        //           return "一包软中华";
+        // }
+        // console.log("你给领导买了:" + buy());
+        // console.log("领导很满意.....");
+
+
+        console.log("小张:给我买包烟，领导塞了10元给小张");
+        function buy(money) {
+            if (money >= 45) {
+                return "一包中华"
+            } else {
+                return "没有您想要的香烟"
+            }
+        }
+        console.log(buy());
+        console.log("领导......");
+
+
+
+    </script>
+</body>
+
+</html>

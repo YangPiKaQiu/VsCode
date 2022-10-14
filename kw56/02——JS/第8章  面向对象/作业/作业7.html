@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 4．编写一个Car类，具有属性品牌，具有功能drive；
+    // 定义其子类Aodi和Benchi 具有属性：价格、型号；具有功能：变速；创建Aodi和Benchi的对象，打印对象的特性.
+
+    //父类
+    class Car {
+        constructor(brand,drive) {
+            this.brand=brand;
+            this.drive = drive;
+        }
+        info1() {
+            console.log(`品牌:${this.brand},功能:${this.drive}`);
+        }
+    }
+    //子类 Aodi Benchi
+    class Aodi extends Car {
+        constructor(price, model, shifting) {
+            super("奥迪","变速");
+            this.price = price;
+            this.model = model;
+            this.shifting = shifting;
+        }
+        info2() {
+            this.info1();
+            console.log(`价格:${this.price},型号：${this.model},具有功能:${this.shifting}`);
+        }
+    }
+    class Benchi extends Car {
+        constructor(price, model, shifting) {
+            super("奔驰","变速");
+            this.price = price;
+            this.model = model;
+            this.shifting = shifting;
+        }
+        info3() {
+            this.info1();
+            console.log(`价格:${this.price},型号：${this.model},具有功能:${this.shifting}`);
+        }
+    }
+
+    let bee1 = new Aodi("30万","A3","变速");
+    bee1.info2();
+    let bee2 = new Benchi("40万","amg","变速");
+    bee2.info3();
+
+</script>
+
+</html>

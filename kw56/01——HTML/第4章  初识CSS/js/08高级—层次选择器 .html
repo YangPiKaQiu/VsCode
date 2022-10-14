@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 后代选择器 将body的后代元素p的背景色变成红色 */
+        body p{background: red;}
+        /* 子选择器 将body的下一代中p元素背景色变成粉红色 */
+        body>p{background: pink;}
+        /* 空格表示后代, >表示下一代 */
+        /* p4,p5,p6变成蓝色 */
+        body>ul p{background: blue;}
+        /* 相邻兄弟选择器  将class=active的元素的相邻兄弟背景色变成绿色 */
+        .active+p{background: green;}
+        /* 通用兄弟选择器  将class=firstP的元素的通用兄弟背景色变成黄色 */
+        .firstP~p{background: yellow;}
+    </style>
+</head>
+<body>
+    <p class="firstP">p1</p>
+    <p class="active">p2</p>
+    <p>p3</p>
+    <ul>
+        <li><p>p4</p></li>
+        <li><p>p5</p></li>
+        <li><p>p6</p></li>
+    </ul>
+    
+</body>
+</html>

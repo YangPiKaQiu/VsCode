@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    /*
+    let对比 var
+    1.作用域
+    2.变量赋初值
+    3.重复命名
+    */
+    var a;
+    console.log(a);
+
+
+    //var可以重复变量名
+    var a = 100;
+    console.log(a);
+
+    
+    let b;
+    console.log(b);
+
+    //let不可以重复命名
+    // let b= 200;
+    // console.log(b);
+
+
+    //const:常量  不可以修改的变量
+    const PI = 3.1415926;
+    console.log(PI);
+
+    //不可以修改常量的值
+    // PI = 0.618;
+    //console.log(PI);
+
+
+    //常量必须要赋初始值，且不可以修改  不能重复变量名
+    const R = 5.0;
+
+    function aa() {
+        const c = 10;
+        console.log(c);
+        for (let i = 0; i < 3; i++) {
+            //const块级作用域
+            const d = 100;
+            console.log(d);
+        }
+
+        //出了const块级作用域范围就报错了
+        console.log(d);
+
+    }
+
+</script>
+
+</html>

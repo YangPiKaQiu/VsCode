@@ -1,0 +1,273 @@
+/* 初始化样式 */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  background: #f5f5f5;
+  color: #000;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+img {
+  width: 100%;
+  border: 0;
+}
+li {
+  list-style: none;
+}
+.w {
+  width: 1226px;
+  margin: 0 auto;
+}
+.cursorP {
+  cursor: pointer;
+}
+.illustration {
+  margin-top: 30px;
+  height: 120px;
+}
+/* 手机的分类,智能穿戴合并样式开始 */
+.title-phone,
+.title-Smart-wear {
+  height: 58px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-phone h2,
+.title-Smart-wear h2 {
+  font-size: 23px;
+  font-weight: lighter;
+}
+.phone-more,
+.Smart-wear-more {
+  font-size: 18px;
+  font-weight: lighter;
+}
+.phone-more a:hover,
+.Smart-wear-more a:hover {
+  /* transition: all 0.3s linear; */
+  color: #ff6700;
+}
+/* 手机,智能穿戴合并样式开始  */
+.phone-box,
+.Smart-wear-box,
+.computer-box {
+  height: 614px;
+  display: flex;
+  justify-content: space-between;
+}
+.phone-right,
+.Smart-wear-right,
+.computer-right {
+  width: 234px;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.phone-left,
+.Smart-wear-left-d1,
+.computer-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.phone-item,
+.Smart-wear-item,
+.computer-item {
+  width: 234px;
+  height: 300px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  overflow: hidden;
+  margin: 0 0 0 11px;
+}
+.phone-item img,
+.Smart-wear-item img,
+.computer-item img {
+  width: 160px;
+  height: 160px;
+}
+.phone-item-title,
+.Smart-wear-item-title,
+.computer-item-title {
+  width: 210px;
+  margin-top: 10px;
+  color: #4c4c4c;
+  font-size: 15px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.phone-item-introduce,
+.Smart-wear-item-introduce,
+.computer-item-introduce {
+  width: 210px;
+  margin-top: 5px;
+  color: #bcbcbc;
+  font-size: 13px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.phone-item-price,
+.Smart-wear-item-price,
+.computer-item-price {
+  width: 210px;
+  margin-top: 10px;
+  color: #ff700f;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+.phone-item-price > span,
+.Smart-wear-item-price > span,
+.computer-item-price > span {
+  padding-left: 5px;
+  color: #b0b0b0;
+  text-decoration: line-through;
+}
+/* 公共鼠标滑过添加盒子阴影 */
+.common-item-active {
+  transition: all 0.3s linear;
+  transform: translateY(-1px);
+  box-shadow: 0 0 30px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 智能穿戴开始 */
+.Smart-wear-left {
+  flex: 1;
+}
+.Smart-wear-box {
+  height: 614px;
+  box-sizing: border-box;
+}
+.Smart-wear-item {
+  margin-bottom: 15px;
+}
+.Smart-wear-more a:hover {
+  border-bottom: 3px solid #ff700f;
+}
+/* 游览更多合并样式 */
+.Smart-wear-visit-more,
+.computer-visit-more {
+  width: 234px;
+  height: 143px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  overflow: hidden;
+  margin: 0 0 0 11px;
+}
+.Smart-wear-visit,
+.computer-visit {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.Smart-wear-visit-t,
+.computer-visit-t {
+  height: 45px;
+}
+.Smart-wear-visit-t p {
+  width: 94px;
+}
+.Smart-wear-visit-t p:nth-of-type(1) {
+  font-size: 20px;
+}
+.Smart-wear-visit-t p:nth-of-type(2) {
+  font-size: 10px;
+}
+.Smart-wear-visit img,
+.computer-visit img {
+  width: 45px;
+  height: 45px;
+}
+/* 游览更多样式合并结束 */
+.Smart-wear-left-d2 {
+  display: flex;
+  flex-wrap: wrap;
+  display: none;
+}
+.Smart-wear-item2 {
+  width: 234px;
+  height: 300px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  overflow: hidden;
+  margin: 0 0 0 11px;
+}
+.Smart-wear-item2 img {
+  width: 160px;
+  height: 160px;
+}
+.Smart-wear-item2-title {
+  width: 210px;
+  margin-top: 10px;
+  color: #4c4c4c;
+  font-size: 15px;
+  text-align: center;
+}
+.Smart-wear-item2-introduce {
+  width: 210px;
+  margin-top: 5px;
+  color: #bcbcbc;
+  font-size: 13px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.Smart-wear-item2-price {
+  width: 210px;
+  margin-top: 10px;
+  color: #ff700f;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+.Smart-wear-item2-price > span {
+  padding-left: 5px;
+  color: #b0b0b0;
+  text-decoration: line-through;
+}
+/* 电脑模块 */
+.computer-xian {
+  display: flex;
+  justify-content: space-between;
+}
+.computer-xian-include p {
+  font-size: 14px;
+}
+.computer-xian img {
+  width: 80px;
+  height: 80px;
+  margin-left: 5px;
+}
+#computeritem {
+  width: 234px;
+  height: 300px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

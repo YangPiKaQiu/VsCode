@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- marks1和marks2是学员分别在两个学科中获得的成绩。
+    如果marks1大于50而marks2小于50，则可以给marks2加5分。
+    如果marks2大于或等于50，那么学员获得的等级为A？ -->
+</head>
+
+<body>
+    <script>
+        var marks1 = parseFloat(prompt("请输入第一门考试成绩："));
+        var marks2 = parseFloat(prompt("请输入第二门考试成绩："));
+        if (marks1 > 50 && marks2 < 50) { marks2 += 5 }
+        if(marks2 >=50){console.log("学员的等级为A");}
+    </script>
+</body>
+
+</html>

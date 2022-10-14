@@ -1,0 +1,30 @@
+h2 {
+    color: #003580;
+}
+
+#p1 {
+    color: #000033;
+    font-size: 14px;
+}
+
+.red {
+    color: red;
+}
+
+a {
+    color: #003580;
+}
+
+.blue {
+    color: #1f87cc;
+}
+
+.orange {
+    color: #faa53b;
+}
+
+.green {
+    color: #0d7114
+}
+.firstimg{width: 100px; height: 160px;}
+.lastimg{width: 200px; height: 130px;}

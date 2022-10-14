@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* <!-- 属性选择器： --> */
+    /* <!-- 1.选择某个元素中存在某个属性 --> */
+    a[href] {
+      background: red
+    }
+
+    /* <!-- 2.选择某个元素中存在   某个属性=具体值 --> */
+    a[href="#"] {
+      background: blue;
+    }
+
+    /* <!-- 3.选择某个元素中存在  某个属性,并且属性的值以xx开头  属性值http开头的背景色为绿色 --> */
+    a[herf^="http"] {
+      background: green;
+    }
+
+    /* <!-- 4.选择某个元素中存在  某个属性,并且属性的值以xx结尾    属性值net结尾的背景色为金色 --> */
+    a[herf$="net"] {
+      background: gold;
+    }
+
+    /* <!-- 5.选择某个元素中存在某个属性,并且属性的值包含xx  属性值包含样式  背景色为zise --> */
+    a[herf*="样式"] {
+      background: purple;
+    }
+  </style>
+
+</head>
+
+<body>
+  <a href="#">链接1</a><br>
+  <a href="http://www/baidu.com">链接2</a><br>
+  <a href="http://www.taobao.com">链接3</a><br>
+  <a href="https://wwww.csdn.net">链接4</a><br>
+  <a href="03外部样式.html">链接5</a><br>
+  <a href="01行内样式.html">链接6</a><br>
+  <a href="02内部样式.html">链接7</a><br>
+  <a>链接7</a>
+</body>
+
+</html>

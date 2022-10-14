@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        // 2.输入某年某月某日，判断这一天是这一年的第几天？
+        // 注意判断润月的情况
+
+
+        var year = Number(prompt("请输入年份："));
+        var month = Number(prompt("请输入月份："));
+        var day = Number(prompt("请输入天数："));
+        var days = day;
+        for (i = 1; i < month; i++) {
+            switch (i) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    days = days + 31;
+                    break;
+
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    days = days + 30;
+                    break;
+
+                case 2:
+                    if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+                        days = days + 29;
+                    }
+                    else { days = days + 28; }
+            }
+        }
+        alert("这一天是这一年的第" + days + "天");
+
+    </script>
+</body>
+
+</html>

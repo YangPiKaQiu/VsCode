@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 7.求1-500之间不含4的自然数共有多少个?(324)
+        for(var i=1,j=0;i<=500;i++){
+            
+            if(parseInt(i/100)==4){
+                continue;
+            }
+            if(parseInt(i%10)==4){
+                continue;
+            }
+            if(parseInt(i%100/10)==4){
+                continue;
+            }
+            j++;
+        }
+        document.write("1-500之间不含4的自然数共有"+j+"个");
+    </script>
+</body>
+</html>

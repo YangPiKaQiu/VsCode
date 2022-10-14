@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //1.通过new创建对象
+    //创建桌子    Object所有类的最大类
+    let desk = new Object(); //通过new创建对象
+    //以下是桌子的静态特征------属性，通过桌子     对象名.属性名来进行操作
+    desk.size = "150*50*70";
+    desk.color = "白色";
+    desk.price = "300";
+    desk.material = "木制";
+    //以下是桌子的动态特征---行为/方法
+    desk.use = function () {
+        console.log("桌子可以摆放物品!");
+    }
+    //调用桌子的属性和方法
+    console.log(`我买了一个桌子：
+               尺寸:${desk.size}
+               颜色:${desk.color}
+               价格:${desk.price}
+               材质:${desk.material}
+               `);
+    desk.use();
+
+
+</script>
+
+</html>

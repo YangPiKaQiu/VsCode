@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+<script>
+    let s = "abc cde abc efg cde";
+    //1.如何创建正则表达式对象   字面量方式
+    let reg = /^abc$/;
+    //2.正则表达式对象的使用  test()
+    // reg.test(字符串)返回值: true符合格式   false:不符合格式
+    console.log(reg.test(s));
+    /*
+    ^:匹配开头
+    $:匹配结尾
+    //:字面量格式
+    //i:  i表示忽略大小写
+    //g： g全局
+    */
+
+    let reg2 = /ABC/i;    //忽略大小写之后，可以和s中的abc匹配，返回true
+    console.log(reg2.test(s));
+
+    let reg3=/ABC/g;
+    //字符串方法search(可以放正则表达式)
+    console.log(s.search(reg3));
+
+
+    console.log(s.replace(reg3,"呵呵"));
+
+
+
+    //3.构造函数方式创建正则对象
+    let reg4=new RegExp(/ABC/,"ig");
+    console.log(s.replace(reg4,"哈哈"));
+
+
+    //4.通配：
+    /*
+      \d：数字0-9
+      \w: 大小写字母  和0-9  和 _
+      
+
+
+
+    */ 
+
+</script>
+
+</html>

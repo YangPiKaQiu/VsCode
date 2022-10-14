@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // 5.思考题：从控制台输入一个数n，使用for循环实现求n!
+        // 提示：n! = n * (n - 1) * (n - 2) *…* 1
+        // 升级：求1！+2！+3! +…+n!的值
+
+
+
+        //升级版    (超纲题用双重循环做)
+        // 输入3，计算1！+2！+3！=9
+
+        
+            var num = Number(prompt('请输入阶乘数字：'));
+            var sum=0;
+            for(var j=1;j<num;j++){
+            var resurt = num;
+            for (var i = 1; i < num; i++) {
+            resurt *= (num - i);
+                }
+                sum+=resurt;
+            }
+            console.log(resurt);
+            // console.log(sum);
+     
+    </script>
+</body>
+
+</html>

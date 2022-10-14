@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        div {
+            width: 300px;
+            height: 400px;
+            color: #fff;
+            font-size: 16px;
+            background: #fff url(../image/bg.jpg) no-repeat top;
+        }
+
+        span {
+            color: red;
+        }
+        tr>td:nth-of-type(1){border-radius: 5px 5px 5px 5px;}
+
+        table {
+            padding-top: 90px;
+            padding-left: 20px;
+            line-height: 32px;
+        }
+
+        tr>td .picture {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <span>*</span> 姓名: <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>*</span> 邮箱: <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>*</span> 电话: <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>性别: <select name="" id="">
+                        <option value="">请选择</option>
+                        <option value="">男</option>
+                        <option value="">女</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    年龄: <select name="" id="">
+                        <option value="">请选择</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="picture">
+                    <img src="../image/btn.jpg" alt="">
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

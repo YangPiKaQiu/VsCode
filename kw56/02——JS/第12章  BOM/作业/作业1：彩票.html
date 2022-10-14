@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- // 体彩7位数开奖程序：
+// 5.1 创建体彩管理类
+// 5.2 创建下注获得一注彩票的方法。
+// 5.3 创建开奖显示中奖情况的方法。
+// 5.4 创建start方法提供下注和开奖以及退出选项，供用户操作
+// 注意: 彩票中奖只计算票面中的最高奖项，
+// 所中彩票的数字在位置上要和开奖结果一致
+// 奖项如下：
+// 一等奖: 7位全中
+// 二等奖: 中连续的六位
+// 三等奖：中连续的五位
+
+// 。。。最小奖中连续的两位 （20分) -->
+
+<body>
+    <button onclick="a()">下注</button>
+    <button onclick="b()">开奖</button>
+    <button onclick="c()">中奖</button>
+    <button onclick="window.close()">退出</button>
+</body>
+<script>
+
+
+    let add = [];
+    function a() {
+        for (let i = 0; i < 7; i++) {
+            var num = +prompt('请输入下注号码第' + (i + 1) + '位');
+            add.push(num)
+        }
+        console.log("下注号码是：" + add);
+        console.log(add.slice(0,5));
+    }
+    let bdd = [];
+    function b() {
+        for (let i = 0; i < 7; i++) {
+            var num2 = Math.floor(Math.random() * 10) % 9 + 1;
+            bdd.push(num2)
+        }
+        console.log("开奖号码是：" + bdd);
+    }
+    function c() {
+        if (add === bdd) {
+            console.log(`恭喜您中了 *** 一等奖 ***`);
+        }
+        else if (add.slice(0, 6) === bdd.slice(0, 6) || add.slice(1, 7) === bdd.slice(1, 7)) {
+            console.log(`恭喜您中了 *** 二等奖 ***`);
+        }
+        else if (add.slice(0, 5) === bdd.slice(0, 5) || add.slice(1, 6) === bdd.slice(1, 6) || add.slice(2, 7) === bdd.slice(2, 7)) {
+            console.log(`恭喜您中了 *** 三等奖 ***`);
+        }
+        else if (add.slice(0, 4) === bdd.slice(0, 4) || add.slice(1, 5) === bdd.slice(1, 5) || add.slice(2, 6) === bdd.slice(2, 6)|| add.slice(3, 7) === bdd.slice(3, 7)) {
+            console.log(`恭喜您中了 *** 四等奖 ***`);
+        }
+        else if (add.slice(0, 3) === bdd.slice(0, 3) || add.slice(1, 4) === bdd.slice(1, 4) || add.slice(2, 5) === bdd.slice(2, 5)|| add.slice(3, 6) === bdd.slice(3, 6)|| add.slice(4, 7) === bdd.slice(4, 7)) {
+            console.log(`恭喜您中了 *** 五等奖 ***`);
+        }
+        else if (add.slice(0, 2) === bdd.slice(0, 2) || add.slice(1, 3) === bdd.slice(1, 3) || add.slice(2, 4) === bdd.slice(2, 4)|| add.slice(3, 5) === bdd.slice(3, 5)|| add.slice(4, 6) === bdd.slice(4, 6)|| add.slice(5, 7) === bdd.slice(5, 7)) {
+            console.log(`恭喜您中了 *** 六等奖 ***`);
+        }else{
+            console.log("很遗憾您没有中奖！");
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //    10．编写一个Java应用程序，设计一个汽车类Vehicle，包含的属性有车轮个数wheels和车重weight。
+    //    小车类Car是Vehicle的子类，其中包含的属性有载人数loader。卡车类Truck是Car类的子类，其中包含
+    //    的属性有载重量payload。每个类都有构造方法和输出相关数据的方法。创建实例并输出
+
+    class Vehicle {
+        wheels;
+        weight;
+        constructor(wheels, weight) {
+            this.wheels = wheels;
+            this.weight = weight;
+        }
+        fun() {
+            console.log(`车有${this.wheels}个轮子，车重:${this.weight}吨，`);
+        }
+    }
+    class Car extends Vehicle {
+        loader;
+        constructor(loader) {
+            super(4, 2);
+            this.loader = loader;
+        }
+        zaiRen() {
+            this.fun();
+            console.log("车载人数:" + this.loader);
+        }
+    }
+    class Truck extends Car {
+        payload;
+        constructor(payload) {
+            super(4);
+            this.payload = payload;
+        }
+        Tpay() {
+            this.zaiRen();
+            console.log("卡车类载重量:" + this.payload + "斤");
+        }
+    }
+    let Truck1 = new Truck(1000);
+    Truck1.Tpay();
+</script>
+</html>

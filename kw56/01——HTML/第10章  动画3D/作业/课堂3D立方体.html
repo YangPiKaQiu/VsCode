@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 800px;
+            height: 800px;
+            /* border: 2px solid red; */
+            margin: 20px auto;
+
+            /* 3d舞台 */
+            transform-style: preserve-3d;
+            /* 定位参照 */
+            position: relative;
+            transform: rotateY(0deg) rotateX(0deg);
+
+            /* 使用关键帧 */
+            animation: run 2s linear infinite;
+            /* linear:匀速
+            infinite:无限循环 */
+        }
+
+        /* 关键帧 */
+        @keyframes run {
+            0% {
+                transform: rotateX(10deg) rotateY(30deg);
+            }
+
+            33% {
+                transform: rotateY(300deg);
+            }
+
+            66% {
+                transform: rotateX(20deg) rotateY(500deg);
+            }
+
+            100% {
+                transform: rotateX(30deg) rotateY(1000deg);
+            }
+
+        }
+
+        /* @keyframes run {
+            0% {
+                transform: rotate3d(0, 0, 0, 360deg);
+            }
+
+            20% {
+                transform: rotate3d(0,3,0,360deg);
+            }
+
+            40% {
+                transform: rotate3d(2,0,0, 360deg);
+            }
+            60% {
+                transform: rotate3d(1,4, 0,360deg);
+            }
+            80% {
+                transform: rotate3d(3,4,0, 360deg);
+            }
+            100% {
+                transform: rotate3d(10,10,0, 360deg);
+            }
+
+        } */
+
+        .box>div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
+            /* border: 1px solid blue; */
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+        }
+
+        #d1 {
+            background-color: red;
+            /* 背面：z轴反向平移100px */
+            transform: translateZ(-100px);
+            background: url(../img/01.jpg)no-repeat center;
+            background-size: cover;
+
+        }
+
+        #d2 {
+            background-color: orange;
+            /* 左面：x轴向左平移100px ，旋转90deg*/
+            transform: translateX(-100px) rotateY(-90deg);
+            background: url(../img/02.jpg)no-repeat center;
+            background-size: cover;
+
+        }
+
+        #d3 {
+            background-color: yellow;
+            /* 右面：x轴向右平移100px ，旋转90deg*/
+            transform: translateX(100px) rotateY(90deg);
+            background: url(../img/03.jpg)no-repeat center;
+            background-size: cover;
+
+        }
+
+        #d4 {
+            background-color: greenyellow;
+            /* 上面：y轴向上平移100px ，旋转90deg*/
+            transform: translateY(-100px) rotateX(-90deg);
+            background: url(../img/04.jpg)no-repeat center;
+            background-size: cover;
+
+        }
+
+        #d5 {
+            background-color: blue;
+            /* 下面：y轴向下平移100px ，旋转90deg*/
+            transform: translateY(100px) rotateX(90deg);
+            background: url(../img/05.jpg)no-repeat center;
+            background-size: cover;
+
+        }
+
+        #d6 {
+            background-color: purple;
+            /* 正面：z轴反向平移100px */
+            transform: translateZ(100px);
+            background: url(../img/06.jpg)no-repeat center;
+            background-size: cover;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="d1">1</div>
+        <div id="d2">2</div>
+        <div id="d3">3</div>
+        <div id="d4">4</div>
+        <div id="d5">5</div>
+        <div id="d6">6</div>
+    </div>
+</body>
+
+</html>

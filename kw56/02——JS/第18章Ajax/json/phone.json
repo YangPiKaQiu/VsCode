@@ -1,0 +1,50 @@
+[
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202209261921_a1b840c267bd26bcf4dc654d52f259e5.png?thumb=1&w=300&h=300&f=webp&q=90",
+        "type": "XiaoMi Civi2",
+        "dexc": "仿生双屏 | 氛围人像",
+        "price": "2399"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a687e796bb4879cd0e93867177f800da.png?thumb=1&w=300&h=300&f=webp&q=90",
+        "type": "XiaoMi MIX Fold 2",
+        "dexc": "超轻薄折叠机身设计,小米自研微水",
+        "price": "8999"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208101511_488638d8f8d5dbcf3b66cd82703ecfb9.png?thumb=1&w=300&h=300&f=webp&q=90",
+        "type": "Redmi K50 至尊版",
+        "dexc": "晓龙8+ | 1.5K高清直屏",
+        "price": "2999"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011810_86ad513472d1423a3fdec8d7d5107038.png?thumb=1&w=300&h=300&f=webp&q=90",
+        "type": "XiaoMi 12S Ultra",
+        "dexc": "这真徕卡 | 专业徕卡影像",
+        "price": "5999"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207012000_0b9df066c110f201154013ac373df1d9.png?thumb=1&w=300&h=300&f=webp&q=90",
+        "type": "XiaoMi 12S Pro",
+        "dexc": "骁龙8+ 旗舰处理器 | 徕卡影像",
+        "price": "4699"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207012022_19bbddb6b35c3828f8b53f450c1519a3.png?thumb=1&w=300&h=300&f=webp&q=90",
+        "type": "XiaoMi 12S",
+        "dexc": "小尺寸性能旗舰 | 徕卡影像",
+        "price": "3999"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202207011841_084ed41d67f248677914605b73faf582.png?thumb=1&w=300&h=300&f=webp&q=90",
+        "type": "XiaoMi 12Pro 天机版玑版",
+        "dexc": "全球首发天玑9000+ | 叶脉冷泵散热系",
+        "price": "3999"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/211bb83776a8e0c8358732c3f3aa2864.png?thumb=1&w=300&h=300&f=webp&q=90",
+        "type": "Redmi Note 11 Pro+",
+        "dexc": "天玑8100 | 真旗舰芯",
+        "price": "1999"
+    }
+]

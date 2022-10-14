@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var yuefen =Number(prompt("请输入月份："));
+        var cangwei =Number(prompt("请选择舱位等级:1头等舱 2经济舱")) ;
+        var money;
+        if (yuefen >= 4 && yuefen <= 10) {
+            switch (cangwei) {
+                case 1: money = 5000 * 0.9;
+                    console.log(money);
+                    break;
+                case 2: money = 5000 * 0.8;
+                    console.log(money);
+                    break;
+            }
+        }
+        else  {
+            switch (cangwei) {
+                case 1: money = 5000 * 0.5;
+                    console.log(money);
+                    break;
+                case 2: money = 5000 * 0.4;
+                    console.log(money);
+                    break;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .box {
+            width: 1000px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .box1 {
+            height: 50px;
+            background: #D13753;
+            border-radius: 10px 10px 10px 10px;
+            position: relative;
+        }
+
+        .box1 img {
+            float: left;
+            margin-top: 5px;
+        }
+
+        .box1 p {
+            background: white;
+            width: 100px;
+            height: 40px;
+            color: #D13753;
+            position: absolute;
+            left: 300px;
+            top: 10px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 15px;
+            border-radius: 5px 5px 0px 0px;
+            font-weight: bold;
+        }
+
+        .box1 ul {
+            font-size: 10px;
+            margin-left: 800px;
+
+        }
+
+
+        .box1 li {
+            color: white;
+            float: left;
+            padding: 0px 4px;
+            height: 27px;
+            line-height: 27px;
+            margin-top: 10px;
+
+        }
+
+        .box1 a {
+            color: white;
+            text-decoration: none;
+            font-size: 10px;
+            padding-right: 10px;
+            line-height: 27px;
+
+        }
+
+        .box2 {
+            margin-top: 20px;
+            /* border: 1px solid blue; */
+            position: relative;
+        }
+
+        .left {
+            width: 190px;
+            border: 1px solid #D6D6D6;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .left p {
+            width: 191px;
+            height: 30px;
+            background: url(../img/游戏列表灰色渐变.jpg) no-repeat;
+            line-height: 30px;
+        }
+
+        .left p img {
+            margin-left: 8px;
+            vertical-align: middle;
+
+        }
+
+        .left p span {
+            margin-left: 15px;
+            font-size: 10px;
+        }
+
+        .left p:hover {
+            cursor: pointer;
+            background: #DB683C;
+        }
+
+        .center {
+            position: absolute;
+            left: 201px;
+            bottom: 5px;
+        }
+
+        .center img {
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .right {
+            width: 265px;
+            height: 210px;
+            border: 1px solid #D6D6D6;
+            position: absolute;
+            left: 730px;
+            bottom: 0px;
+            border-radius: 10px 10px 10px 10px;
+            background: #FAFAFA;
+        }
+
+        .right p:nth-of-type(1) {
+            color: #938577;
+            margin-top: 20px;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .right p:nth-of-type(2) {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .right p:nth-of-type(3) {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .right img {
+            margin-left: 100px;
+            margin-top: 15px;
+        }
+
+        .right p:nth-of-type(4) {
+            margin-top: 8px;
+        }
+
+        .right p a {
+            text-decoration: none;
+            margin-left: 40px;
+            color: #2B62A5;
+        }
+
+        .box4 {
+            width: 720px;
+            border: 1px solid #D6D6D6;
+            border-radius: 10px 10px 10px 10px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .head {
+            height: 30px;
+            line-height: 30px;
+            background: #D6D6D6;
+        }
+
+        .head p {
+            color: #7D0808;
+            font-size: 15px;
+            font-weight: bold;
+            margin-left: 20px;
+            float: left;
+        }
+
+        .head ul {
+            margin-left: 120px;
+            font-size: 15px;
+
+        }
+
+        .head li {
+            color: #938577;
+            float: left;
+            height: 30px;
+            padding-right: 10px;
+            line-height: 30px;
+        }
+
+        .head a {
+            color: #938577;
+            text-decoration: none;
+            padding-right: 10px;
+            line-height: 30px;
+
+        }
+
+        .left1 {
+            width: 300px;
+            height: 130px;
+            margin: 20px 30px;
+            border: 1px solid #D6D6D6;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .left1 img {
+            float: left;
+            margin: 15px 10px 25px 10px;
+        }
+
+        .cont1 {
+            font-size: 10px;
+            line-height: 20px;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        .cont1 i {
+            color: #df1717;
+        }
+
+        .cont1 span:nth-of-type(1) {
+            border: 1px solid #D6D6D6;
+            padding: 5px;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        .cont1 span:nth-of-type(2) {
+            background: #386E9D;
+            width: 80px;
+            padding: 5px;
+            border-radius: 5px 5px 5px 5px;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .cont1 p:nth-of-type(4) {
+            margin-top: 10px;
+        }
+
+        .right1 {
+            width: 300px;
+            height: 130px;
+            margin: 20px 30px;
+            border: 1px solid #D6D6D6;
+            border-radius: 10px 10px 10px 10px;
+            position: absolute;
+            left: 350px;
+            bottom: 1px;
+
+        }
+
+        .right1 img {
+            float: left;
+            margin: 15px 10px 25px 10px;
+        }
+
+        .cont2 {
+            font-size: 10px;
+            line-height: 20px;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        .cont2 span:nth-of-type(1) {
+            border: 1px solid #D6D6D6;
+            padding: 5px;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        .cont2 span:nth-of-type(2) {
+            background: #386E9D;
+            width: 80px;
+            padding: 5px;
+            border-radius: 5px 5px 5px 5px;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .cont2 p:nth-of-type(4) {
+            margin-top: 10px;
+        }
+
+        .box3 {
+            position: relative;
+            border: 1px solid white;
+            height: 240px;
+        }
+
+        .box5 {
+            width: 265px;
+            border: 1px solid #D6D6D6;
+            position: absolute;
+            left: 730px;
+            top: 5px;
+            border-radius: 10px 10px 10px 10px;
+            background: #FAFAFA;
+            position: absolute;
+            top: 20px;
+        }
+
+        .box5 p {
+            color: #7D0808;
+            font-size: 15px;
+            font-weight: bold;
+            height: 30px;
+            line-height: 30px;
+            text-indent: 20px;
+            background-color: #D6D6D6;
+            font-size: 15px;
+
+        }
+
+        .box5 img {
+            margin-left: 10px;
+        }
+
+        .box5 ul {
+            list-style: none;
+            color: #666666;
+        }
+
+        .box5 li {
+            height: 25px;
+            border-bottom: 1px dashed #7c7c7e;
+            font-size: 10px;
+            line-height: 25px;
+        }
+
+        .box5 li:nth-of-type(7) {
+            border-bottom: none;
+        }
+
+        .box5 ul li:hover {
+            cursor: pointer;
+            animation: move 0.5s linear forwards;
+
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            50% {
+                transform: translate(0px, 3px) scale(1.05)
+            }
+
+            100% {
+                transform: translate(0px, 6px) scale(1.09);
+            }
+        }
+
+        .box6 {
+            width: 720px;
+            height: 440px;
+            border: 1px solid #D6D6D6;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .box7 {
+            width: 720px;
+            height: 430px;
+            padding-left: 30px;
+        }
+
+        #firstp {
+            color: #7D0808;
+            font-size: 15px;
+            font-weight: bold;
+            height: 30px;
+            line-height: 30px;
+            text-indent: 20px;
+            background-color: #D6D6D6;
+            font-size: 15px;
+        }
+
+        #id1 {
+            color: red;
+        }
+
+        .box7 {
+            margin-top: 10px;
+        }
+
+        .box7 ul li {
+            width: 132px;
+            height: 200px;
+            margin-right: 30px;
+            font-size: 12px;
+            float: left;
+            /* border: 1px solid red; */
+        }
+
+        .box7 ul li p {
+            line-height: 2em;
+        }
+
+        .xuanfu {
+            display: inline-block;
+            border: 1px solid hsl(0, 0%, 84%);
+            padding: 5px;
+            border-radius: 5px 5px 5px 5px;
+            margin: 5px 5px 0 5px;
+
+        }
+
+        .jinru {
+            display: inline-block;
+            background: #386E9D;
+            padding: 5px;
+            border-radius: 5px 5px 5px 5px;
+            color: white;
+        }
+
+        .box8 {
+            position: absolute;
+            right: 0px;
+            top: 540px;
+        }
+
+        .box8 p:nth-of-type(2) {
+            padding-top: 10px;
+        }
+
+        .box9 {
+            width: 265px;
+            border: 1px solid #D6D6D6;
+            position: absolute;
+            left: 730px;
+            top: 5px;
+            border-radius: 10px 10px 10px 10px;
+            background: #FAFAFA;
+            position: absolute;
+            right: 0;
+            top: 710px;
+        }
+
+        .box9 p {
+            color: #7D0808;
+            font-size: 15px;
+            font-weight: bold;
+            height: 30px;
+            line-height: 30px;
+            text-indent: 20px;
+            background-color: #D6D6D6;
+            font-size: 15px;
+
+        }
+
+        .box9 img {
+            float: left;
+        }
+
+        .box9 ul {
+            margin: 10px;
+        }
+
+        .box9 ul li {
+            margin-bottom: 10px;
+            font-size: 10px;
+            color: #2B62A5;
+            line-height: 30px;
+
+        }
+
+        .box9 ul li:nth-of-type(1) {
+            border-bottom: 1px dashed #7c7c7e;
+            padding-bottom: 15px;
+        }
+
+        .box10 {
+            font-size: 10px;
+            margin-top: 40px;
+        }
+
+        .box10 span {
+            color: #2B62A5;
+            text-decoration: underline;
+        }
+
+        #tp:hover {
+            animation: run 5s linear forwards;
+        }
+
+        @keyframes run {
+            0% {
+                transform: translate(-10px)
+            }
+
+            33% {
+                transform: translate(-15px)
+            }
+
+            66% {
+                transform: translate(-20px)
+            }
+
+            100% {
+                transform: translate(-25px)
+            }
+        }
+
+        .box11 {
+            position: absolute;
+            right: -500px;
+            bottom: 500px;
+        }
+
+        .box11:hover {
+            animation: vip 5s linear infinite alternate;
+        }
+
+        @keyframes vip {
+            0% {
+                transform: translate(-100px, 100px)
+            }
+
+            20% {
+                transform: translate(-200px, 200px)
+            }
+
+            40% {
+                transform: translate(-400px, 300px)
+            }
+
+            60% {
+                transform: translate(-600px, 400px)
+            }
+
+            80% {
+                transform: translate(-800px, 500px)
+            }
+
+            100% {
+                transform: translate(-1000px, 600px)
+            }
+        }
+
+        .center li {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgb(65, 66, 63);
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .center li:nth-of-type(1) {
+            background-color: red
+        }
+
+        .center ul {
+            position: absolute;
+            right: 40px;
+            bottom: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">
+            <img src="../img/gameLogo.png" alt="">
+            <p>首页</p>
+            <ul>
+                <li><a href="#">注册</a>|</li>
+                <li><a href="#">登录</a>|</li>
+                <li><a href="#">帮助</a>|</li>
+                <li><a href="#">更多</a></li>
+            </ul>
+        </div>
+
+        <div class="box2">
+            <div class="left">
+                <p><img src="../img/sub-2.gif" alt=""><span>征战四方</span></p>
+                <p><img src="../img/sub-3.gif" alt=""><span>龙将</span></p>
+                <p><img src="../img/sub-4.gif" alt=""><span>弹弹堂</span></p>
+                <p><img src="../img/sub-5.gif" alt=""><span>凡人修真2</span></p>
+                <p><img src="../img/sub-6.gif" alt=""><span>一骑当先</span></p>
+                <p><img src="../img/sub-7.gif" alt=""><span>宫廷计</span></p>
+                <p><img src="../img/sub-8.gif" alt=""><span>神仙道</span></p>
+            </div>
+            <div class="center">
+                <img src="../img/xdtgg_frxz2_44.jpg" alt="" width="520px">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+            <div class="right">
+                <p>开心网用户登录</p>
+                <p> 账号：<input type="" name="" id="" placeholder="字母、数字的六位字符 "> </p>
+                <p> 密码：<input type="" name="" id="" placeholder="四位数字"> </p>
+                <img src="../img/btnLogin.jpg" alt="">
+                <p><a href="#">立即注册</a>
+                    <a href="#">忘记密码</a>
+                </p>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="box4">
+                <div class="head">
+                    <p>全部游戏</p>
+                    <ul>
+                        <li><a href="#">战争策略</a>|</li>
+                        <li><a href="#">体育经营</a>|</li>
+                        <li><a href="#">社交游戏</a>|</li>
+                    </ul>
+                </div>
+                <div class="left1">
+                    <img src="../img/img-4.jpg" alt="" width="100px" height="80px" id="tp">
+                    <div class="cont1">
+                        <p>三国题材横版RPG网游，丰富的武将系统</p>
+                        <p>类型：角色扮演</p>
+                        <p>游戏人气：<i>470921</i></p>
+                        <p><span>选服</span><span>进入游戏</span></p>
+                    </div>
+                </div>
+                <div class="right1">
+                    <img src="../img/img-5.jpg" alt="" width="100px" height="80px" id="tp">
+                    <div class="cont2">
+                        <p>一款不建主城不等CD，不占资源，全程战斗</p>
+                        <p>类型：战征策略</p>
+                        <p>游戏人气：8745221</p>
+                        <p><span>选服</span><span>进入游戏</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="box5">
+                <p>新闻公告</p>
+                <ul>
+                    <li><img src="../img/rightTwo.png" alt="">&nbsp;&nbsp;&nbsp;[征战四方] 开心首服·黄巾之乱</li>
+                    <li><img src="../img/rightTwo.png" alt="">&nbsp;&nbsp;&nbsp; [龙将] 火爆8服·八门金</li>
+                    <li><img src="../img/rightTwo.png" alt="">&nbsp;&nbsp;&nbsp;[弹弹堂] 41服开启·万人竞技</li>
+                    <li><img src="../img/rightTwo.png" alt="">&nbsp;&nbsp;&nbsp;[凡人修真2] 03月08日·四海帝王</li>
+                    <li><img src="../img/rightTwo.png" alt="">&nbsp;&nbsp;&nbsp;[一骑当先] 开心2服上线送黄金</li>
+                    <li><img src="../img/rightTwo.png" alt="">&nbsp;&nbsp;&nbsp;[宫廷计] 03月06日·西施秘史</li>
+                    <li><img src="../img/rightTwo.png" alt="">&nbsp;&nbsp;&nbsp;[凡人修真2] 03月08日·四海帝王</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box6">
+            <p id="firstp">角色扮演</p>
+            <div class="box7">
+                <ul>
+                    <li> <img src="../img/img-6.jpg" alt="" id="tp">
+                        <p>游戏人气：1765314</p>
+                        <p>游戏状态：<span id="id1">22区开启</span></p>
+                        <p> <span class="xuanfu">选服</span><span class="jinru">进入游戏</span></p>
+                    </li>
+
+                    <li><img src="../img/img-7.jpg" alt="" id="tp">
+                        <p> 游戏人气：1245814</p>
+                        <p>游戏状态：<span id="id1">23区开启</span></p>
+                        <p> <span class="xuanfu">选服</span><span class="jinru">进入游戏</span></p>
+                    </li>
+
+                    <li><img src="../img/img-8.jpg" alt="" id="tp">
+                        <p>游戏人气：1232158</p>
+                        <p>游戏状态：<span id="id1">25区开启</span></p>
+                        <p> <span class="xuanfu">选服</span><span class="jinru">进入游戏</span></p>
+                    </li>
+
+                    <li> <img src="../img/img-9.jpg" alt="" id="tp">
+                        <p>游戏人气：123745</p>
+                        <p>游戏状态：<span id="id1">18区开启</span></p>
+                        <p> <span class="xuanfu">选服</span><span class="jinru">进入游戏</span></p>
+                    </li>
+
+                    <li><img src="../img/img-10.jpg" alt="" id="tp">
+                        <p>游戏人气：178501</p>
+                        <p>游戏状态：<span id="id1">火爆开启</span></p>
+                        <p> <span class="xuanfu">选服</span><span class="jinru">进入游戏</span></p>
+                    </li>
+
+                    <li><img src="../img/img-11.jpg" alt="" id="tp">
+                        <p>游戏人气：983014</p>
+                        <p>游戏状态：<span id="id1">2服开启</span></p>
+                        <p> <span class="xuanfu">选服</span><span class="jinru">进入游戏</span></p>
+                    </li>
+
+                    <li><img src="../img/img-12.jpg" alt="" id="tp">
+                        <p>游戏人气：745214</p>
+                        <p>游戏状态：<span id="id1">4服开启</span></p>
+                        <p> <span class="xuanfu">选服</span><span class="jinru">进入游戏</span></p>
+                    </li>
+
+                    <li><img src="../img/img-13.jpg" alt="" id="tp">
+                        <p>游戏人气：654814</p>
+                        <p>游戏状态：<span id="id1">火爆开启</span></p>
+                        <p> <span class="xuanfu">选服</span><span class="jinru">进入游戏</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="box8">
+            <p><img src="../img/ad1.jpg" alt="" width="260px" height="70px"></p>
+            <p><img src="../img/ad2.jpg" alt="" width="260px" height="70px"></p>
+        </div>
+        <div class="box9">
+            <p>游戏视频</p>
+            <ul>
+                <li><img src="../img/img-1.jpg" alt="" id="tp">&nbsp;&nbsp;&nbsp;《航海之王》麻辣炫酷反穿越，英雄时尚大变身！</li>
+                <li><img src="../img/img-2.jpg" alt="" id="tp">&nbsp;&nbsp;&nbsp; 《弹弹堂》吴克群同名激情主题MV，体验修真乐趣</li>
+            </ul>
+        </div>
+        <div class="box10" <p><span>关于我们&nbsp;&nbsp;手机版 &nbsp;&nbsp;开放平台&nbsp;&nbsp; 自助广告&nbsp;&nbsp; 招聘&nbsp;&nbsp;
+                客服&nbsp;&nbsp; 帮助</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @2017开心网 文网文[2009]157号 京ICP证080482号 京公网安备110000000003号 未成年人家长监护</p>
+        </div>
+        <div class="box11">
+            <img src="../img/ad3.jpg" alt="" width="300px" height="250px">
+        </div>
+    </div>
+
+</body>
+
+</html>

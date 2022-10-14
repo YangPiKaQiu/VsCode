@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 2px solid blue;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bigBox {
+            width: 308px;
+            height: 308px;
+            border: 2px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .smallBox {
+            width: 180px;
+            height: 188px;
+            border: 2px solid green;
+            background-color: green;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="bigBox">
+            <div class="smallBox">
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    /*
+    如果外层盒子和内层盒子都拥有相同的事件，那么由内层盒子发起的会触发外层盒子
+    */
+
+    //选中元素
+    let box = document.querySelector(".box");
+    let bigBox = document.querySelector(".bigBox");
+    let smallBox = document.querySelector(".smallBox");
+
+
+    /*
+    添加事件监听，第三个参数ture，先执行最外层事件
+    */
+    smallBox.addEventListener("click", function () {
+        console.log("smallBox...触发");
+    }, true);
+    bigBox.addEventListener("click", function () {
+        console.log("bigBox...触发");
+    }, true);
+    box.addEventListener("click", function (e) {
+        e.stopPropagation();
+        console.log("box...触发");
+    }, true);
+
+</script>
+
+</html>

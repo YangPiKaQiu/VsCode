@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //一.自定义函数   带参函数
+    //1.带一个函数   字符串/数字/
+    //参数默认值
+    function goSchool(tool="共享单车") {
+        console.log("你通过" + tool + "到学校！");
+    }
+    goSchool("地铁");
+    goSchool();
+
+
+    function eatCakes(n) {
+        console.log("你吃了" + n + "块蛋糕！");
+    }
+    eatCakes(3);
+
+
+
+    console.log("------------------------------------");
+    //2.对象做参数
+    function feedPet(pet) {
+        console.log(`你喂养了一个${pet.type}宠物，宠物的价格是${pet.price}，宠物的颜色是${pet.color}`);
+        pet.playGame();
+    }
+    //创建pet类型对象的实例
+    let dog = {
+        "type": "金毛犬",
+        "price": "1000",
+        "color": "黄色",
+        playGame: function () {
+            console.log("主人和宠物狗狗正在玩接飞盘的游戏...");
+        }
+    }
+    feedPet(dog);
+    //如果方法参数传递的是引用类型的数据，调用方法的实参应该是实例化之后的对象
+
+
+    console.log("------------------------------------");
+    //3.数组做参数
+    function eatFruits(f) {
+        console.log("我喜欢吃：" + f[0] + "," + f[2]);
+    }
+    //创建数组---数组引用类型
+    let fruits = ["猕猴桃", "水蜜桃", "香蕉", "哈密瓜", "火龙果", "西瓜", "菠萝蜜", "山竹"];
+    eatFruits(fruits);
+
+    //传递多个参数:你今天吃的水果是根据你自己的选择来的，索引beginIndex,endIndex
+    /*
+    f:表示被选择的水果数组
+    beginIndex:你选择的其实索引位置
+    endIndex :你选择的结束索引位置
+    */
+
+    function selFruits(f, beginIndex, endIndex) {
+        console.log("你选的水果是：");
+        for (let i = beginIndex; i <= endIndex; i++) {
+            console.log(f[i]);
+        }
+    }
+    //调用
+    selFruits(fruits, 3, 6);
+
+
+    console.log("------------------------------------");
+    //5.对象数组做参数
+    //需求:我们将学生数组里面，学生成绩低于60分的成绩加10分.
+    function addScore(students) {
+        console.log(students);
+        console.log("----------");
+        for (let i = 0; i < students.length; i++) {
+            //判断students数组里面的每一个学生的成绩是否低于60分，
+            //如果低于60分，给这个份数+10
+            if(students[i].score<60){
+                students[i].score+=10;
+            }
+        }
+        console.log(students);
+    }
+   
+    //创建对象数组
+    let studentsList=[
+        {
+            "stuno":"1001",
+            "stuname":"tom",
+            "score":"56",
+        },
+        
+        {
+            "stuno":"1002",
+            "stuname":"jerry",
+            "score":"65",
+        },
+        
+        {
+            "stuno":"1003",
+            "stuname":"小红",
+            "score":"78",
+        },
+        {
+            "stuno":"1004",
+            "stuname":"小强",
+            "score":"58",
+        },
+        {
+            "stuno":"1005",
+            "stuname":"3号",
+            "score":"45",
+        },
+        
+        {
+            "stuno":"1006",
+            "stuname":"别人家的孩子",
+            "score":"100",
+        },
+    ]
+    //调用
+    addScore(studentsList);
+
+
+
+</script>
+
+</html>

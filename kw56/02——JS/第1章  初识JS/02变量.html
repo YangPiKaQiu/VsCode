@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  <!-- 变量的语法 -->
+
+        // <!-- 1.声明变量 -->
+        var R301;
+
+        // <!-- 2.变量赋值 -->
+        // R301 = "小明";   //双引号表示 值是字符串
+        R301 = "小强"; 
+
+        // <!-- 3.变量的使用 -->
+        console.log("301房间住的是" + R301)
+
+        // 变量就是内存中的一块空间,由于在机器中是用二进制表示这块空间的位置,不好记忆,
+        // 所以起个名字给这块空间,变量可以多次赋值
+
+        // 变量的声明和赋值一起使用
+        var R991="小红"
+        // 变量的使用
+        console.log("991房间住的是"+R991);
+
+        // 同时声明赋值多个变量
+        var R101="张三",R102="李四",R103="王五",R104;
+        R104="领导";
+        console.log(R101,R102,R103,R104);
+
+        // 变量名字的要求
+        /*
+        1.不能是关键字 var const console 
+        2.首字母不能是数字 变量起名字不要a1 a2 a3 a4 a5
+        3.特殊字符不能用，只能是规定范围内的字符
+          数字  美元符  人民币符  下划线（英文） 数字
+          字下美人数骆驼
+          驼峰式命名法---变量
+          首字母小写
+          全部大写：常量
+        */
+
+
+        // 变量的类型
+        // js并没有在声明的时候规定变量的类型,我们称为弱类型,边解释边执行，当你获取到变量的值的时候
+        //    才知道该变量的类型是什么
+        var n=100;
+        var name="张三";
+        var ale=18;
+        var isVip=true;
+        var money=100.5;
+        var score;  //  声明但是没有赋值  unfefined
+        var address="江苏南京雨花台区xxxxx"
+        var a=null;
+
+        // 判断变量的类型关键字  typeof
+        console.log(typeof n); //number  数值类型
+        console.log(typeof name); //string  字符串类型
+        console.log(typeof isVip); //boolean  布尔类型（true/false)值只有两个
+        console.log(typeof score); //undefined 声明未赋值的类型
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        html,
+        body {
+            height: 100vh;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        header {
+            height: 3.75rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            border-bottom: .125rem solid #f0efef;
+        }
+
+        header div:nth-of-type(2) {
+            background-color: #f0efef;
+            width: 75%;
+            line-height: .9375rem;
+            padding: .625rem;
+            border-radius: 3.125rem;
+        }
+
+        header div:nth-of-type(2) img {
+            width: .9375rem;
+            margin-bottom: -0.125rem;
+            margin-right: .625rem;
+        }
+
+        header div:nth-of-type(2) span {
+            font-size: .9375rem;
+            color: #ACA9A4;
+        }
+
+        section {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            overflow: auto;
+        }
+
+
+        .left {
+            width: 5rem;
+            overflow: auto;
+        }
+
+        .left>ul {
+            overflow: auto;
+        }
+
+        .left ul li {
+            height: 3.75rem;
+            font-size: .9375rem;
+            line-height: 3.75rem;
+            color: black;
+            text-align: center;
+            background-color: #f0efef;
+        }
+
+        .left li:hover {
+            background-color: white;
+            color: red;
+        }
+
+
+        .right {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: flex-start;
+            flex: 1;
+            overflow: auto;
+        }
+
+        .content {
+            width: 33%;
+            height: 10rem;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content img {
+            width: 5rem;
+        }
+
+        footer {
+            height: 3.75rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        footer img {
+            width: 5rem;
+        }/*  */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <header>
+            <div class="icon iconfont icon-arrow-left-bold"></div>
+            <div><i><img src="image/sousuo.png" alt=""></i><span>衣服</span></div>
+            <div class="icon iconfont icon-shenglvehao"></div>
+        </header>
+        <section>
+            <div class="left">
+                <ul>
+                    <li>热门推荐</li>
+                    <li>手机数码</li>
+                    <li>京东超市</li>
+                    <li>家用电器</li>
+                    <li>电脑办公</li>
+                    <li>玩具乐器</li>
+                    <li>家居厨具</li>
+                    <li>家具家装</li>
+                    <li>男装</li>
+                    <li>男鞋</li>
+                    <li>女装</li>
+                    <li>女鞋</li>
+                    <li>美妆护肤</li>
+                    <li>医药保健</li>
+                    <li>酒水饮料</li>
+                    <li>运动户外</li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="content">
+                    <img src="image/01.jpg" alt="">
+                    <p>空调</p>
+                </div>
+                <div class="content">
+                    <img src="image/02.jpg" alt="">
+                    <p>冰箱</p>
+                </div>
+                <div class="content">
+                    <img src="image/03.png" alt="">
+                    <p>电脑</p>
+                </div>
+                <div class="content">
+                    <img src="image/04.png" alt="">
+                    <p>手机</p>
+                </div>
+                <div class="content">
+                    <img src="image/05.jpg" alt="">
+                    <p>全面屏手机</p>
+                </div>
+                <div class="content">
+                    <img src="image/06.jpg" alt="">
+                    <p>保健品</p>
+                </div>
+                <div class="content">
+                    <img src="image/07.jpg" alt="">
+                    <p>游戏手机</p>
+                </div>
+                <div class="content">
+                    <img src="image/08.jpg" alt="">
+                    <p>口罩</p>
+                </div>
+                <div class="content">
+                    <img src="image/09.jpg" alt="">
+                    <p>驱蚊用品</p>
+                </div>
+                <div class="content">
+                    <img src="image/10.jpg" alt="">
+                    <p>电磁炉</p>
+                </div>
+                <div class="content">
+                    <img src="image/11.jpg" alt="">
+                    <p>电热水壶</p>
+                </div>
+                <div class="content">
+                    <img src="image/12.jpg" alt="">
+                    <p>数据线</p>
+                </div>
+                <div class="content">
+                    <img src="image/13.jpg" alt="">
+                    <p>图书</p>
+                </div>
+                <div class="content">
+                    <img src="image/14.jpg" alt="">
+                    <p>美妆护肤</p>
+                </div>
+                <div class="content">
+                    <img src="image/15.jpg" alt="">
+                    <p>除菌液</p>
+                </div>
+                <div class="content">
+                    <img src="image/16.jpg" alt="">
+                    <p>休闲零食</p>
+                </div>
+                <div class="content">
+                    <img src="image/17.jpg" alt="">
+                    <p>充电宝</p>
+                </div>
+                <div class="content">
+                    <img src="image/18.jpg" alt="">
+                    <p>体温计</p>
+                </div>
+                <!-- <div class="content">
+                    <img src="image/19.jpg" alt="">
+                    <p>空调</p>
+                </div>
+                <div class="content">
+                    <img src="image/20.jpg" alt="">
+                    <p>空调</p>
+                </div> -->
+            </div>
+        </section>
+        <footer>
+            <div>
+                <img src="image/1.png" alt="">
+                <img src="image/2.png" alt="">
+                <img src="image/3.png" alt="">
+                <img src="image/4.png" alt="">
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

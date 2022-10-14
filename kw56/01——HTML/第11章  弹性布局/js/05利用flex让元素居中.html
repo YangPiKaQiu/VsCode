@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 设置body高度是一个了浏览器视口高度 */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            display: flex;
+
+            /* 主轴方向 */
+            flex-direction: row;
+
+            /* 设置主轴对齐居中 */
+            justify-content: center;
+            
+            /* 设置侧轴对齐居中 */
+            align-items: center;
+        }
+
+        .center {
+            width: 200px;
+            height: 200px;
+            background: blue;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="center">1</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- location.href是通过改变url地址，切换页面，会存在history对象中 -->
+    <button onclick="window.location.href='Page1.html'">进入Page1页面</button>
+    <button onclick="history.forward()">前进</button>
+
+    <button onclick="alert('史记录个数:'+history.length)">显示历史记录length</button>
+
+    <a href="http://www.taobao.com/" target="_blank">淘宝</a>
+</body>
+</html>

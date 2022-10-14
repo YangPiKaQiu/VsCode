@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 8．编写一个类A，该类创建的对象可以调用方法f输出小写的英文字母表。然后再编写一个A类的子类B，
+    // 要求子类B必须继承A类的方法f（不允许重写），子类B创建的对象不仅可以调用方法f输出小写的英文字母表，而且可以调用子类新增的方法g输出大写的英文字母表，
+    // 最后编写主类C，C的print()方法中测试类A与类B的各个方法
+    class A{
+        f() {
+           for (let i = 0; i <26;i++){
+            console.log(String. fromCharCode(97+i));
+           }
+        }
+    }
+    class B extends A {
+        g() {
+           for (let i = 0; i < 26; i++) {
+            console.log(String. fromCharCode(65+i));
+        }
+        this.f();
+        }
+    }
+    class C{
+        info() {
+            let a=new A();
+            a.f();
+            console.log("-------------------------------------");
+            let b=new B();
+            b.g();
+        }
+    }
+    let c=new C();
+    c.info()
+</script>
+</html>

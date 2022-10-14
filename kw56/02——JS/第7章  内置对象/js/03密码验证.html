@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //正确密码
+    let truePass = "abc123";
+
+    //提示:输入一个密码
+    let yourInputPass = prompt("请输入密码:");
+    console.log(yourInputPass);
+
+    //处理填写的密码:让空格，大马，小写通用
+    let trueP=truePass.toLocaleLowerCase();
+    let inputP = yourInputPass.toLowerCase().trim();
+    if (yourInputPass === truePass) {
+        alert("密码正确!");
+    }
+    
+
+</script>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="onkeydownEvemt">onkeydown</button>
+    <hr>
+    <button id="onkeypressEvent">onkeypress</button>
+    <hr>
+    <button id="onkeyupEvent">onkeyup</button>
+
+    <!-- 通过一个input对象,触发以上三个事件 -->
+    <hr>
+    <input type="text" id="textInput">
+
+
+</body>
+<script>
+    //获取三个按钮
+    let btn1 = document.querySelector("#onkeydownEvent");
+    let btn2 = document.querySelector("#onkeypressEvent");
+    let btn3 = document.querySelector("#onkeyupEvent");
+
+    let textInput = document.querySelector("#textInput");
+    //键盘被按下
+    textInput.onkeydown = function (e) {
+        let { key } = e;
+        console.log("onkeydown,键盘被按下。。。。", key);
+    }
+    //键盘按键被释放
+    textInput.onkeypress = function () {
+        console.log("onkeyup,键盘按键被释放....");
+    }
+
+
+    //键盘按下可产生字符的按键，例如shift不产生字符，不触发该事件
+    textInput.onkeypress = function(){
+    console.log("onkeypress,某个键盘按键被按下并松开.....");
+}
+
+
+
+
+
+    //1.当按钮1按下的时候触发一个键盘事件onkeydown 某个按键被按下
+    btn1.onclick = function () {
+        //调用事件  对象.事件名 =fn
+        window.onkeydown = function (e) {
+            //此处e是事件对象，封装了属性和方法，（事件类型，事件的触发者，键盘的按键值）
+            //如何获取按键值
+            let { key } = e;
+            console.log("11111");
+
+        }
+    }
+
+
+</script>
+
+</html>

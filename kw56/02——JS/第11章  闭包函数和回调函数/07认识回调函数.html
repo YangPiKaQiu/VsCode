@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //回调函数：方法的参数是一个函数，那么这个函数成为回调函数
+
+        let nums=[11,22,33,44,55,66,77];
+
+        //功能：将数字放大两倍
+        function gt(val){
+            return val*2;
+        }
+
+        //缩小两倍
+        function lt(val){
+            return val/2;
+        }
+
+        //自定义回调函数的方法
+        //将数组元素放大两倍  arr:数组  callBack：回调函数
+        function renScale(arr,callBack){
+            //空数组
+            let emptyArr=[];
+            for(let i=0;i<arr.length;i++){
+                emptyArr.push(callBack(arr[i]));
+            }
+            return emptyArr;
+        }
+        let result=renScale(nums,gt);
+        console.log(result);
+
+
+        // arr.forEach(function(item,index){
+        //     console.log(item);
+        // })
+
+        // arr.sort((a,b)=>b-a);
+        // console.log(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        张三考了5门课程,计算5门课程的平均分
+        分析： 课程数5   有限次数的循环  首选for循环
+        */
+        
+     for(var i=1,sum=0;i<=5;i++){
+        //录入每门课程的成绩
+        var score=parseFloat(prompt("请录入第"+i+"门课程的成绩"));
+        //求出总成绩
+        sum+=score;
+     }
+     //循环完成之后总分sum  计算出来
+     var avg = sum/5;
+     console.log(avg);
+    </script>
+</body>
+</html>

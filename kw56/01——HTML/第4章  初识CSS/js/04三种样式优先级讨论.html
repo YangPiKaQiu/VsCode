@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 外部样式表 -->
+    <link rel="stylesheet" href="外部样式.css">
+    <!-- 内部样式表 -->
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+    <!-- 小结：外部样式表和内部样式表优先级相同,但是取决于就近原则(谁离p标签近) -->
+</head>
+
+<body>
+    <!-- 因为行内样式就在元素里面,离它最近所以行内样式优先级最高 -->
+    <p style="color: green;">为梦想而年轻,为青春而坚定</p>
+</body>
+
+</html>

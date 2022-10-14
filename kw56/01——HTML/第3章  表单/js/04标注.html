@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="get">
+        <!-- 标注元素label里面for属性,会指向对应的元素id -->
+        <p><label for="userName">用户名：</label>
+            <input type="text" name="userName" id="userName">
+        </p>
+        <p>
+            <label for="male">男</label><input checked type="radio" id="male" name="sex" />
+            <label for="female">女</label><input type="radio" name="sex" id="female" />
+        </p>
+
+        <p>
+            <label for="apple">苹果</label><input type="checkbox"id="apple">
+            <label for="orange">橘子</label><input type="checkbox"id="orange">
+            <label for="pear">梨子</label><input type="checkbox"id=pear>
+            <!-- 快捷写法：(label+input:radio#a)*3 -->
+        </p>
+    </form>
+</body>
+
+</html>

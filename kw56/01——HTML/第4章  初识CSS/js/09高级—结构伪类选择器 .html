@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 划分范围,由大到小 */
+        /* 第一个孩子元素,找出body第一个孩子元素,背景色改成红色
+           ：表示的是条件
+            */
+        body>p:first-child {
+            background: red;
+        }
+
+        /* 最后一个孩子,找出ul最后一个孩子元素,背景色改成蓝色 */
+        ul>li:last-child {
+            background: blue;
+        }
+
+        /* 找第n个孩子元素 找出body的第n个孩子元素,背景色改成粉色
+        先找第几个，在匹配类型 */
+        body>p:nth-child(2) {
+            background: pink;
+        }
+
+        /* 找指定类型中的第n个元素  找body中第三个p元素,背景色改成绿色 
+        先找类型，再找第个数
+        */
+        body>p:nth-of-type(3) {
+            background: green;
+        }
+
+        /* 找body子元素中的第2个p元素 */
+        /* body>p:nth-of-type(2){background: gold;} */
+        /* 找body子元素中的第1个p元素 */
+        /* body>p:nth-of-type(1){background: black;} */
+        /* body>p:first-of-type{background: black;} */
+        /* 找body子元素中的最后一个p元素 */
+        /* body>p:last-of-type{background: purple;} */
+    </style>
+</head>
+
+<body>
+    <h4>head1</h4>
+    <p>p1</p>
+    <p>p2</p>
+    <h4>head2</h4>
+    <p>p3</p>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+    </ul>
+
+</body>
+
+</html>

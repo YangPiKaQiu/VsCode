@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 3.鸡兔同笼，今又鸡和兔关在一个笼子里面，动物的头的总数是35，
+        // 动物的脚的总数是94，问你鸡和兔子各有多少只？提示：利用二重循环解决问题
+
+        for (var i = 1; i <= 35; i++) {
+            for (var t = 35 - i; t >= 0; t--) {
+                if ((i + t) == 35 && (2 * i + 4 * t) == 94) {
+                    document.write("鸡有：" + i + "<br/>" + "兔有：" + t);
+                }
+            }
+        }
+
+
+//var tou = 35,
+//jiao = 94;
+//for (var i = 0; i <= tou; i++) {
+//for (var j = 0; j <= jiao; j++) {
+//if (i + j == tou && 4 * i + 2 * j == jiao) {
+// console.log(j,i);
+//}
+// }
+//}
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //1.首先你需要知道如何创建一个对象？
+    //使用字面量方式创建一个学生对象
+    let student = { "name": "tom", "age": 23, "score": 98 };
+
+
+    //2.如何创建一个数组?
+    //字面量
+    let fruits = ["香蕉", "哈密瓜", "苹果", "橙子"];
+
+
+    //3.什么叫对象数组?
+    //数组里面存放的元素是对象-一对 象数组
+    let stuList = [{
+        "name": "张三",
+        "age": 22,
+        "score": 99
+    },
+    {
+        "name": "李四",
+        "age": 25,
+        "score": 91
+    },
+    {
+        "name": "赵六",
+        "age": 22,
+        "score": 56
+    }
+    ]
+
+    //遍历数组中每一-个学 生的信息
+    for (let i = 0; i < stuList.length; i++) {
+        //一个数组的元素都是 一个对象
+        console.log(stuList[i].name + "------" + stuList[i].age + "-----" + stuList[i].score);
+    }
+
+</script>
+
+</html>

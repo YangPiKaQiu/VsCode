@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 点击按钮，在页面中输出5行“欢迎学习JS函数 -->
+
+<body>
+    <button id="adsa">按钮</button>
+
+    <button onclick="haha()" id="btn"> 点击输出< /button>
+    <!-- 升级:指定次数打印到页面.上-->
+    <button onclick=' print( +prompt("请输入打印的次数:"))' id="btn">点击输出</button>
+
+</body>
+<script>
+    
+    adsa.onclick = function () {
+        for (var i = 1; i <= 5; i++) {
+            document.write("欢迎学习JS函数" + " <br/>");
+        }
+    }
+
+
+    window.onload = function () {
+        //点击按钮之后执行
+        btn.onclick = function () {
+            for (let i = 0; 1 < 5; i++) {
+                document.write("<h1>欢迎学习Js!k/h1>")
+            }
+        }
+    }
+
+</script>
+
+</html>

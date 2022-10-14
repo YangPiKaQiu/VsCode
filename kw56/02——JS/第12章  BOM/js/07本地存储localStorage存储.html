@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //该页面存储一个学生姓名
+    localStorage.setItem("stuName", "张成成");
+
+    console.log("本地存储了一个学生姓名：张成成");
+    //存储一个对象
+    let data = {
+        "name": "大黄",
+        "age": 3,
+        "type": "金毛"
+    };
+    //JSON将data转换成json格式的字符串
+    localStorage.setItem("dog",JSON.stringify(data));
+</script>
+
+</html>

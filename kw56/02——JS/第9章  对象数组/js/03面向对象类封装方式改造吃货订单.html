@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    /*
+       创建类  order管理类
+       属性：操作的数据   orders   ,  dishes
+
+       方法：
+           addOrder()
+           delOrder()
+           findOrder()
+           signOrder()
+           ...
+     
+    */
+
+    class OrderMrg {
+        //属性
+        orders = [];
+        dishes = [];
+
+        //功能
+        //1.初始化数据
+        init() {
+            //将订单改成对象数组,其中数组中的元素是订单对象
+            this.orders = [
+                {
+                    "names": "潘磊",
+                    "dishMegs": "全家桶 2桶",
+                    "times": 13,
+                    "addresses": "江苏警官学院",
+                    "states": 1,
+                    "sumPrices": 99 * 2,
+                },
+                {
+                    "names": "刘金铃",
+                    "dishMegs": "瑞星咖啡 1杯",
+                    "times": 14,
+                    "addresses": "江苏警官学院",
+                    "states": 0,
+                    "sumPrices": 52,
+                },
+
+            ]
+
+
+
+            //菜品改成订单数组
+            this.dishes = [
+                {
+                    "dishNames": "全家桶",
+                    "prices": 99,
+                    "praiseNums": 0
+                },
+                {
+                    "dishNames": "瑞星咖啡",
+                    "prices": 52,
+                    "praiseNums": 10
+                },
+                {
+                    "dishNames": "炸鸡腿",
+                    "prices": 9.9,
+                    "praiseNums": 0
+                },
+                {
+                    "dishNames": "冰淇淋",
+                    "prices": 13,
+                    "praiseNums": 3
+                },
+            ]
+        }
+
+        //方法一：订餐
+        addOrder() {
+            console.log("****我要订餐****");
+            let yourName = prompt("请输入订餐人姓名:");
+            //展示菜品信息
+            console.log(`序号   菜名   单价    点赞数`);
+
+            //使用dishes对象数组遍历打印菜品信息
+            for (let i = 0; i < this.dishes.length; i++) {
+                console.log(`${i + 1}\t  ${this.dishes[i].dishNames}\t   ${this.dishes[i].prices}\t   ${this.dishes[i].praiseNums} `);
+            }
+
+            //选择菜品编号
+            let yourDishNo = +prompt("请选择您要点的菜品编号:")
+            while (yourDishNo > this.dishes.length || yourDishNo < 1) {
+                yourDishNo = +prompt("对不起您点的菜我们这真的没有，请重新录入:");
+            }
+            //选择分数
+            let yourChoiceCount = +prompt("请选择您需要的份数:");
+            //拼接菜品信息
+            let yourDishMegs = this.dishes[yourDishNo - 1].dishNames + " " + yourChoiceCount + "份";
+            //选择时间
+            let yourTime = +prompt("请输入送餐时间(送餐时间10点到20点之间)");
+            while (yourTime > 20 || yourTime < 10) {
+                yourTime = +prompt("对不起您录入的时间不在骑手的工作范围内,请重新输入送餐时间(送餐时间10点到20点之间)");
+            }
+            //选择地址
+            let yourAddress = prompt("请输入送餐地址:");
+            //后台做计算总价格：（餐费大于50元免配送费，否则配送费6元，）
+            //后台将订餐信息添加到数组数据中;
+            //计算小费
+            //三元运算符   相当于  if ----else---
+
+            let yourCash = this.dishes[yourDishNo - 1].prices * yourChoiceCount > 50 ? 0 : 6;
+            //计算总价格
+            let yourTotalPrice = this.dishes[yourDishNo - 1].prices * yourChoiceCount + yourCash;
+            //将订餐信息添加到对象数组  order
+
+
+            //先构造一个订单对象__自己顶的
+            let order = {
+                "names": yourName,
+                "dishMegs": yourDishMegs,
+                "times": yourTime,
+                "addresses": yourAddress,
+                "states": 0,
+                "sumPrices": yourTotalPrice,
+            }
+            //对象数组添加一个元素(对象)
+            this.orders.push(order);
+
+
+
+            //打印成功信息
+            console.log("订餐成功!");
+            console.log(
+                ` -------------------------------------
+    您订的是:${yourDishMegs}
+    送餐时间:${yourTime}点
+    餐费:${this.dishes[yourDishNo - 1].prices * yourChoiceCount}元,送餐费:${yourCash}元,总计:${yourTotalPrice}元。
+-------------------------------------`);
+        }
+
+        //方法二:查看餐袋
+        findOrder() {
+            console.log("****查看餐袋****");
+            console.log(`序号   订餐人   餐品信息   送餐日期   送餐地址   总金额    订单状态`);
+
+            //通过订单的对象数组遍历
+            for (let i = 0; i < this.orders.length; i++) {
+                console.log(`${i + 1}\t${this.orders[i].names}\t ${this.orders[i].dishMegs}\t ${this.orders[i].times}点 \t ${this.orders[i].addresses} \t ${this.orders[i].sumPrices}元\t${this.orders[i].states == 0 ? '已预定' : '已完成'}`);
+            }
+        }
+
+        //方法三:签收订单
+        signOrder() {
+            console.log("****签收订单*****");
+            let yourSignNo = +prompt("请选择要签收的订单序号:");
+            //判断订单数组里面有没有数据
+            if (this.orders.length === 0) {
+                console.log("没有订单，输入错误！");
+
+            } else {
+                while (yourSignNo > this.orders.length || yourSignNo < 1) {
+                    console.log("您所选的订单不存在，请重新订单序号:");
+                    yourSignNo = +prompt("请选择要签收的订单序号:");
+
+                }
+                //判断订单是否已签收,已签收就不能再次签收给出提示
+                if (this.orders[yourSignNo - 1].states === 1) {
+                    console.log("您选择的订单已完成签收，不能再次签收!");
+                } else {
+                    //可以被签收，修改状态
+                    this.orders[yourSignNo - 1].states = 1;
+                    console.log("签收完成!感谢您的配合!");
+                }
+
+            }
+        }
+
+
+        //方法四:删除订单
+        delOrder() {
+            console.log("****删除订单****");
+            let yourDelNo = +prompt("请选择要删除的订单序号:");
+            //判断订单数组里面有没有数据
+            if (this.orders.length === 0) {
+                console.log("没有订单，输入错误！");
+
+            } else {
+                while (yourDelNo > this.orders.length || yourDelNo < 1) {
+                    console.log("您所选的订单不存在，请重新订单序号:");
+                    yourDelNo = +prompt("请选择要删除的订单序号:");
+
+                }
+                //判断订单是否已签收,已签收就不能再次签收给出提示
+                if (this.orders[yourDelNo - 1].states === 0) {
+                    console.log("您选择的订单未签收，不能删除!");
+                } else {
+                    //将选择的订单从订单数组中删除   arry.splice(yourDelNo-1,1)
+                    //删除6个数组
+                    let delNo = yourDelNo - 1;
+                    //从对象数组中删除一个元素
+                    this.orders.splice(delNo, 1);
+                    console.log("删除成功，欢迎下次继续光顾!");
+                }
+
+            }
+
+
+        }
+
+
+        //方法五:启动菜单  开始
+        startMenu() {
+            //2.搭建框架结构
+            do {
+                //使用es6里面的模板字符串
+                //变量选择数字
+                var choice;
+                //  +prompt() 接收录入的数据   +直接转换成整数
+                choice = +prompt(
+                    `
+            欢迎使用“吃货联盟订餐系统”
+            ****************************
+            1、我要订餐
+            2、查看餐袋
+            3、签收订单
+            4、删除订单
+            5、我要点赞
+            6、退出系统
+            7、新品上架
+            
+            ****************************
+            请选择：  
+           `);
+
+                //根据选项进行相关的操作
+                switch (choice) {
+                    case 1:
+                        this.addOrder();
+                        continue;
+                    case 2:
+                        this.findOrder();
+                        continue;
+                    case 3:
+                        this.signOrder();
+                        continue;
+                    case 4:
+                        this.delOrder();
+                        continue;
+                    case 5:
+                        console.log("=====我要点赞");
+                        continue;
+                    case 6:
+                        console.log("=====退出系统");
+                        break;
+                    case 7:
+                        console.log("****新品上架****");
+                        //添加新菜单
+                        continue;
+                }//跳出switch
+                break;//跳出do-while
+            } while (true);
+        }
+    }
+
+    //测试初始化数据是否成功
+    //实例化类
+     let o1 =  new OrderMrg();
+
+     //调用初始化方法
+     o1.init();
+     //调用开始菜单
+     o1.startMenu();
+
+    //程序结束
+    console.log("程序结束!");
+
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        ul {
+            /* width: 410px; */
+            border: 2px solid blue;
+        }
+
+        li {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            /* 左浮动 */
+            float: left;
+            /* 右浮动 */
+            /* float: right; */
+        }
+
+
+
+        img {
+            border: 1px solid blue;vertical-align: text-bottom;
+        }
+
+        /* 小结：当一个父元素里面的所有的子元素全部都浮动之后，实际上，
+            这些子元素脱离了标准文档流，会导致父元素没有内容，出现边框
+            塌陷的问题，父元素的边框回事一条直线，对后面元素的排版产生影响。 */
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+    <img src="../img/logo.png" alt="">
+    <span>span1</span>
+    <p>段落一</p>
+</body>
+
+</html>

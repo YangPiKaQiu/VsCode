@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //计算机的函数，是一个固定的一一个程序段，
+        //或称其为一个子程序，它在可以实现固定运算功能的同时，
+        //还带有一个入口和一个出口，所谓的入口，就是函数所带的各个参数，
+        //我们可以通过这个入口，把函数的参数值代入子程序，供计算机处理;
+        //所谓出口，就是指函数的函数值，在计算机求得之后，由此口带回给调用它的程序.
+
+        //1.打印矩形
+        // for (let i = 0; i < 5; i++) {
+        //     for (let j = 0; j < 5; j++) {
+        //         document.write("*")
+        //     }
+        //     //换行
+        //     document.write("<br/>")
+
+        // }
+
+        //使用函数封装：函数的目的减少代码冗余，让某个功能能够重复使用
+        // function printRect() {
+        //     for (let i = 0; i < 5; i++) {
+        //         for (let j = 0; j < 5; j++) {
+        //             document.write("*")
+        //         }
+        //         //换行
+        //         document.write("<br/>")
+        //     }
+        // }
+        //打印矩形.
+        //调用功能(函数)
+        // printRect();
+
+        /*
+        自定义函数的语法：
+        五要素:  1.function
+                2.方法名
+                3.() 参数列表 (可以没有参数)
+                4.{方法体}你编写的代码
+                5.return返回值(可以没有)
+        函数的调用:
+               函数名(传递具体的参数)
+        */
+
+        //带参数的函数
+        function printRect(line, column = 10) {//参数默认值
+            for (let i = 0; i < line; i++) {
+                for (let j = 0; j < column; j++) {
+                    document.write("*");
+                }
+                //换行|
+                document.write("<br/>");
+            }
+        }
+        //调用函数:携带具体的参数(实参)
+        printRect(10, 20);
+
+
+        /*
+          计算两个数相加，获取两个数的和
+          要求用户输入两个数，通过一个函数获得两个数相加的结果
+        */
+        // let n1 = +prompt("请输入一个数:");
+        // let n2 = +prompt("请输入第二个数:")
+        // //编写加法运算的函数
+        // function add(a, b) {
+        //     let sum = a + b;
+        //     console.log(sum);
+        // }
+        // //调用函数，传入实际的数字(实参)
+        // add(n1, n2);
+
+
+        let n3 = +prompt("请输入一个数:");
+        let n4 = +prompt("请输入第二个数:")
+        //编写加法运算的函数
+        function add(a, b) {
+            let sum = a + b;
+            // console.log(sum);
+            //带返回值的函数，return后面是表达式。
+            return sum;
+        }
+        //调用函数，传入实际的数字(实参)
+       let result=add(n3, n4);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米官网注册</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, #616161, #ccc);
+        }
+
+        .box {
+            border: 3px solid blue;
+            background: white;
+            width: 500px;
+            margin: 20px auto;
+        }
+
+        table {
+            border-spacing: 0px;
+            /* border: 2px solid red; */
+        }
+
+        caption {
+            font-family: "隶书";
+            font-size: 30px;
+            font-weight: bold;
+            color: pink;
+        }
+
+        td {
+            padding: 10px 15px;
+            /* text-align: center; */
+            font-size: medium;
+            font-weight: bolder;
+            color: pink;
+            font-family: "隶书";
+        }
+
+        button {
+            width: 60px;
+            height: 25px;
+            background-color: cornflowerblue;
+            border-radius: 5px;
+            margin: 0px 20px;
+        }
+
+        button:hover {
+            color: aquamarine;
+        }
+
+        span {
+            font-size: 14px;
+            padding: 0px 10px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table>
+            <tr>
+                <td cloplan="2">
+                    <caption>小米注册</caption>
+                </td>
+            </tr>
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" id="userName" name="userName"><span id="userSpan">*</span></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td><input type="text" id="pass" name="userName"><span id="userSpan">*</span></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button>注册</button>
+                    <button>重置</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+<script>
+    /*
+    需求:光标从用户名的文本框里面移出来的时候，判断你输入的用户名是否被注册了
+    */
+
+    //1.获取dom元素对象
+    let userNameInput = document.querySelector("#userName");
+    let userSpan = document.querySelector("#userSpan");
+
+    //ajax引擎
+    let xhr = new XMLHttpRequest();
+
+    //2.光标失焦事件
+    userNameInput.onblur = function () {
+        //获取文本框的输入值
+        let userName = userNameInput.value;
+        console.log("1111");
+        //判断你写的用户名是否已被注册（依据ajax请求获得后端的数据是否包含你注册的名字)
+        //2.1创建http请求
+        xhr.open("post", "./json/data.json")
+
+        //post请求需要设置请求头的格式
+        xhr.setRequestHeader("content-Type" , " application/x-www-form-urlencoded") ;
+
+
+
+        //2.2 xhr对象监测事件  onreadystatechange  当xhr对象状态status=200   readyState = 4
+        //从responseText里面获取相应数据
+        xhr.onreadystatechange = function () {
+            if (xhr.status === 200 && xhr.readyState === 4) {
+                console.log(xhr.responseText);
+                //通过F12  network(网络)查看返回给我的数据是什么值，是什么类型?
+                //如果是字符串，需要转换成对象之后再处理
+                //JSON.parse(str)  将字符串转换成object对象
+
+                let { users } = JSON.parse(xhr.responseText)
+                console.log(users);
+                let flag = false;  //标记：表示用户名是否存在
+                //从users数组（已经注册过的用户）遍历用户名，比较userName是不是存在
+                users.forEach((item, index) => {
+                    if (item.name === userName) {
+                        flag = true;
+                    }
+                });
+                //根据判断结果  对dom元素相应的处理
+                if (flag) {
+                    userSpan.innerHTML = "* 用户名已存在";
+                    userSpan.style.color = "red";
+                } else {
+                    userSpan.innerHTML = "* 用户名可以使用";
+                    userSpan.style.color = "green";
+                }
+            }
+        }
+        //2.3发送请求
+        xhr.send();
+
+    }
+</script>
+
+</html>;

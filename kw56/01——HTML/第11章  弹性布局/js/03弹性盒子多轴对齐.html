@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 20px auto;
+
+            /* 设置大盒子为弹性盒子 */
+            display: flex;
+
+            /* 设置主轴方向 */
+            flex-direction: row;
+
+            /* 设置是否换行 */
+            flex-wrap: wrap;
+
+            /* 换行之后，想让第一行两端对齐，主轴对齐 */
+            justify-content: space-between;
+
+            /* 侧轴对齐 */
+            align-items: center;
+
+            /* align-content属性----多轴对齐方式：（只有设置了flex-wrap：wrap 才有用）
+            flex-start:与交叉轴的起点对齐
+            flex-end:与交叉轴的终点对齐
+            center:与交叉轴的中点对齐
+            space-between:与交叉轴两端对齐，轴线之间的间隔平均分布
+            space-around:每根轴线两侧的间隔都相等，所以轴线之间的间隔比轴线与边框的间隔
+            stretch（默认值）：轴线沾满整个交叉轴，如果高度没有设置才生效 */
+            align-content: space-around;
+        }
+
+        .box div {
+            width: 100px;
+            height: 100px;
+            border: 1px dashed blue;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="small">1</div>
+        <div class="small">2</div>
+        <div class="small">3</div>
+        <div class="small">4</div>
+        <div class="small">5</div>
+        <div class="small">6</div>
+        <div class="small">7</div>
+        <div class="small">8</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 实际支付金额
+        var realMoney;
+        //  获取是否是会员
+        var isVip = prompt("请输入是否是会员：是(y)/否（其他字符）");
+        // 输入购物金额
+        var money = parseFloat(prompt("请输入购物金额："));
+        // 判断：会员打8折  普通用户满100元打9，会员满200元，打7,5折
+        if (isVip === "y") {
+            // 是会员
+            if (money >= "y") {
+                realMoney = money * 0.75;
+            }
+            else { realMoney = money * 0.8; }
+        }
+        else {
+            // 不是会员
+            if (money >= 100) { realMoney = money * 0.9; }
+            else { realMoney = money; }
+        }
+        console.log("实际支付:"+realMoney);
+    </script>
+</body>
+
+</html>

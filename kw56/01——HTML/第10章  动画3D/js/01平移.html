@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 600px;
+            height: 600px;
+            border: 2px solid red;
+            margin: 20px auto;
+            position: relative;
+
+            /* 要想使用3d动画需要先搭建3D平台 */
+            transform-style: preserve-3d;
+            /* 大盒子3D旋转 */
+            /* transform: rotateY(45deg); */
+            /* 景深：眼睛离3d平台的距离 */
+            perspective: 800px;
+        }
+
+        .center {
+            width: 200px;
+            height: 200px;
+            background: blue;
+            /* 设置小盒子在大盒子的正中央 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
+
+            /* 2D平移 */
+            /* transform: translate(100px); */
+            
+            /* 3D平移 */
+            /* transform: translateX(200px); */
+            /* transform: translateY(200px); */
+            /* transform: translateZ(100px); */
+
+            /* 合在一起写： */
+            transform: translate3d(100px,50px,200px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="center"> </div>
+
+    </div>
+</body>
+
+</html>

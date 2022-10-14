@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 4.题目：一球从100米高度自由落下，每次落地后反跳回原高度的一半；再落下，求它在 第10次落地时，共经过多少米？第10次反弹多高
+        var h = 100, length = 100;
+        for (var i = 1; i <= 10; i++) {
+            h = h / 2;
+            length = length + h * 2;
+        }
+        console.log('第10次反弹高度=' + h);
+        console.log('第10次落地时，共经过' + length);
+    </script>
+</body>
+
+</html>

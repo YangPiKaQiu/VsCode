@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 7．按要求编写一个程序：
+    // （1）定义一个类，描述一个矩形，包含有长、宽两种属性和计算面积方法。
+    // （2）编写一个类，继承自矩形类，同时该类描述长方体，具有长、宽、高属性和计算体积的方法.
+
+
+    //父类
+    class Rectangle {
+        constructor(long, wide) {
+            this.long = long;
+            this.wide = wide;
+        }
+        info1() {
+            console.log("长:"+this.long,"宽:"+this.wide,"面积是："+(this.long)*(this.wide));
+        }
+    }
+     //子类 Hezi
+     class Hezi extends Rectangle {
+        constructor(long, wide, height) {
+            super(long, wide);
+            this.height = height;
+        }
+        info2() {
+            this.info1();
+            console.log("高:"+this.height,"长方体的体积是："+(this.long)*(this.wide)*(this.height));
+        }
+    }
+    let bee1 = new Rectangle ("10","5");
+    bee1.info1();
+    let bee2 = new Hezi ("10","8","6");
+    bee2.info2();
+</script>
+</html>

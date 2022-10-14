@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inform {
+            border: 1px solid #000;
+        }
+
+        .inform tr td {
+            border: 1px solid #000;
+            padding: 2px 5px;
+        }
+
+        .inform tbody tr:hover {
+            background: plum;
+        }
+
+        .bg1 {
+            background: plum;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>姓名：</td>
+            <td><input type="text" value=""></td>
+        </tr>
+        <tr>
+            <td>班级：</td>
+            <td><input type="text" value=""></td>
+        </tr>
+        <tr>
+            <td>性别：</td>
+            <td>
+                <input type="radio" name="sex" value="男">男
+                <input type="radio" name="sex" value="女">女
+            </td>
+        </tr>
+        <tr>
+            <td>年龄：</td>
+            <td><input type="text" value=""></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button onclick="addStudent()">增加</button>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table class="inform">
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>班级</td>
+                <td>年龄</td>
+                <td>性别</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+
+        //获取文本框元素
+        let inputText = document.querySelectorAll("[type='text']")//伪数组   3
+        //获取性别按钮
+        let inputSex = document.querySelectorAll("[type='radio']")//伪数组    2
+        //获取增加信息表格节点
+        let tbodyObj = document.querySelector('.inform tbody')
+        for (let i = 0; i < inputSex.length; i++) {
+            inputSex[i].onclick = () => {
+                inputSex[i].setAttribute("checked", "checked")
+            }
+        }
+        function addStudent() {
+            if (inputText[0].value == "" || inputText[1] == "" || inputText[2] == "") {
+                alert("不能添空信息！！！")
+            } else {
+                //创建表格节点
+                let trObj = document.createElement('tr')
+                let userNmae = document.createElement('td')
+                let className = document.createElement('td')
+                let age = document.createElement('td')
+                let sex = document.createElement('td')
+                let operation = document.createElement('td')
+                //插入节点
+                tbodyObj.appendChild(trObj)
+                trObj.appendChild(userNmae)
+                trObj.appendChild(className)
+                trObj.appendChild(age)
+                trObj.appendChild(sex)
+                trObj.appendChild(operation)
+                //新增元素添加值
+                userNmae.innerHTML = inputText[0].value
+                className.innerHTML = inputText[1].value
+                age.innerHTML = inputText[2].value
+                operation.innerHTML = '删除'
+                //性别值取出value
+                for (let i = 0; i < inputSex.length; i++) {
+                    if (inputSex[i].checked) {
+                        sex.innerHTML = inputSex[i].value
+                    }
+                }
+                //鼠标滑动背景变色
+                for (let i = 0; i < trObj.length; i++) {
+                    trObj[i].onmouseover = function () {
+                        this.className = 'bg1'
+                    }
+                    trObj[i].onmouseout = function () {
+                        this.className = ''
+                    }
+                }
+                //增加信息后清除文本内容
+                for (let i = 0; i < inputText.length; i++) {
+                    inputText[i].value = ''
+                }
+                for (let i = 0; i < inputSex.length; i++) {
+                    inputSex[i].removeAttribute("checked")
+                }
+                //增加信息后清除文本框内容
+                operation.onclick = function () {
+                    let confirmObj = confirm('是否确认删除')
+                    if (confirmObj) {
+                        operation.parentNode.remove();
+                    } else {
+                        return 0;
+                    }
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

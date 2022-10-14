@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+  // 2、根据当前日期进行以下方面的处理：
+    // 1、取得日期的年份、月份、天、时、分、秒，并转换成大写日期格式
+    // 如：2013年8月17日 20时30分20秒
+    let t = new Date();
+    let year = t.getFullYear();
+    let month = t.getMonth() + 1;
+    let day = t.getDate();    
+
+    let hour = t.getHours();
+    let min = t.getMinutes();
+    let sec = t.getSeconds();
+    console.log(year+"年"+month+"月"+day+"日",hour+"时"+min+"分"+sec+"秒");
+</script>
+</html>

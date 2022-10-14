@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 4.从键盘上输入10个整数，合法数字1，2或3，不是这三个数则为非法数字。试编程统计每个整数和非法数字的个数.
+
+        var arr = [];
+        var count=0;
+        for (var i = 0; i < 10; i++) {
+            arr[i] = Number(prompt("请输入10个整数:"));
+            if(arr[i] == 1 ||arr[i] == 2 || arr[i] == 3){
+                count++;
+                continue;
+            }
+        }
+        console.log(arr);
+        console.log("非法数字个数为:"+count);
+        
+
+    </script>
+</body>
+
+</html>

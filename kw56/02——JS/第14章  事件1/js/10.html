@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        body {
+            height: 100vh;
+            background: radial-gradient(circle at center, grey, #ccc);
+        }
+
+        .box {
+            width: 800px;
+            margin: 20px auto;
+            position: relative;
+
+        }
+
+        .box .img img {
+            width: 100%;
+        }
+
+        .pageBtn ul {
+            display: flex;
+            position: absolute;
+            left: 50%;
+            bottom: 15px;
+            transform: translate(-50%);
+        }
+
+        .pageBtn li {
+            background-color: #ccc;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+
+        .box .arrow {
+            width: 40px;
+            height: 60px;
+            color: white;
+            font-size: 50px;
+            line-height: 50px;
+            position: absolute;
+            /* bottom: calc(50% - 50px); */
+        }
+
+        .box .arrow.left {
+            left: 0px;
+        }
+
+        .box .arrow.right {
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="img">
+            <img src="http://p1.music.126.net/o0rWz14wMg91goAxoiTB1g==/109951167910437806.jpg?imageView&quality=89"
+                alt="">
+        </div>
+        <div class="pageBtn">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="arrowDiv">
+            <div class="arrow left">&lt;</div>
+            <div class="arrow right">&gt;</div>
+        </div>
+    </div>
+</body>
+<script>
+    let imgs = [
+        "http://p1.music.126.net/o0rWz14wMg91goAxoiTB1g==/109951167910437806.jpg?imageView&quality=89",
+        "http://p1.music.126.net/tR939G_a4tBKxT_cREx4WA==/109951167910212919.jpg?imageView&quality=89",
+        "http://p1.music.126.net/dPbrJrqz7NkyAAT7_VrobQ==/109951167910227751.jpg?imageView&quality=89",
+        "http://p1.music.126.net/NlamHrVcmTU1oQVNZbSk3Q==/109951167910226366.jpg?imageView&quality=89",
+        "http://p1.music.126.net/9Hi4LhNMl-T-6UJMx8mYIA==/109951167910232337.jpg?imageView&quality=89",
+        "http://p1.music.126.net/DeRHQu61-Y_vbQK3-lCmIA==/109951167910792262.jpg?imageView&quality=89",
+        "http://p1.music.126.net/I7yjbkLsulRowBxhfLMMMw==/109951167910234930.jpg?imageView&quality=89",
+        "http://p1.music.126.net/_7DLwMLGOx3ApEWy9nCBkg==/109951167910245692.jpg?imageView&quality=89"
+    ]
+
+</script>
+
+</html>

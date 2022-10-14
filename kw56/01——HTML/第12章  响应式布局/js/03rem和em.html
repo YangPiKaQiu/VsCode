@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        html {
+            font-size: 36px;
+        }
+
+        div {
+            line-height: 100px;
+        }
+
+        .father {
+            font-size: 12px;
+        }
+
+        .c1 {
+            /* 根据根元素html字体大小进行相对设置 */
+            font-size: 1rem;
+        }
+
+        .c2 {
+              /* 根据父元素的字体大小进行相对设置 */
+            font-size: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="c1">哈哈哈哈</div>
+        <div class="c2">呵呵呵呵</div>
+    </div>
+</body>
+
+</html>

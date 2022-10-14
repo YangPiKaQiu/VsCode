@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javaScript">
+       var vip=8349;
+       var num="vip";
+       console.log("请输入4位会员卡号:"+"\n");
+       gw=parseInt(vip%10);
+       sw=parseInt(vip%100/10);
+       bw=parseInt(vip%1000/100);
+       qw=parseInt(vip/1000);
+       sum=parseInt(gw+sw+bw+qw);
+       console.log("会员卡号是："+vip+"\n"
+                   +"千位数："+qw+"\n"
+                   +"百位数："+bw+"\n"
+                   +"十位数："+sw+"\n"
+                   +"个位数："+gw+"\n"
+                   +"会员卡号8349各位之和:"+sum);
+    </script>
+</body>
+</html>

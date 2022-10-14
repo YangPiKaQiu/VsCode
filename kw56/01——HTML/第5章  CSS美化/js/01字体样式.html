@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* font-size 字体大小
+    font-weight 字体粗细
+    font-style 字体风格
+    font-family 字体类型 */
+    p:nth-of-type(1) {
+        font-size: 12px;
+    }
+
+    /* 字体加粗值有多种写法：1.关键字(bold bolder light )2.磅值 100- 900 700等价bold 400等价 */
+    p:nth-of-type(2) {
+        font-weight: bold;
+    }
+
+    /* 字体风格：倾斜  正常 */
+    p:nth-of-type(3) {
+        font-style: italic;
+    }
+
+    /* 字体类型：如果同时设置中文字体和西文字体,西文类型放前面,中文类型放后面 
+    可以鞋多个字体类型，如果前面 的类型无法获取，用后面的类型替代*/
+    p:nth-of-type(4) {
+        font-family: "隶书""宋体";
+        /* 字体颜色 */
+        color: red;
+    }
+
+    /* 第二个p元素设置font属性
+     font属性一次性将字体的属性全部设置,但是要注意顺序
+     样式-=粗细--大小--类型   */
+    p:nth-of-type(5) {
+        font: italic bold 40px"楷体";
+    }
+</style>
+
+<body>
+    <p>学海无涯苦作舟</p>
+    <p>书山有路勤为径</p>
+    <p>教育改变生活</p>
+    <p>躺平strive</p>
+    <p>无语</p>
+</body>
+
+</html>

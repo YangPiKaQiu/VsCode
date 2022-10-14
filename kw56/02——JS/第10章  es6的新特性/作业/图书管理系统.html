@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书馆管理系统</title>
+</head>
+
+<body>
+    <script>
+        /*作业：
+图书类  Book
+属性： 
+bookNo    图书编号
+name       图书名称
+category  图书分类
+author   作者
+price   价格
+totalCount   库存总数
+方法：
+入库：（新增）
+addBook()      类似订单的点餐功能
+查询全部:    
+findBook()    类似订单的查看餐袋功能
+查询是否存在某个书籍
+findByName()   
+录入一个你要查看的图书的名称，遍历整个图书数组，
+查看是否存在，给出提示：存在或者不存在
+删除：
+delBook()  
+借阅:
+lendBook()
+1.判断你选择的图书是否存在
+2.查看图书库存数量，如果小于1，给出提示：库存不足
+否则：提示结束成功，并且库存数量减 1
+还书：
+1.查看选择的图书是否存在
+2.给对应的图书库存+1
+退出系统
+quit()
+要求：
+1.使用对象数组存放数据
+2.使用方法封装功能
+3.使用类模板进行功能的封装*/
+
+        class Book {         //创建书 类
+            bookList = [];      //创建书库列表
+            init() {
+                this.bookList = [
+                    {
+                        "name": "Java",
+                        "category": "技术开发",
+                        "author": "囍",      //作者
+                        "price": 80,            //价格
+                        "totalCount": 1,         //库存
+                        "Borrow": 1      //是否借出 借出0 可借 1
+                    },
+                    {
+                        "name": "前端开发",
+                        "category": "技术开发",
+                        "author": "歡",
+                        "price": 40,
+                        "totalCount": 0,
+                        "Borrow": 6
+                    }
+                ];
+            }
+            addBook() {
+                console.log("-----新增图书-----");
+                let bookName = prompt("请输入书名");
+                for (let i = 0; i < this.bookList.length; i++) {  //遍历图书是否存在
+                    if (this.bookList[i] === bookName) {
+                        this.bookList[i].totalCount = this.bookList[i].totalCount + 1;   //存在则库存+1
+                        console.log('图书添加成功，库存为' + this.bookList[i].totalCount);
+                    }
+                }
+                let bookCategory = prompt("请输入类型");   //不存在继续下面操作
+                let bookAuthor = prompt("请输入作者");
+                let bookPrice = +prompt("请输入价格");
+                this.totalCount = 0;
+                let list = {                           //创建书列信息
+                    'name': bookName,            //后面变量都是你输入的
+                    'category': bookCategory,
+                    'author': bookAuthor,
+                    'price': bookPrice,
+                    'totalCount': this.totalCount + 1,
+                    'Borrow': 1
+                }
+                this.bookList.push(list);    //把信息增加到数组最后
+                console.log("-----新增图书成功！-----");    //增加完打印出书本信息
+                console.log(`书名 类型 作者 价格 库存 状态`);
+                console.log(`${list.name}\t ${list.category}\t ${list.author}\t ${list.price}\t ${list.totalCount}\t ${list.Borrow == 0 ? '不可借' : '可借'}`);
+            }
+
+            findBook() {      //查看书库，先循环遍历所有书本输出
+                console.log("-----查看书库-----");
+                console.log(`编号  书名   类型   作者   价格   库存   状态`);
+                for (let i = 0; i < this.bookList.length; i++) {
+                    console.log(`${i + 1}\t${this.bookList[i].name}\t${this.bookList[i].category}\t${this.bookList[i].author}\t${this.bookList[i].price}\t ${this.bookList[i].totalCount}\t${this.bookList[i].Borrow == 0 ? '不可借' : '可借'}`);
+                }
+
+            }
+
+            findByName() {//查找书本
+                console.log('-----查找图书-----');
+                let findBook = prompt("请输入您要查找的图书");
+                for (let i = 0; i < this.bookList.length; i++) {//遍历书库查看书本是否存在
+                    if (this.bookList[i].name === findBook) {//如果存在打印出书本信息
+                        console.log(`${i + 1}\t${this.bookList[i].name}\t${this.bookList[i].category}\t${this.bookList[i].author}\t${this.bookList[i].price}\t ${this.bookList[i].totalCount}\t${this.bookList[i].Borrow == 0 ? '不可借' : '可借'}`);
+                        return;
+                    }
+                }
+                alert('---查找的书本不存在！---');
+            }
+            delBook() {
+                console.log("-----删除图书-----");
+                let delBooks = prompt("请输入您要删除的图书");
+                for (let i = 0; i < this.bookList.length; i++) {//遍历所有数据查看书本是否借出，借出不能删除，否则删除
+                    if (this.bookList[i].condition === 0) {
+                        console.log("图书已借出，不能删除！");
+                        return;
+                    } else if (this.bookList[i].name === delBooks) {
+                        this.bookList.splice(i, 1);//该数组以对象形式存储数组，删除第一个即可
+                        console.log("图书已删除！");
+                        return;
+                    }
+                }
+            }
+            lendBook() {
+                console.log("-----借出图书-----");
+                let lendBooks = prompt("请输入需要借出的书名");
+                for (let i = 0; i < this.bookList.length; i++) {
+                    if (this.bookList[i].name === lendBooks) {//首先查看你输入的书本是否存在，存在继续下面操作
+                        if (this.bookList[i].Borrow === 0) {//库存为零，图书已借出
+                            console.log("对不起，图书已借出!");
+                            return;
+                        }
+                        if (this.bookList[i].totalCount >= 1) {//库存大于1的则借出库存-1
+                            this.bookList[i].totalCount = this.bookList[i].totalCount - 1;
+                            this.bookList[i].Borrow = 1;
+                            console.log("图书借出成功！");
+                            return;
+                        }
+
+                    }
+                }
+                console.log("对不起，您要找的图书不存在！")
+
+            }
+            returnBook() {
+                console.log("------归还图书------");
+                let returnBooks = prompt("请输入需要归还的书名");
+                for (let i = 0; i < this.bookList.length; i++) { //遍历书库，找到书名库存+1
+                    if (this.bookList[i].name === returnBooks) {
+                        this.bookList[i].totalCount = this.bookList[i].totalCount + 1;
+                        this.bookList[i].Borrow = 1;
+                        console.log("图书归还成功！");
+                        return;
+                    }
+                }
+                console.log("对不起，您要找的图书不存在！")
+            }
+
+            loginBook() {
+                do {
+                    let choice = +prompt(
+                        `
+                欢迎使用“图书管理系统”
+                ****************************
+                1、新增图书
+                2、查看库存
+                3、查找图书
+                4、删除图书
+                5、借出图书
+                6、归还图书
+                7、退出系统
+                ****************************
+                请选择：  
+               `);
+                    switch (choice) {
+                        case 1:
+                            this.addBook();//调用对象函数
+                            continue;
+                        case 2:
+                            this.findBook();
+                            continue;
+                        case 3:
+                            this.findByName();
+                            continue;
+                        case 4:
+                            this.delBook();
+                            continue;
+                        case 5:
+                            this.lendBook();
+                            continue;
+                        case 6:
+                            this.returnBook();
+                            continue;
+                        case 7:
+                            console.log("-----退出系统-----");
+                            break;
+                    }
+                    break;
+                } while (true)
+            }
+        }
+        let star = new Book();  //构造对象
+        star.init();
+        star.loginBook();
+        console.log("程序结束！");
+
+    </script>
+</body>
+
+</html>

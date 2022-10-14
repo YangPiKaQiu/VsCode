@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+
+    //订单信息
+    var names = ['daidi', 'haha1'];
+    var disMegs = ['全家桶', '咖啡'];
+    var times = [13, 14];
+    var addresses = ['江苏警官学院', '大学陈'];
+    var states = [1, 0];
+    var sumPrices = [99, 52.0];
+    //菜品信息
+    var dishNames = ['全家桶', '咖啡', '炸鸡腿', '比欺凌'];
+    var prices = [99, 52, 9.9, 13];
+    var praiseNums = [0, 10, 0, 3, 6];
+    //框架结构
+    do {
+        //使用es6语法
+        var choice;
+        choice = +Number(prompt(`
+               欢迎使用“吃货联盟订餐系统”
+               ***************************
+               1、我要订餐
+               2、食右餐袋
+               3、签收订单
+               4、删除订单
+               5、我要点赞
+               6、退出系统
+               7. 新品上架
+               ****************************
+               请选择:
+               `));
+        switch (choice) {
+            case 1:
+                wydc();
+                continue;
+            case 2:
+                spcd();
+                continue;
+            case 3:
+                qsdd();
+                continue;
+            case 4:
+                scdd();
+                continue;
+            case 5:
+                wydz();
+                continue;
+            case 6: console.log("========退出系统========="); break;
+            case 7:
+                xpsj();
+                continue;
+        }
+        break;
+    } while (true)
+
+    function wydc() {
+        console.log("========我要订餐========");
+        var yourName = Number(prompt('请输入订餐人姓名：'));
+        //展示信息
+        console.log(`序号\t菜名\t单价\t点赞数`);
+        for (let i = 0; i < dishNames.length; i++) {
+            console.log(`${i + 1}\t${dishNames[i]}\t${prices[i]}\t${praiseNums[i + 1]}`);
+        }
+        //选择菜品名
+        let yourDishNo = +prompt('请选择您要点的菜品编号:');
+        while (yourDishNo > dishNames.length || yourDishNo < 1) {
+            yourDishNo = +prompt("对不起您点的菜我么没有，请重新输入");
+        }
+        //选择分数
+        let yourChoiceCount = +prompt('请选择你的份数：');
+        let yourdisMegs = dishNames[yourDishNo - 1] + " " + yourChoiceCount + " ";
+        let yourTime = +prompt('请输入送餐时间（在 10点到20点):');
+        while (yourTime > 20 || yourTime < 10) {
+            yourTime = +prompt('您输入的时间不在 10点到20点:');
+        }
+        //选择地址
+        let yourAddress = prompt('请输入送餐地址：');
+        //后台做核算(餐费大于50免配送费 否则 配送费6)
+        let yourCash = prices[yourDishNo - 1] * yourChoiceCount > 50 ? 0 : 6;
+        let yourTotaPrice = prices[yourDishNo - 1] * yourChoiceCount + yourCash;
+        names.push(yourName);
+        disMegs.push(yourdisMegs);
+        times.push(yourAddress);
+        states.push(0);
+        sumPrices.push(yourTotaPrice);
+        console.log('订餐完成！');
+        console.log(`
+                       ---------------------------------
+                       您点餐是：${yourdisMegs}
+                       送餐时间：${yourTime}
+                       餐费：${prices[yourDishNo - 1] * yourChoiceCount}元，送餐费：${yourCash}元,总价：${yourTotaPrice}
+                       ---------------------------------
+                       `)
+    }
+    function spcd() {
+        console.log("========查看餐带=========");
+        console.log(`序号 订餐人  参评信息  送餐日期   送餐地址   总金额   订单状态 `);
+        for (let i = 0; i < names.length; i++) {
+            console.log(`${i + 1} \t ${names[i]} \t ${disMegs[i]} \t${times[i]}\t ${addresses[i]} \t ${sumPrices[i]}元 \t ${states[i] == 0 ? '已预订' : '已完成'}`);
+        }
+    }
+    function qsdd() {
+        console.log("========签收订单=========");
+        let yourSigNo = +prompt("请选择要签收的订单序号:");
+        //判断订单数组里有没有数据
+        if (names.length === 0) {
+            console.log("没有订单，输入错误！");
+        } else {
+            while (yourSigNo > names.length || yourSigNo < 1) {
+                console.log("您所选的订单不存在，请重新订单序号");
+                yourSigNo = +prompt("请选择要签收的计单序号:");
+            }
+            //判断订单是否已签收,已签收就不能再次签收给出提示
+            if (states[yourSigNo - 1] === 1) {
+                console.log("您选择的订单已完成签收，不能再次签收!");
+            } else {
+                //可以被签收，修改状态
+                states[yourSigNo - 1] = 1;
+                console.log("签收完成，感谢您的配合!");
+            }
+        }
+    }
+    function scdd() {
+        console.log("========删除订单=========");
+        let yourSigNo2 = +prompt("请选择要签收的订单序号:");
+        if (names.length === 0) {
+            console.log("没有订单，输入错误！");
+        } else {
+            while (yourSigNo2 > names.length || yourSigNo2 < 1) {
+                console.log("您所选的订单不存在，请重新订单序号");
+                yourSigNo2 = +prompt("请选择要删除计单序号:");
+            }
+            //判断订单是否已签收,已签收就不能再次签收给出提示
+            if (states[yourSigNo2 - 1] === 0) {
+                console.log("签收未完成，不能删除订单!");
+            } else {
+                names.splice(yourSigNo2 - 1, 1);
+                disMegs.splice(yourSigNo2 - 1, 1);
+                times.splice(yourSigNo2 - 1, 1);
+                addresses.splice(yourSigNo2 - 1, 1);
+                states.splice(yourSigNo2 - 1, 1);
+                sumPrices.splice(yourSigNo2 - 1, 1);
+                console.log('订单删除完成！');
+            }
+        }
+    }
+    function wydz() {
+        console.log(`序号\t菜名\t单价\t点赞数`);
+        for (let i = 0; i < dishNames.length; i++) {
+            console.log(`${i + 1}\t${dishNames[i]}\t${prices[i]}\t${praiseNums[i + 1]}`);
+        }
+        console.log(`序号 订餐人  参评信息  送餐日期   送餐地址   总金额   订单状态 `);
+        for (let i = 0; i < names.length; i++) {
+            console.log(`${i + 1} \t ${names[i]} \t ${disMegs[i]} \t${times[i]}\t ${addresses[i]} \t ${sumPrices[i]}元 \t ${states[i] == 0 ? '已预订' : '已完成'}`);
+        }
+        console.log("========我要点赞=========");
+        let yourSigNo3 = +prompt("请选择要签收的订单序号:");
+        if (names.length === 0) {
+            console.log("没有订单，输入错误！");
+        } else {
+            while (yourSigNo3 > names.length || yourSigNo3 < 1) {
+                console.log("您所选的订单不存在，请重新订单序号");
+                yourSigNo3 = +prompt("请选择要删除计单序号:");
+            }
+            //判断订单是否已签收,已签收就不能再次签收给出提示
+            if (states[yourSigNo3 - 1] === 0) {
+                console.log("签收未完成，不能点赞!");
+            } else {
+                var praisestr = prompt('请输入点赞:')
+                let numb = praiseNums[yourSigNo3 - 1];
+                praiseNums.splice(yourSigNo3 - 1, 1, numb + 1);
+                console.log(`
+                               ----点赞成功-----  ${praisestr}
+                                `);
+            }
+        }
+    }
+    function xpsj() {
+        console.log("========新品上架=========");
+        console.log(`序号\t菜名\t单价\t点赞数`);
+        for (let i = 0; i < dishNames.length; i++) {
+            console.log(`${i + 1}\t${dishNames[i]}\t${prices[i]}\t${praiseNums[i + 1]}`);
+        }
+        var newdishNames = prompt('请输入新菜品名：');
+        var newprices = +prompt('请输入菜品价格：');
+        if (dishNames.includes('newdishNames')) {
+            dishNames.push(newdishNames);
+            prices.push(newprices);
+            console.log(`
+   
+                           ==========新菜单如下=========
+   
+                           `);
+            console.log(`序号\t菜名\t单价\t点赞数`);
+            for (let i = 0; i < dishNames.length; i++) {
+                console.log(`${i + 1}\t${dishNames[i]}\t${prices[i]}\t${praiseNums[i + 1]}`);
+            }
+            console.log(`
+                           ====添加成功====
+                       `);
+        } else {
+            console.log('您输入的菜品已存在，请重新输入！！');
+        }
+    }
+</script>
+
+</html>

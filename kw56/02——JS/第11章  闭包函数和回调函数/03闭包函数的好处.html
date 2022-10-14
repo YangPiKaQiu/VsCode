@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //一个函数里面再定义一个函数，返回值是里面的函数，再函数的外部通过一种函数表达式的方式调用
+    function out(a, b) {
+        function inner() {
+            //内层函数返回a和b的和
+            return a + b;
+        }
+        // inner();     在函数内部调用内部函数是可以的 
+        //外层函数返回inner()函数
+        console.log(inner);
+        return inner;
+    }
+
+    //函数外部定义两个变量
+    let num1 = 100, num2 = 50;
+
+    //函数表达式方式获取内部函数
+    //形成闭包:再闭包里面num1 =100 num2=50封装的，一直保存再内存中
+    let result = out(num1, num2);
+    console.log(result());
+
+    //修改外部变量
+    num1 = 999, num2 = 666;
+    console.log(result());
+
+    let result2 = out(num1, num2);
+    console.log(result2());
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{ width: 500px;
+            height: 500px;
+            /* 给div添加背景色 */
+            background-color: black;
+            /* 给div添加背景图片 */
+            background-image: url(../image/1.jpg);
+            /* 给div背景图片去掉重复平铺 */
+            background-repeat: no-repeat;
+            /* 给div背景图片定位 */
+            background-position: center  center;
+
+
+              /* 小结：背景色放在背景图片的下面
+           添加一个背景图片需要三个相关的属性
+           1.背景图片
+           2.背景重复
+           3.背景定位 */
+
+           /* 将以上4个属性合在一起写 */
+           /* 属性值之间用空格隔开
+           没有顺序 */
+           /* background: blue center center no-repeat url(../image/icon.gif); */
+           background: blue 70px 0% no-repeat url(../image/icon.gif);
+             /* 设置定位位置：
+              1.像素值
+              2.关键字 left right top bottom center
+              3.百分比  (x轴或者y轴百分比)*/        
+              
+            /* 背景图片尺寸 
+            auto 默认值
+            contain 填充的时候，等比例缩放
+            cover：覆盖
+            percentage 百分比根据元素的宽度来计算
+            */
+          background-size: 50%;
+
+        }    
+    </style>
+</head>
+<body>
+    <!-- div元素：块元素,里面可以放其他的块元素和行元素 -->
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 8.打印水仙花数，所谓水仙花数是指一个三位数，其各位数字立方和等于该数本身。
+        // 例如：153是一个水仙花数，因为153=1的三次方+5的三次方+3的三次方。
+        // (数字范围：100-999）
+        // (1)提示：Math.pow(double a,double b) 获得a的b次方
+
+
+        for (var i = 100; i <= 999; i++) {
+            var a=Math.pow(parseInt(i / 100), 3);
+            var b= Math.pow(parseInt(i % 10), 3);
+            var c=Math.pow(parseInt(i % 100 / 10), 3);
+            if (i==(a+b+c)){
+                document.write(i+"<br/>");
+            }
+      }
+
+    </script>
+</body>
+
+</html>

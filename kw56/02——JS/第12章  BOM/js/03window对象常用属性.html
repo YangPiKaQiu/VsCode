@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //window对象 history属性
+        console.log(window.history);
+        console.log(window.history.length);
+        console.log(history.length);
+    
+        //window对象 location属性
+        console.log(window.location.href);
+
+        //页面跳转
+        // window.location.href="http://www.taobao.com/"
+        function gotoTao(){
+            window.location.href="http://www.taobao.com/"
+        }
+       
+    </script>
+</head>
+<body>
+    <button onclick="gotoTao()">淘宝</button>
+</body>
+</html>

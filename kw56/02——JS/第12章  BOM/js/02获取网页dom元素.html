@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 空白节点  node-->
+    <!-- 文本节点 -->
+    <!-- 元素节点 -->
+    <div id="haha">娃哈哈</div>
+    <input type="checkbox" name="sports" value="水球">
+    <input type="checkbox" name="sports" value="曲棍球">
+    <input type="checkbox" name="sports" value="橄榄球">
+    <input type="checkbox" name="sports" value="足球">
+
+
+    <!-- p标签 -->
+    <p>段落一</p>
+    <p>段落二</p>
+    <p>段落三</p>
+</body>
+
+<script>
+    // xml  可扩展的标记语言
+    // html   超文本标记语言
+    // <p> </p>  标签结构编程
+    // 根：root   分支：
+    // document对象：保存html页面的所有元素的信息
+
+    //如何根据document对象来找到里面的id="haha"的元素
+    console.log(window.document);
+
+    //1.根据元素的id找到那个元素对象
+    let divHaHa = document.getElementById("haha");
+    console.log(divHaHa);
+    //改变里面的文本内容
+    divHaHa.innerHTML = "北大青鸟";
+
+    //2.根据name属性获取一组元素
+    let sportsObj = document.getElementsByName("sports");
+    console.log(sportsObj);
+    for (let i = 0; i < sportsObj.length; i++) {
+        console.log(sportsObj[i].value);
+        //勾选value值是橄榄球的运动
+        if (sportsObj[i].value === "橄榄球") {
+            sportsObj[i].checked = true;
+        }
+    }
+
+    //3.根据标签名获取相关元素
+    let pObjs = document.getElementsByTagName("p");
+    console.log(pObjs);
+    for (let i = 0; i < pObjs.length; i++) {
+        console.log(pObjs[i].innerHTML); //获取文本内容
+    }
+
+</script>
+
+</html>

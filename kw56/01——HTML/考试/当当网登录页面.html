@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .box {
+            width: 100%;
+            width: 1500px;
+            margin: auto;
+            margin-top: 100px;
+            border-top: 1px #ccc solid;
+            border-bottom: 1px #ccc solid;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .header ul {
+            display: flex;
+            font-size: 10px;
+            color: #ccc;
+        }
+
+        .header ul li a {
+            text-decoration: none;
+            color: #3779B4;
+            padding: 5px;
+        }
+
+        .box2 {
+            display: flex;
+        }
+
+        .box3 {
+            border: 1px solid rgb(163, 162, 162);
+            width: 400px;
+        }
+
+        .box3 p:nth-of-type(1) {
+            color: #A72020;
+            font-weight: bold;
+            margin: 10px 10px;
+        }
+
+        .box2>img:nth-of-type(1) {
+            width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="header">
+            <div class="box1">
+                <img src="img/logo.gif" alt="">
+                <img src="img/site_sign.gif" alt="">
+            </div>
+            <ul>
+                <li><a href="#">首页</a>|</li>
+                <li><a href="#">商品展示页</a>|</li>
+                <li><a href="#">购物车</a>|</li>
+                <li><a href="#">注册</a></li>
+            </ul>
+        </div>
+        <div class="box2">
+            <img src="img/main_image.jpg" alt="">i--
+            
+            <div class="box3">
+                <p><img src="img/login_lock.gif" alt="">&nbsp;请登录当当网</p>
+                <p> Email地址或昵称：<input type="text" name="" value=""></p>
+                <p> 密码：<input type="text" name="" value=""></p>
+                <p>登录</p>
+                <div class="box4">
+                    还不是当当用户？快捷方便的免费注册,让你尽享当当网提供的条项优惠服务......
+                </div>
+                <p>快速注册新用户</p>
+            </div>
+            <img src="img/main_img_bg.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

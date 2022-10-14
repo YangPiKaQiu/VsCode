@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var nums = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+        var nums2 = [];
+        //1.forEach()  高阶函数
+        //1):利用forEach() 打印数组元素
+        //2):复制新数组和nums里面的值相同（真克隆）
+        var max=nums[0];
+        nums.forEach(function (item, index) {
+            // console.log(item, index);
+            //将nums的元素复制给nums2
+            // nums2[index] = item;
+            //找最大的元素
+            if (max < item) {
+                max = item;
+            }
+        })
+        console.log(nums);
+        console.log(nums2);
+        console.log(max);
+
+
+        //假克隆(引用传递  传递指针)
+        var nums3 = nums;
+        console.log(nums3);
+
+        nums3[0] = 8080;
+        console.log(nums);
+
+        //值传递（基本类型数据  传递的是值）
+        var a = 108;
+        var b = a;
+        console.log(a, b);
+        b = 200;
+        console.log(a, b);
+
+    </script>
+</body>
+
+</html>

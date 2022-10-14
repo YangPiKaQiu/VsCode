@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    // 1．写一个应用程序，主要是体现父类子类间的继承关系。
+    // 父类：鸟，子类：麻雀、鸵鸟、鹰。子类继承父类的一些特点，
+    // 如都是鸟的话就都会有翅膀、两条腿等，但它们各自又有各自的
+    // 特点，如麻雀的年龄、体重；鸵鸟的身高、奔跑速度；鹰的捕食、
+    // 飞翔高度等,创建各个子类的实例，并打印信息.
+
+
+
+    //父类
+    class Bird {
+        constructor(wing, legs) {
+            this.wing = wing;
+            this.legs = legs;
+        }
+        info1() {
+            console.log(`鸟有${this.wing}个头,${this.legs}条腿`);
+        }
+    }
+
+    //子类
+    //麻雀：Sparrow
+    class Sparrow extends Bird {
+        constructor(age, weight) {
+            super(2, 2);
+            this.age = age;
+            this.weight = weight;
+        }
+        info2() {
+            console.log(`麻雀${this.age}岁,体重是：${this.legs}斤`);
+        }
+    }
+    //鸵鸟：Ostrich
+    class Ostrich extends Bird {
+        constructor(height, run) {
+            super(2, 2);
+            this.height = height;
+            this.run = run;
+        }
+        info3() {
+            console.log(`鸵鸟的身高是：${this.height},奔跑速度是：${this.run}`);
+        }
+    }
+    //鹰：Eagle
+    class Eagle extends Bird {
+        constructor(predation, fly) {
+            super(2, 2);
+            this.predation = predation;
+            this.fly = fly;
+        }
+        info4() {
+            console.log(`鹰捕食：${this.predation},飞翔高度是：${this.fly}`);
+        }
+    }
+
+    let birdName1 = new Sparrow("3", "1");
+    birdName1.info2();
+
+    let birdName2 = new Ostrich("1米5", "20km/h");
+    birdName2.info3();
+
+    let birdName3 = new Eagle("蛇", "20km");
+    birdName3.info4();
+
+</script>
+
+</html>

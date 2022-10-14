@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="font-1/iconfont.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            height: 170px;
+            background-color: #222939;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header .box1 {
+            height: 50px;
+            /* border: 1px solid red; */
+            display: flex;
+            flex-direction: row;
+
+            /* 设置主轴对齐 */
+            justify-content: space-between;
+
+            /* 设置侧轴对齐 */
+            align-items: center;
+        }
+
+        .iconfont {
+            color: white
+        }
+
+        header .box1 div {
+            padding: 4px;
+            width: 10%;
+            /* border: 1px solid red; */
+            font-size: 25px;
+        }
+
+        .box1 div:nth-of-type(1) {
+            font-size: 33px;
+        }
+
+        header .box1 span {
+            color: white;
+            flex: 1;
+            padding: 10px;
+        }
+
+        header .box2 {
+            /* border: 1px solid yellow; */
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        header .box2 div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            align-items: center;
+        }
+
+        header .box2 div .iconfont {
+            font-size: 45px;
+        }
+
+        header .box2 div span {
+            margin-top: 10px;
+        }
+
+        header .box2 div i img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        content {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+        }
+
+        section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        section .content {
+            height: 265px;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        section .content div {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            border: 1px solid rgb(236, 234, 234);
+        }
+
+        .items .iconfont {
+            /* color: red; */
+            font-size: 25px;
+        }
+
+        .items span {
+            font-size: 10px;
+            margin-top: 5px;
+        }
+
+        .ground {
+            height: 15px;
+            background-color: #F5F5F5;
+        }
+
+        footer {
+            height: 60px;
+            background-color: #f9fbfc;
+        }
+
+        .backpic {
+            background: url(img/001.jpg) no-repeat;
+            flex: 1;
+            background-size: cover;
+            position: relative;
+        }
+
+        .backpic ul {
+            width: 65px;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            /* 移动自身的把百分之五十，左负右正 */
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /*  */
+        .backpic ul li {
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            background-color: gray;
+            border-radius: 50%;
+            margin: 5px 5px;
+        }
+
+        .backpic ul li:hover {
+            background-color: #25B0F3;
+        }
+
+        .contain {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .contain div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: #D2D3D5;
+            align-items: center;
+        }
+
+        .contain div .iconfont {
+            color: #D2D3D5;
+            font-size: 45px;
+            font-size: 30px;
+            margin-top: 5px;
+        }
+
+        .contain div span {
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+        .contain div:hover {
+            color: #25B0F3;
+        }
+
+        .contain div .iconfont:hover {
+            color: #25B0F3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="box1">
+            <div class="icon iconfont icon-zhangdan"></div>
+            <span>账单</span>
+            <div class="icon iconfont icon-zhanghubaobiao"></div>
+            <div class="icon iconfont icon-Magnifier"></div>
+            <div class="icon iconfont icon-jiahao"></div>
+        </div>
+        <div class="box2">
+            <div><i class="icon iconfont icon-saoyisao"></i><span>扫一扫</span></div>
+            <div><i class="icon iconfont icon-zhengzhouyinhangAPPtubiaodiergaolunkuohuachunse-10"></i><span>付款</span>
+            </div>
+            <div><i class="icon iconfont icon-qiaquan"></i><span>卡券</span></div>
+            <div><i><img src="img/1.bmp" alt=""></i><span>咻一咻</span></div>
+        </div>
+    </header>
+    <section>
+        <div class="content">
+            <div class="items">
+                <i class="icon iconfont icon-xinyongqia" style="color:#F2B65E;"></i>
+                <span>信用卡还款</span>
+            </div>
+
+            <div class="items">
+                <i class="icon iconfont icon-jizhangben" style="color:#25B0F3;"></i>
+                <span>记账本</span>
+            </div>
+
+            <div class="items">
+                <i class="icon iconfont icon-gupiao" style="color:#D26F74;"></i>
+                <span>股票</span>
+            </div>
+
+            <div class="items">
+                <i class="icon iconfont icon-jisuanqi_o" style="color:#25B0F3;"></i>
+                <span>理财小工具</span>
+            </div>
+
+            <div class="items">
+                <i class="icon iconfont icon-taobao" style="color:#D26F74;"></i>
+                <span>淘宝</span>
+            </div>
+
+            <div class="items">
+                <i class="icon iconfont icon-youxichongzhi" style="color:#D26F74;"></i>
+                <span>游戏充值</span>
+            </div>
+
+            <div class="items">
+                <i class="icon iconfont icon-qinmifu" style="color:#D26F74;"></i>
+                <span>亲密付</span>
+            </div>
+
+            <div class="items">
+                <i class="icon iconfont icon-jipiao" style="color:#25B0F3;"></i>
+                <span>机票火车票</span>
+            </div>
+
+            <div class="items">
+                <i class="icon iconfont icon-huafei" style="color:#25B0F3;"></i>
+                <span>手机充值</span>
+            </div>
+
+            <div class="items">
+                <i class="icon iconfont icon-zhuanzhang" style="color:#25B0F3;"></i>
+                <span>转账</span>
+            </div>
+
+            <div class="items">
+                <i class="icon iconfont icon-koubei1" style="color:#D26F74;"></i>
+                <span>口碑外卖</span>
+            </div>
+
+            <div class="items">
+                <i class="icon iconfont icon-lvxing" style="color:#25B0F3;"></i>
+                <span>阿里旅行</span>
+            </div>
+        </div>
+        <div class="ground"></div>
+        <div class="backpic">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="contain">
+            <div><i class="icon iconfont icon-zhifubao"></i><span>支付宝</span></div>
+            <div><i class="icon iconfont icon-koubei1"></i><span>口碑</span></div>
+            <div><i class="icon iconfont icon-pengyou"></i><span>朋友</span></div>
+            <div><i class="icon iconfont icon-zhuanzhang"></i><span>我的</span></div>
+        </div>
+    </footer>
+</body>
+
+</html>

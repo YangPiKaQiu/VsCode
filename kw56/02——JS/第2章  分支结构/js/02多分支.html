@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 需求三：小明考试超过90分奖励一台笔记本电脑，否则惩罚一个星期不出门
+        //  以上惩罚不太合理
+        /*
+        90分以上  奖励笔记本电脑
+        80-90之间  奖励手机
+        70-80之间   奖励笔记本
+        60-70之间   口头鼓励
+        60以下    惩罚一个星期不出门
+         */
+
+
+
+        // var score=89;
+        // if(score>=90){
+        //     console.log("奖励一台笔记本电脑");
+        // }
+        // else{
+        //     console.log("一个星期不出门");
+        // }
+
+        // 多选一
+        // 注意:前面的区间条件不能包含后面的区间条件
+
+        var score = 89;
+        if (score >= 90) { console.log("奖励一台笔记本电脑");}
+        else if(score>=80){console.log("奖励手机");}
+        else if(score>=70){console.log("奖励笔记本");}
+        else if(score>=60){console.log("口头奖励");}
+        else {console.log("惩罚一个星期不出门");}
+    </script>
+</body>
+
+</html>

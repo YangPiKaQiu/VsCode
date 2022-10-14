@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+any-rule
+<body>
+    <script>
+        let s="abc sds sda gsd efg abc sad";
+        //1.如何创建正则表达式对象  字面量方式
+        let reg =/^abc/;
+        //2.正则表达式对象的使用  test()
+        //reg.test(字符串)  返回值:true 符合格式  false: 不符合格式
+        console.log(reg.test(s));
+        /*
+            ^匹配开头
+            $匹配结尾
+            //：字面量格式
+            //i：i表示忽略大小写
+            //g: g全局
+        */
+        let reg2=/ABC/i;//忽略大小写之后，可以和s中的abc匹配，返回true
+        console.log(reg2.test(s));
+
+        let reg3=/ABC/ig;
+        //字符串方法search(可以放正则表达式)
+        console.log(s.search(reg3));
+
+        console.log(s.replace(reg3,"呵呵"));
+        
+        //3.构造函数方式创建正则对象
+        // let reg4=new RegExp(/ABC/ig)        
+        let reg4=new RegExp(/ABC/,"ig");        
+        console.log(s.replace(reg4,"哈哈"));
+
+        //4.通配
+        /* 
+            \d： 数字0-9  
+            \w: 大小写字母  和 0-9 和 _
+            \s: 空格 tab
+            \D: 非数字  a,A,&,_........
+            \W: 非\w  & @ ,中
+            \S: 非空格，非tab1键
+
+            .:匹配单个字符
+            *：匹配 0 或多次
+            +：匹配 1 或多次
+            ?：匹配 0 或1次
+        */
+
+        //5.指定范围出现的字符[]
+        let s2="abc123@com.cn";
+        let emailReg=/^[a-zA-Z]+\d+@[a-zA-Z]+.cn$/;
+        console.log(emailReg.test(s2));
+
+        //6.指定出现的次数{m,n}   例如：{0,1} ---> ?
+        let emailReg2=/^[a-zA-Z]{1,}\d+@[a-zA-Z]{1,}.[a-zA-Z]{1,}$/;
+        console.log(emailReg2.test(s2));
+
+        //7.中文汉字 [\u4E00-\u9FA5] 常用汉字的Unicode编码范围
+        let s3="北大青鸟";
+        let titleReg=/[\u4E00-\u9FA5]{1,}/;
+        console.log(titleReg.test(s3));
+
+        //8.或者   | 注意：竖线之间不要有空格
+        let age =19;
+        // let ageReg=/^((\d)|([1-9]\d)|(1[0-2]\d))$/g;//20-120岁
+        let ageReg=/^(([2-9]\d)|(1[0-2]\d))$/g;//20-120岁
+        console.log(ageReg.test(age));
+
+
+
+        console.log("----------------------------------------");
+        // 1:验证手机号，手机号11位， 第- -位是1，第二位是3-9，第三位到11位是数字
+            let tel = /^[1][3-9]\d{9}$/
+            console. log(tel. test(13564587952)); // true
+
+        // 2:验证电话号码xxxxxxxxxx)| xxxxxxxxxxx)
+            let dhtel = /^\d{3,4}-\d{8}$/
+            console. log( dhtel. test("012-12345678")); // true
+            console.log( dhtel. test("1012-12345678")); // true
+
+        // 3:验证密码字母数字下划线组成， 字母开头6-16位
+            let zh = /^[a-zA-Z]\w{5,15}/
+            console. log(zh. test("shk123")); // true
+
+    </script>
+</body>
+</html>

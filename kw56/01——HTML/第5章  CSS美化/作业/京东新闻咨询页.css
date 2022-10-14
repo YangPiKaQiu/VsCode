@@ -1,0 +1,29 @@
+h1 {
+    text-shadow: rgb(177, 177, 184) 4px 4px 4px;
+    text-align: center;
+}
+
+h2 {
+    color: rgb(126, 123, 119);
+    text-align: center;
+}
+
+#p1 {
+    text-align: center;
+}
+
+.red {
+    color: red;
+}
+
+p {
+    text-indent: 2em
+}
+
+h3 {
+    text-indent: 2em
+}
+
+#conter {
+    margin-left: 25%;
+}

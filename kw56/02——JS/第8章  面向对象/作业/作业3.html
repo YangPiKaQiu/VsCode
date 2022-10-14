@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+  function It(uname, age, job, years) {
+            this.name = uname;
+            this.age = age;
+            this.job = job;
+            this.years = years;
+            this.work = function (company, post) {
+                if (age < 15) {
+                    age = 15;
+                    console.log(`
+                    年龄信息无效！已修改默认年龄为15
+                    姓名：${uname}
+                    年龄：${age}
+                    技术方向：${job}
+                    工作年限：${years}
+                    目前就职于：${company}
+                    职务是 ：${post}
+                    `);
+                } else {
+                    console.log(`
+                    姓名：${uname}
+                    年龄：${age}
+                    技术方向：${job}
+                    工作年限：${years}
+                    目前就职于：${company}
+                    职务是 ：${post}
+                    `);
+                }
+            }
+        }
+        let mwl = new It('马未龙', 35, '数据库维护', 10);
+        mwl.work('腾讯实业', '数据库维护工程师');
+        let zk = new It('张凯', 10, 'JAVA开发', 1);
+        zk.work('鼎盛科技', 'JAVA开发工程师');
+</script>
+
+</html>

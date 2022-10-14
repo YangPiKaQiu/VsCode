@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .header {
+            background-color: #D43D3D;
+            height: 10vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header img {
+            margin-left: 3vw;
+            width: 4vw;
+        }
+
+        .header h4 {
+            flex: 1;
+            text-align: center;
+            color: white;
+            font-size: 4vw;
+        }
+
+        .middle p {
+            color: #888888;
+            font-size: 4vw;
+            margin: 1vw 0vw 0vw 3vw;
+        }
+        .box2 {
+            padding: 5vw;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .box2 li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 18vw;
+            height: 8vw;
+            margin: 1.5vw;
+            border: 1px solid #ccc;
+            font-size: 3.5vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="./img/back.png" alt="">
+        <h4>频道管理</h4>
+    </div>
+    <div class="middle">
+        <p>点击删除以下频道</p>
+        <ul class="box2">
+            <li>头条</li>
+            <li>新闻</li>
+            <li>国内</li>
+            <li>国际</li>
+            <li>政治</li>
+            <li>财经</li>
+            <li>体育</li>
+            <li>娱乐</li>
+            <li>军事</li>
+            <li>教育</li>
+            <li>科技</li>
+            <li>NBA</li>
+            <li>股票</li>
+            <li>星座</li>
+        </ul>
+        <p>点击增加以下频道</p>
+        <ul class="box2">
+            <li>育儿</li>
+            <li>健康</li>
+            <li>女性</li>
+        </ul>
+    </div>
+</body>
+</html>

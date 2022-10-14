@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="we1">警告框</button>
+    <button id="we2">确认框</button>
+    <button id="we3">输入框</button>
+</body>
+<script>
+    /*
+    弹框
+   1.警告框  alert
+   2.确认框  confirm
+   3.输入框  prompt
+    */
+    window.onload = function () {
+        //点击警告框
+        we1.onclick = function () {
+            alert("担心！");
+        }
+        //确认框
+        we2.onclick = function () {
+            let result = confirm("确定充值100元?");
+            if (result) {
+                document.write("充值成功! ");
+            }
+            else {
+                document.write("没有充值!");
+            }
+        }
+    }
+</script>
+</html>

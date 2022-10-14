@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //3、计算当前时间向前、向后（一天、一个月）的日期，并取出是星期几.
+    let t = new Date();
+    let d = t.getDate();
+    t.setDate(d - 1);
+    let day = t.getDay();
+    document.write(day);
+  
+
+</script>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .box {
+            width: 1500px;
+            border-top: 2px  solid rgb(233, 233, 233);
+            margin: auto;
+            margin-top: 100px;    
+        }
+
+        .header ul {
+            padding-left: 600px;
+        }
+
+        .header ul li {
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            padding: 0px 3px;
+            font-size: 10px;
+            position: relative;
+        }
+
+        .header ul li:nth-of-type(2) {
+            color: #3779B4;
+        }
+
+        .header ul li:nth-of-type(3) {
+            color: #3779B4;
+        }
+
+
+        .header ul li span {
+            color: #ccc;
+            font-size: 10px;
+        }
+
+        .header ul li span {
+            padding-left: 10px;
+        }
+
+        .headerul li img:nth-of-type(1) {
+            position: absolute;
+            right: 8px;
+            top: 10px
+        }
+
+        .section {
+            height: 60px;
+            background: url(image/logo.gif) no-repeat 150px 5px;
+            position: relative;
+
+        }
+
+        .box1 {
+            color: #FF7E2C;
+            font-size: 12px;
+            position: absolute;
+            left: 285px;
+            top: 5px
+        }
+
+        .box2 {
+            width: 400px;
+            font-size: 15px;
+            font-weight: bold;
+            position: absolute;
+            left: 275px;
+            bottom: -5px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .box3 {
+            background: url(image/nav_home.gif) no-repeat center;
+            height: 40px;
+            width: 100px;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+        }
+
+        .box4 {
+            height: 40px;
+            width: 100px;
+            background: url(image/nav_bg.gif) no-repeat center;
+            text-align: center;
+            line-height: 40px;
+            padding-bottom: -5px;
+        }
+
+        .section ul {
+            position: absolute;
+            bottom: 0px;
+            right: 250px;
+            font-size: 10px;
+        }
+
+        .section ul li {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: bold;
+            position: relative;
+        }
+        .section ul li span {
+            color: #ccc;
+            font-size: 12px;
+            font-weight: 100;
+        }
+
+        .section ul li:nth-of-type(3) span {
+            padding-left: 10px;
+        }
+        .section ul li:nth-of-type(3) img {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+        }
+
+        .section ul li:nth-of-type(5) img {
+            position: absolute;
+            right: -15px;
+            top: 5px;
+        }
+        .fotter {
+            height: 50px;
+            background-color: #FF7E2C;
+        }
+
+        .fotter ul {
+            padding-left: 210px;
+        }
+
+        .fotter ul li {
+            color: white;
+            font-size: 13px;
+            height: 50px;
+            display: inline-block;
+            line-height: 50px;
+            padding: 0px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="header">
+            <ul>
+                <li>欢迎光临当当网,</li>
+                <li>请</li>
+                <li>登录</li>
+                <li>免费注册&nbsp;&nbsp;<img src="image/shopping.gif" alt=""></li>
+                <li>购物车<span>丨</span></li>
+                <li>我的订单<span>丨</span></li>
+                <li>我的当当&nbsp;&nbsp;<img src="image/arrow.gif" alt=""><span>丨</span></li>
+                <li>礼品卡&nbsp;&nbsp;<img src="image/arrow.gif" alt=""><span>丨</span></li>
+                <li>帮助</li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="box1">网上购物享当当</div>
+            <div class="box2">
+                <div class="box3">首页</div>
+                <div class="box4">图书</div>
+                <div class="box4">百货</div>
+                <div class="box4">品牌</div>
+                <div class="box4">促销</div>
+            </div>
+            <ul>
+                <li>商家<span>丨</span></li>
+                <li>当当榜<span>丨</span></li>
+                <li>礼物<img src="image/arrow.gif" alt=""><span>丨</span></li>
+                <li>在线读书<span>丨</span></li>
+                <li>更多服务<img src="image/arrow.gif" alt=""></li>
+            </ul>
+        </div>
+        <div class="fotter">
+            <ul>
+                <li>音乐</li>
+                <li>影视</li>
+                <li>少儿</li>
+                <li>教辅</li>
+                <li>小说</li>
+                <li>外语</li>
+                <li>数码相机</li>
+                <li>笔记本</li>
+                <li>连衣裙</li>
+                <li>高跟鞋</li>
+                <li>运动鞋</li>
+                <li>美容护肤</li>
+                <li>厨卫用品</li>
+                <li>婴幼奶粉</li>
+                <li>玩具</li>
+                <li>美食保健</li>
+                <li>饰品</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

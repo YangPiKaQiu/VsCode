@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <h1>标题1</h1>
+        <p>段落1 <span>黄色</span> <span>绿色</span></p>
+    </div>
+    <div id="box2">
+        <span>紫色</span>
+    </div>
+</body>
+
+
+<script>
+    //通过js获取dom元素
+
+    //根据id获取元素
+    // let boxObj = document.getElementById("box");
+    // console.log(boxObj);
+
+    let boxObj = document.querySelector("#box");  //根据选择器获取第一个元素
+    console.log(boxObj);
+
+
+    let spanObj = document.querySelector("span");   //根据选择器获取第一个span
+    console.log(spanObj.innerHTML);
+
+    
+    //根据标签获取元素
+    let spans=document.getElementsByTagName("span"); //根据选择器获取所有元素  伪数组
+    console.log(spans[1]);  //获取伪数组里面第二个span
+
+    //获取指定选择器包含的元素对象，返回的是伪数组
+    let spans2=document.querySelectorAll("#box2 span");
+    console.log(spans2[0]);
+
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = 8;//题目给的一个的对比数
+        var arr = [];//定义一个空数组来存放三次得出的三个随机数
+        function get() { //定义一个求随机数的自定义函数
+            var brr = parseInt(Math.random() * 9 + 1); //随机数得出的是小数所以得取整   了解后面会讲到
+            return brr;
+        }
+        for (var i = 0,count=0; i < 3; i++) {//我要得到三次随机数所以得循环三次，并且定义一个计数器来计算几次相等
+            arr[i] = get();  //把每次循环得出的值赋给空数组     这也是调用函数
+            if (arr[i] == 8) {   //判断数组元素和定义的8几次相等
+              count++;   //如果相等则计数器加一
+            }
+        }
+        var be=count/3*100;  //求胜率百分比 次数除以三次
+        console.log(arr);
+        console.log(be+"%");
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

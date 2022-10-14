@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组操作：增删改查
+        var nums=[100,200,300,400,500,600];   //最后一位下标  5
+
+        // 1.增加元素
+        //---在末尾添加一个元素；
+        nums[6]=9999;
+        nums[nums.length]=8888;
+        console.log(nums);
+        // ---通过数组的方法push（）；
+        var newLength=nums.push(777);
+        console. log(nums);
+        console. log(newLength);
+
+        //向前面添加元素
+        newLength=nums.unshift(8488);
+        console.log(nums);
+        console.log(newLength);
+         
+        //向中间插入一个元素
+            // 向元素的第3个索引位置添加32
+        nums.splice(3,0,32);
+        console.log(nums);
+
+
+        // arr:表示操作的数组;
+        //index:表示插入的位置；
+        //newNum:插入的元素（数字）；
+        // myInsert:方法名；
+        function myInsert(arr,index,newNum){
+            //1.找到位置 index
+
+            //2.位置之前的元素不动，之后的元素后移
+           for(var i=arr.length-1;i>=index;i--){
+               arr[i+1]=arr[i];
+           }
+            //3.插入新元素
+            arr[index]=newNum;
+        }
+
+        var fruits = ["apple", "orange" , "banana","pear"];
+        //向orange后面加kiwi
+        myInsert(fruits,2, "kiwi");
+        console.log(fruits);
+        //向banana后面加1 emon
+        myInsert(fruits,4,"lemon");
+        console. log(fruits);
+
+
+ 
+    </script>
+</body>
+</html>

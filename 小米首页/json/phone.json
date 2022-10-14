@@ -1,0 +1,58 @@
+[
+    {
+        "img": "img/214.png",
+        "type": "XiaoMi Civi2",
+        "dexc": "仿生双屏 | 氛围人像",
+        "price": "2399",
+        "falseprice":""
+    },
+    {
+        "img": "img/215.png",
+        "type": "XiaoMi MIX Fold 2",
+        "dexc": "超轻薄折叠机身设计,小米自研微水",
+        "price": "8999",
+        "falseprice":""
+    },
+    {
+        "img": "img/216.png",
+        "type": "Redmi K50 至尊版",
+        "dexc": "晓龙8+ | 1.5K高清直屏",
+        "price": "2999",
+        "falseprice":""
+    },
+    {
+        "img": "img/217.png",
+        "type": "XiaoMi 12S Ultra",
+        "dexc": "这真徕卡 | 专业徕卡影像",
+        "price": "5999",
+        "falseprice":""
+    },
+    {
+        "img": "img/218.png",
+        "type": "XiaoMi 12S Pro",
+        "dexc": "骁龙8+ 旗舰处理器 | 徕卡影像",
+        "price": "4699",
+        "falseprice":""
+    },
+    {
+        "img": "img/219.png",
+        "type": "XiaoMi 12S",
+        "dexc": "小尺寸性能旗舰 | 徕卡影像",
+        "price": "3999",
+        "falseprice":""
+    },
+    {
+        "img": "img/220.png",
+        "type": "XiaoMi 12Pro 天机版玑版",
+        "dexc": "全球首发天玑9000+ | 叶脉冷泵散热系",
+        "price": "3999",
+        "falseprice":""
+    },
+    {
+        "img": "img/221.png",
+        "type": "Redmi Note 11 Pro+",
+        "dexc": "天玑8100 | 真旗舰芯",
+        "price": "1999",
+        "falseprice":"2099元"
+    }
+]

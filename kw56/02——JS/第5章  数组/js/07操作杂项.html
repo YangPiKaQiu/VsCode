@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var chars = ["a", "b", "c", "d"];
+        //1.数组元素的倒叙输出
+        for (var i = chars.length - 1; i >= 0; i--) {
+            console.log(chars[i]);
+        }
+
+
+        //2.数组元素反转
+        chars.reverse();
+        console.log(chars);
+
+
+        //3.把数组的所有元素放入一个字符串join(参数)   参数: 连接数组元素的连接符
+        var arrStr = chars.join('');
+        console.log(arrStr);
+        
+
+        //4.把两个或者更多的数组连接
+        var fruits = ["banana", "strawberry", "kiwi", "apple", "lemon"];
+        var names = ["tom", "jerry", "lucy"];
+        var sports = ["足球","篮球","排球"];
+        var bigArr =fruits.concat(names).concat(sports);
+        console.log(bigArr);
+
+
+
+    </script>
+</body>
+
+</html>

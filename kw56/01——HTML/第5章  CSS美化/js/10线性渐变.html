@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      div{width: 500px;height: 500px;
+    
+        /* 背景色渐变色：如果背景色是渐变函数获得颜色, 那么不可以将背景图的属性值一起写 */
+       /* background: linear-gradient(to left top, blue ,green, orange ,red); */
+       /* background: linear-gradient(to left , blue ,green, orange ,red); */
+       background: linear-gradient(to bottom, blue ,green, orange ,red);
+       /* to bottom 从上往下渐变 */
+      /* 使用角度代替方向：
+      0deg 表示从下到上
+      45deg 顺时针旋转  从左到右上
+      ...
+      045deg 逆时针旋转  从右下到左上 */
+       /* background: linear-gradient(180deg, blue ,green, orange ,red); */
+
+       /* 各种颜色之后可以加上显示宽度的百分比 */
+       /* background: linear-gradient(180deg, blue ,green 40%, orange ,red); */
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

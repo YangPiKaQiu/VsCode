@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+  
+    console.log(localStorage);
+    document.write(localStorage.getItem("stuName"))
+
+    let yourDog = localStorage.getItem("dog");
+    console.log(typeof yourDog);
+    //通过es6里面
+    // JSON 转换： JSON.stringify(data)将对象转换成字符串
+                 // JSON.parse(s) 将字符串转换成json格式的对象
+    let realDog = JSON.parse(yourDog);
+    console. log(realDog);
+
+    document.write(realDog.name)
+    document.write(realDog.age)
+    document.write(realDog.type)
+
+
+
+
+</script>
+
+</html>

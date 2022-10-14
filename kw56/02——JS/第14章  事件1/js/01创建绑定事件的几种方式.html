@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid blue;
+            width: 140px;
+            height: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">哈哈哈</div>
+    <div id="d2">呵呵呵</div>
+    <div id="d3">嘻嘻嘻</div>
+    <div id="d4" onmouseover="fn()"  onmouseout="fn()" >吃吃吃</div>
+
+</body>
+<script>
+    //1.绑定事件的方式
+    d1.onlick = function () {
+        //函数体
+        alert("111");
+        d1.innerHTML = "haha";
+        //this 在这个函数中
+        console.log(this);
+    }
+
+    d1.onlick = () => {
+        //函数体.
+        // this.innerHTML = "haha" ;
+        // this在这个函数中
+        // 箭头函数中this并不指向当前对象
+        // console.log(this);
+        d1.innerHTML = "haha"
+    }
+    //2.绑定事件的方式二
+    d2.addEventListener(" click", () => {
+        //将第二个div修收
+        d2.innerHTML = "hehe";
+    })
+    // 3.找到触发时间的对象
+    //通过window全局对象获取
+    //点击第三个div  修收内容
+    d3.onclick = function () {
+        console.log(window.event.target);
+        let div = window.event.target;
+        div.innerHTML = "xixi ";
+    }
+    //通用方法
+    function fn() {
+        //只要触发fn方法，就可以知道是谁触发的，触发了什么事件
+        let o = window.event.target;
+        let e = window.event.type;
+        console.log(o, e);
+        if(e==="mouseover"){
+            o.style.backgroundColor="red";
+        }else if(e==="mouseout"){
+            o.style.backgroundColor="bule";   
+        }
+    }
+
+
+</script>
+
+</html>

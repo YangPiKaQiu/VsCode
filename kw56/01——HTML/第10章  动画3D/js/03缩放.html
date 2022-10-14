@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 600px;
+            height: 600px;
+            border: 2px solid green;
+            margin: 20px auto;
+            position: relative;
+
+            /* 3d舞台 */
+            transform-style: preserve-3d;
+            /* 景深：眼睛离3d平台的距离 */
+            perspective: 800px;
+            /* transform: rotateY(45deg); */
+        }
+
+        .center {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
+            /* 3d缩放 */
+            /* transform: scaleX(2) */
+            transform: scaleZ(10) rotateX(30deg)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="center"> </div>
+</body>
+
+</html>

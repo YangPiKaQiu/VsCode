@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //1.创建方法在数组类原型中
+    Array.prototype.paixu = function () {
+        console.log(this);
+        for (let i = 0; i < this.length - 1; i++) {
+            for (let j = 0; j < this.length - i - 1; j++) {
+                //判断大小
+                if (this[j] > this[j + 1]) {
+                    let temp;
+                    temp = this[j];
+                    this[j] = this[j + 1];
+                    this[j + 1] = temp;
+
+                }
+            }
+        }
+        console.log(this);
+        return this;
+    }
+    //2.原始数组
+    let nums = [1, 5, 13, 17, 22, 15, 8, 6];
+    nums.paixu();
+
+</script>
+
+</html>

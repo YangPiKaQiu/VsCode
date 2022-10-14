@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    let nums = [2, 12, 56, 21, 122, 1, 41];
+    // nums.sort((a, b) => {
+    //     console.log(a, b);
+    //     return a - b;
+    // })
+    //排序方法  给数组
+
+
+    function myPaopao(arr,callBack){
+
+        //冒泡排序
+        for(let i=0;i<arr.length-1;i++){
+            for(let j=0;j<arr.length-1;j++){
+                //判断：升序
+                if(j[i]>j[i+1]){
+                    let temp;
+                    temp=j[i];
+                    j[i]=j[i+1];
+                    j[i+1]=temp;
+                }
+                //判断：降序
+                if(callBack(j[i]>j[i+1])){
+                    let temp;
+                    temp=j[i];
+                    j[i]=j[i+1];
+                    j[i+1]=temp;
+                }
+            }
+        }
+    }
+
+
+
+</script>
+
+</html>

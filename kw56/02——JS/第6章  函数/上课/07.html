@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        var丽数作用域
+        let块级作用域
+        全局作用域：函数外定义
+        */
+        function a() {
+            for (var i = 0; i < 10; i++) {
+                console.log("-------for循环范围内" + i);
+            }
+
+            //i  在整个函数中都生效
+            console.log("a函数里面的i:" + i);
+        }
+        // 调用函数a
+        a();
+
+
+        function b() {
+            for (let j = 0; j < 10; j++) {
+                console.log(">>>>>>>>>for范围内j:" + j);
+            }
+            //for外面范围能杏得到j
+            // console. log("for的外面， b函数里面j:"+j);
+
+        }
+        b();
+    </script>
+</body>
+
+</html>

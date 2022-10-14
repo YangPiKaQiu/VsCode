@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<bod>
+    <script>
+        //打印矩形
+
+        //外层循环执行一遍,内层循环全部执行一次
+        for (var i = 0; i < 5; i++){
+            for(var j=0;j<5;j++){
+                document.write("* ");
+            }
+            document.write("<br/>");
+        }
+
+
+        //平行四边形
+
+        //外层循环执行一次，内层循环全部执行
+        //---外层循环表示的是行数   内层循环表示的是列数
+        for (var i = 1; i <= 5; i++) {
+            //打印左边空格 
+            for (var j = 5 - i; j >= 1; j--) {
+                document.write("&nbsp;&nbsp;");
+            }
+            //打印右边星号
+            for (var k = 1; k <= 5; k++) {
+                document.write("*");
+            }
+            //换行
+            document.write("<br/>");
+        }
+
+        //三角形
+
+         //外层循环打印行数
+        for(var i=1;i<=5;i++){
+            for(var j = 5 - i; j >= 1; j--){
+                document.write("&nbsp;&nbsp;");
+            }
+            for(var k=1;k<=2*i-1;k++){
+                document.write(" * ");
+            }
+            document.write("<br/>");
+        } 
+
+       
+    //1.进入F12观察者模式
+    //2.点开source源码文件，打.上断点
+    //3.watch里面设置变量,
+    //4.断电调试， 单步执行
+
+
+    </script>
+</bod

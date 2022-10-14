@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //1.编写数组的原型中的去重方法
+    Array.prototype.quChong = function () {
+        //定义一个空数组
+        let empty = [];
+
+        //让空数组中存放原始数组中不重复的数据
+        console.log(this);
+        console.log(this.length);
+        for (let i = 0; i < this.length; i++) {
+            //判断空数组里面是否存在当前数组this的数据
+            if (empty.indexOf(this[i]) === -1) {
+                //传递到空数组中
+                empty.push(this[i]);
+
+            }
+        }
+        //返回存好数据的空数组
+        return empty;
+    }
+    let nums = [4, 5, 55, 67, 87, 5, 4, 12];
+    let nums2 = nums.quChong();
+    console.log(nums2);
+
+
+</script>
+
+</html>

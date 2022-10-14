@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 50px;
+            border: 1px solid blue;
+            margin: 20px 0px;
+        }
+        /* position：static;  默认值     不定位
+        position：reletive;   相对定位    先对定位  相对于本身定位
+        position：absolute;    绝对定位   相对于已经定位的最近一个元素
+        position：fixed;   固定定位    相对于浏览器 */
+
+
+        .first {
+            background-color: blue;
+            float: left;
+            position: relative;
+            left: 30px;
+            bottom: -30px;
+        }
+
+        .second {
+            background-color: yellow;
+            /* 一个元素设置相对定位,但是没有设置偏移值,该元素保持原来的位置不变 
+            如果设置偏移值，改元素移动，但是不会对其他元素造成影响，因为这个元素在标准文档流
+            里面的位置保留着
+            对于设置了浮动的元素，仍然生效
+            */
+            position: relative;
+            right: -50px;
+            bottom: -50px;
+            /*  */
+        }
+
+        .third {
+            background-color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">1</div>
+    <div class="second">2</div>
+    <div class="third">3</div>
+</body>
+
+</html>

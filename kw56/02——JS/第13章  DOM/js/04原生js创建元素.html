@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid red;
+        }
+
+        h1 {
+            width: 100%;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header></header> -->
+    <div id="box">
+    </div>
+</body>
+
+<script>
+    //创建一个h1标签，放在box盒子内
+    let h1Obj = document.createElement("h1");
+    //添加文本
+    h1Obj.innerHTML = "哈哈";
+    //添加属性
+    h1Obj.setAttribute("name", "title");
+    //添加行内样式
+    h1Obj.setAttribute("style", "background:yellow;font-size:15px")
+    //添加样式
+    h1Obj.style.backgroundColor = "blue";
+    h1Obj.style.fontSize = "20px";
+    h1Obj.style.color = "red";
+
+
+    //将创建的h1标签放到box盒子内
+    let box = document.querySelector("#box");
+    //把插入的子元素放在最后面
+    box.appendChild(h1Obj);
+
+    /*总结: 1.向页面中添加元素,先用document.createElement()创建元素
+            为创建的元素设置文本，属性，样式...
+            为创建的元素绑定时间...
+            2.把创建的元素放到指定的位置，找已经存在的元素的层次关系
+    */
+
+    //案例：在div之间添加header节点
+    let headerObj = document.createElement("header");
+    headerObj.innerHTML = "呵呵";
+    let body1 = document.querySelector("body");
+    //把插入的子元素放在某个子元素前面
+    body1.insertBefore(headerObj, box);
+
+
+    //懒人方法:克隆复制一个节点元素
+    let newHeaderObj = headerObj.cloneNode(true);
+    body.insertBefore(newHeaderObj, headerObj);
+
+
+</script>
+
+</html>

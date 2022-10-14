@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="addBtn">新增学员</button>
+    <button id="showBth">显示学员信息</button>
+</body>
+<script>
+    // 页面加载事件
+    window.onload = function () {
+        //变量范围升级
+        var name = [];
+        var count = 0;
+        //给新增学员按钮绑定点击事件
+        addBtn.onclick = function () {
+            //每次点击新增的时候，学生数量 + 1
+            count++;
+            //在方法里面定义的变量  作用范固只是方法里面，离开方法就不生效了
+            name.push(prompt("请输入新增学员姓名:"));
+
+        }
+
+        //给显示学员信息按钮绑定点击事件
+        showBtn.onclick = function () {
+            document.write("共" + count + "名学员,信息如下:<br/>" + name);
+        }
+    }
+</script>
+
+</html>

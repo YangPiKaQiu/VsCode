@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 4. 打印菱形。提示：菱形的行数必须是奇数，可以分成上半部分打印，然后再打印下半部分。如图：
+       
+        // for(var i=1;i<=5;i++){
+        //     for(var j = 5 - i; j >= 1; j--){
+        //         document.write( "&nbsp; ");
+        //     }
+        //     for(var k=1;k<=2*i-1;k++){
+        //         document.write("#");
+                
+        //     }
+        //     document.write("<br/>");
+        // } 
+        // for(i=4;i>=1;i--){
+        //     for( j =5-i ;j>=1; j--){
+        //         document.write(" &nbsp; ");
+        //     }
+        //     for( k=1;k<=2*i-1;k++){
+        //         document.write("#");
+        //     }
+        //     document.write("<br/>");
+        // } 
+
+
+
+        // 1.手动录入菱形的行数
+        var n=parseInt(prompt("请输入菱形的行数:"));
+        while(n%2==0){
+            n=parseInt(prompt("行数不能是偶数，请重新输入:"))
+            }
+        // 2.上半部分
+       var top=(n+1)/2;
+       
+        // 3.下半部分
+       var bottom=(n-1)/2;
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+body 
+ p{font-size: 14px;}
+h2{font-size: 16px;}
+.red{color: red;}
+.red~h2{color: blue;}
+body>img:first-of-type{width: 887px;height: 439px;}

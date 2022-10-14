@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="testOne()">获取一个随机数子</button>
+</body>
+<script>
+    //全局方法 测试：
+    function testOne() {
+        let myLote = new Lote();
+        myLote.start();
+    }
+
+    class Lote {
+        //全局变量接收
+        loteNumber = [];
+        yourNumber = [];
+
+        //随机产生一个数字0-9
+        getOne() {
+            return Math.floor(Math.random() * 9 + 1);
+        }
+
+        //获得一注彩票  7位 随机数不能重复
+        getNumber() {
+            let randArr = [];
+            let index = 0;  //数组索引
+            while (true) {
+                let flag = false;//标记
+
+                let randNum = this.getOne();//产生一个随机数
+                // console.log(randNum);
+                //判断随机数字是否存在
+                if (index == 0) {
+                    randArr.push(randNum);
+                    index++;
+                } else {
+                    //已经存在数字，不能使用
+                    let flag = randArr.includes(randNum);
+                    // console.log(flag);
+                    if (!flag) {
+                        randArr.push(randNum);
+                        index++;
+                    }
+                }
+
+                // console.log("index:"+index);
+                //存够7位数
+                if (index == 7) {
+                    break;
+                }
+            }
+            console.log("大奖号码:" + randArr);
+            // return randArr;
+            this.loteNumber = randArr;
+        }
+
+        //手动输入您的彩票号码
+        putYourNumber() {
+            let str = prompt("请输入您的号码:");
+            this.yourNumber = str.split('').map(r => {
+                return parseInt(r);
+            });
+        }
+        //显示中奖情况
+        getPraise() {
+            // this.getNumber();
+            // this.putYourNumber();
+            // console.log(this.loteNumber,this.yourNumber);
+            //中奖规则：比较两个数组
+            /*
+              连续中7位数  一等奖
+              连续中6位数  二等奖
+              连续中5位数   三等奖
+              其他情况谢谢参与
+            */
+            let max = 0;  //max表示连续中的最大的数字
+            let count = 0;//计算连续中奖号码的个数
+            for (let i = 0; i < this.loteNumber.length; i++) {
+
+                if (this.yourNumber[i] === this.loteNumber[i]) {
+                    count++;
+                    if (max < count) {
+                        max = count;
+                    }
+                } else {
+                    count = 0;
+                }
+            }
+            //根据max判断中奖的情况
+            console.log("max:" + max);
+            switch (max) {
+                case 7:
+                    console.log("恭喜你！获得100000000");
+                    break;
+                case 6:
+                    console.log("恭喜你！获得500000");
+                    break;
+                case 5:
+                    console.log("恭喜你！获得20000");
+                    break;
+                case 4:
+                case 3:
+                case 2:
+                case 1:
+                case 0:
+                    console.log("谢谢参与!");
+                    break;
+
+            }
+        }
+
+        //开始菜单
+        start() {
+            //大奖号码悄悄的产生
+            this.getNumber();
+
+            do {
+                let choice = +prompt(`
+                ==================================
+                1.下注
+                2.开奖
+                0.退出
+                请选择:
+                ==================================
+            
+            `);
+                switch (choice) {
+                    case 1:
+                        this.putYourNumber();
+                        continue;
+                    case 2:
+                        this.getPraise();
+                        continue;
+                    case 0:
+                        console.log("退出程序!");
+                        break;
+                    default:
+                        console.log("选择无效");
+                        continue;
+                }
+                break;
+            } while (true);
+
+        }
+
+    }
+
+
+
+
+</script>
+
+</html>

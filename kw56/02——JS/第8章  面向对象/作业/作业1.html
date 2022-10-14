@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    let s = "  kgc sss  ";
+    String.prototype.lTrim = function () {
+        return this.replace(/\s/g,"");  //正则表达式一种查找方式
+    }
+    let newStr1 = s.trimStart(); //内置对象
+    let newStr2 = s.trimEnd();
+    let newStr3 = s.trimStart().trimEnd();
+    let newStr4 = s.lTrim();
+
+    console.log(newStr1);
+    console.log(newStr2);
+    console.log(newStr3);
+    console.log(newStr4);
+
+
+
+
+    // let a = "  kgx  ccc  "
+    //     String.prototype.lTrim1 = function () {
+    //         return this.replace(/^\s/g, "");
+    //     }
+    //     String.prototype.lTrim2 = function () {
+    //         return this.replace(/(\s*$)/g, "")
+    //     }
+    //     String.prototype.lTrim3 = function () {
+    //         return this.replace(/^\s+|\s+$/g, "")
+    //     }
+    //     String.prototype.lTrim4 = function () {
+    //         return this.replace(/\s+/g, "")
+    //     }
+    //     a.lTrim1();
+    //     a.lTrim2();
+    //     a.lTrim3();
+    //     a.lTrim4();
+</script>
+
+</html>

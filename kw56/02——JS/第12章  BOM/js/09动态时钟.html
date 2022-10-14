@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="myTime">
+        <h1></h1>
+        <div>
+            <button id="clearBth" onclick="closeTime()">关闭定时器</button>
+            <button id="clearBth" onclick="beginTime()">开始定时器</button>
+        </div>
+    </div>
+</body>
+<script>
+    //定时函数:间隔时间内执行某个函数
+    let t1 = window.setInterval("getTime()", 1000);
+    //t1创建创建的定时任务编号
+    // let t2 = window.setInterval("getTime()", 1000);
+    console.log(t1);
+    //关闭定时器
+    //clearInterval(t1);
+
+
+    //开始计时
+    function beginTime() {
+        t1=setInterval("getTime()", 1000);
+    }
+    //关闭定时器
+    function closeTime() {
+        clearInterval(t1);
+    }
+    //使用js操作网页元素，将获取的当前事件显示在网页h1标签里面
+    /*
+    1.获取事件new Date()
+    2.获取网页元素document.getElementById( )...
+    3.innerHTML填充网页元素文本
+    */
+
+
+    //显示当前时间
+    function getTime() {
+        let time = new Date();
+        console.log(time);
+        let yearMonthDay = time.toLocaleDateString();
+        let hourMinSec = time.toLocaleTimeString();
+        //以下获取的是数组
+        let h10bj = document.getElementsByTagName("h1")[0];
+        h10bj.innerHTML = yearMonthDay + " " + hourMinSec;
+    }
+    getTime();
+
+
+
+
+
+
+</script>
+
+</html>

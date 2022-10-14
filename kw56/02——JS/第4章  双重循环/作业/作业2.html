@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2.开发一个标题为”FlipFlop”的游戏应用程序。它从1计数到100，
+        // 遇到3的倍数就输出单词“Flip”,遇到5的倍数就输出单词“Flop”,
+        // 既为3的倍数又为5的倍数则输出单词“FilpFlop”,其余情况下输出当前数字.
+
+
+        
+        
+        for(var i=1;i<=100;i++){
+            if(i%3==0&&i%5==0){
+                document.write("FlipFlop"+"<br/>");
+                continue;
+            }
+            if(i%3==0){
+                document.write("Flip"+"<br/>");
+                continue;
+            }
+            if(i%5==0){
+                document.write("Flop"+"<br/>");
+                continue;
+            }
+            document.write(i+"</br>")
+        }
+
+    </script>
+</body>
+</html>

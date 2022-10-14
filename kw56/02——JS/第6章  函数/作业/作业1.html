@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 作业：
+        // 1.根据三角形的三条边长，判断其是直角，钝角，还是锐角三角形。程序的功能要求如下。
+        // a) 先输入三角形三条边的边长
+        // b) 判断能否构成三角形，构成三角形的条件是“任意两边之和大于第三边”，如果不能构成三角形，则提示“不是三角形！”。
+        // c) 如果能构成三角形，判断三角形是合中三角形。如果三角形有一条边的平方等于其他两条边平方和，则为直角三角形；如果一条边的平方大于其他两条边平方的和，则为钝角三角形；否则，为锐角三角形。
+        // （使用带参方法解决以上问题
+
+        var a = +prompt("请输入第一条边：");
+        var b = +prompt("请输入第二条边：");
+        var c = +prompt("请输入第三条边：");
+        var re = getMax(a, b, c);//调用自定义函数，求出最大边
+        function getMax(a, b, c) {//自定义求最大值函数
+            var max = a > b ? a : b;//判断第一次最大值是谁，如果a>b成立则等于a,反之b
+            var newMax = max > c ? max : c;//判断第一次的最大值与第三个值中最大值
+            return newMax;//返回最大值，不返回下面则拿不到这个值
+        }
+        if (a == b && a == c && b == c) {
+            alert("这是一个等边三角形");
+        }
+        if (a + b > c && a + c > b && b + c > a) {//判断两边之和大于第三边
+            if ((a * a + b * b < re * re) || (a * a + c * c < re * re) || (c * c + b * b < re * re)) {//不知道哪个值是最大边的平方，所以判断三次
+                alert("这是一个钝角三角形");
+            } else if ((a * a + b * b > re * re) || (a * a + c * c > re * re) || (c * c + b * b > re * re)) {//同上
+                if ((a * a + b * b == c * c) || (a * a + c * c == b * b) || (c * c + b * b == a * a)) {//同上
+                    alert("这是一个直角三角形");
+                } else {
+                    alert("这是一个锐角三角形");
+                }
+            }
+        }
+        else {
+            alert('这三条边不能构成三角形');
+        }
+
+
+
+    </script>
+</body>
+
+</html>

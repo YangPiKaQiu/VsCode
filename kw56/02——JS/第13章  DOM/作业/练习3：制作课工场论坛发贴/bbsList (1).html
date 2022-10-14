@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>课工场论坛列表</title>
+    <link href="css/bbs.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="bbs">
+    <header><span id="sendSpan">我要发帖</span></header>
+    <section>
+        <ul></ul>
+    </section>
+    <div class="post">
+        <input class="title" placeholder="请输入标题（1-50个字符）">
+        所属版块：<select><option value="0">请选择版块</option><option>电子书籍</option><option>新课来了</option><option>新手报到</option><option>职业规划</option></select>
+        <textarea class="content"></textarea>
+        <input class="btn" value="发布">
+    </div>
+</div>
+</body>
+<script>
+    //窗口加载之后
+    window.onload = function(){
+        // console.log("111111111");
+        //声明全局变量
+        let post = document.querySelector(".post");
+        //标题
+        let title = '';
+        //版块  
+        let cate = ''
+        //发表时间
+        let publishTime = '';
+        //随机数，获取随机图片
+        let randNum = '';
+
+        //图片
+        let imgs = ["images/tou01.jpg",
+        "images/tou02.jpg",
+        "images/tou03.jpg",
+        "images/tou04.jpg"];
+        
+        //1.点击发表评论按钮，能显示发布的信息框
+        sendSpan.onclick =  function(){
+            post.style.display = "block";
+        }
+
+        //2.点击发布按钮，获取填写的数据
+        let sendBtn = document.querySelector(".btn");
+        sendBtn.onclick = function (){
+            title =  document.querySelector(".title").value;
+            cate =  document.querySelector("select").value;
+            publishTime =  new Date().toLocaleDateString();
+            publishTime+=" "+new Date().toLocaleTimeString();
+            //获取随机图片  随机索引0-3 从数组中选择对应的索引
+            randNum =  Math.floor(Math.random()*4);
+    
+            console.log(title,cate,publishTime,randNum);
+           //创建评论
+            createComment();
+            //清空
+            clearComment();
+           
+            //隐藏post
+           post.style.display = "none";
+
+
+
+        }
+        //3.创建评论
+        function createComment(){
+            /*
+             <ul>
+               <li>
+                    <div><img></div>
+                    <h1></h1>
+                    <p><span>版块</span><span>时间</span></p>
+                </li>    
+            </ul>
+            */
+            let newLi = document.createElement("li");
+            let newDiv  =document.createElement("div");
+            let newImg = document.createElement("img");
+            newImg.setAttribute("src",imgs[randNum]);
+            newDiv.appendChild(newImg);
+
+            let newH1 = document.createElement("h1");
+            newH1.innerHTML = title;
+            let newP = document.createElement("p");
+            let newspan1 = document.createElement("span");
+            newspan1.innerHTML=`版块:${cate}`;
+            let newspan2 = document.createElement("span");
+            newspan2.innerHTML = `发表时间:${publishTime}`;
+            newP.appendChild(newspan1);
+            newP.appendChild(newspan2);
+
+            newLi.appendChild(newDiv);
+            newLi.appendChild(newH1);
+            newLi.appendChild(newP);
+
+            //整体创建的li放入ul中
+            let ul =  document.querySelector("ul");
+            ul.insertBefore(newLi,ul.childNodes[0]);
+
+
+        }
+
+        //4.清空评论框内容
+        function clearComment(){
+            document.querySelector(".title").value ="";
+            document.querySelector(".content").value="";
+            document.querySelector("select").value =0;
+        }
+    }
+</script>
+</html>

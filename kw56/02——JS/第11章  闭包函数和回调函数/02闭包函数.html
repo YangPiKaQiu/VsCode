@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //一个函数里面再定义一个函数，返回值是里面的函数，再函数的外部通过一种函数表达式的方式调用
+    function out() {
+        let a = 100, b = 50;
+        function inner() {
+            //内层函数返回a和b的和
+            return a + b;
+        }
+        // inner();     在函数内部调用内部函数是可以的 
+        //外层函数返回inner()函数
+        console.log(inner);
+        return inner;
+    }
+    //如何使用闭包，想要得到a+b的和
+    // out();
+
+    //inner();再函数外边调用内部函数是不可以的
+
+    //我想耍再函数外部调用内部函数，获得内部函数的返回值，怎么办呢?
+    let getSum = out();     //getSum====inner
+    console.log(getSum);
+    //调用内部函数
+    let result = getSum();
+    console.log(result);
+
+
+
+
+</script>
+
+</html>

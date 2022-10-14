@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*需求:考试第一名:去麻省理工学院参观
+              考试第二名:奖励一台笔记本电脑
+              考试第三名：去海南旅游
+
+              多分支结构
+              多选一
+        */
+
+        var mingci = 12;
+        // if (mingci === 1) { console.log("去麻省理工学院参观") }
+        // else if (mingci === 2) { console.log("奖励一台笔记本电脑") }
+        // else if (mingci === 3) { console.log("去海南旅游") }
+        // else { console.log("在家敲代码") }
+
+        // 等值的分支有一种简便写法   Switch结构
+        switch (mingci) {  
+            // switch括号里面的表达式和case语句进行匹配,当找到匹配的时候,就执行
+            case 1: console.log("去麻省理工学院参观");
+                break;
+            case 2: console.log("奖励一台笔记本电脑");
+                break;
+            case 3: console.log("去海南旅游");
+                break;   //   遇到break跳出  花括号的代码块
+            default:
+                console.log("在家敲代码");
+                break;
+        }  
+        //  break:跳出位置
+        /*
+        1.switch(表达式)  里面的表示需要和case后面的  值类型一致
+        2.case 后面的值必须是一个常量，不能是变量
+        3.正常情况下：每一个case  后面要有break 用于跳出switch语句块
+        4.defaul语句位置没有要求，可以放在第一句
+        */
+  
+    </script>
+</body>
+
+</html>

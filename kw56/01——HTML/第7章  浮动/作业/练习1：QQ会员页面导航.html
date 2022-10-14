@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .nav {
+            width: 100%;
+            height: 87px;
+            background: rgba(0, 0, 0, 0.5)url(../img/logo.png) no-repeat 60px center;
+            background-size: contain;
+        }
+
+        ul {
+            height: 87px;
+            line-height: 87px;
+            margin-left: 273px;
+            display: inline-block;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 30px;
+
+        }
+
+        li>a {
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        li>a:hover {
+            color: blue;
+        }
+
+        .vip {
+            display: inline-block;
+            width: 87px;
+            height: 87px;
+            font-weight: bold;
+        }
+        .vip>a{display: inline-block;
+        font-size: 16px;}
+
+        .vip>a:nth-of-type(1) {
+            width: 95px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            text-decoration: none;
+            color: #f0d95c;
+            border: 1px solid #f0d95c;
+            border-radius: 20px;
+        }
+
+        .vip>a:nth-of-type(2) {
+            width: 140px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            text-decoration: none;
+            color: #986b0d;
+            background-color: #f0d95c;
+            border-radius: 20px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="">功能特权</a></li>
+            <li><a href="">游戏特权</a></li>
+            <li><a href="">生活特权</a></li>
+            <li><a href="">会员活动</a></li>
+            <li><a href="">成长体系</a></li>
+            <li><a href="">年费专区</a></li>
+            <li><a href="">超级会员</a></li>
+        </ul>
+        <div class="vip">
+            <a href="#">登录</a>
+            <a href="#">开通超级会员</a>
+        </div>
+    </div>
+</body>
+
+</html>

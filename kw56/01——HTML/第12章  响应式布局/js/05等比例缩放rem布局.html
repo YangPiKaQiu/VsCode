@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .box {
+            width: 375px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+<!-- 设计稿尺寸（物理像素）：469*784
+                 CSS像素：375*627 
+                
+                给html font-size=计算平面宽度/物理宽度*基准像素（16）+“px”
+                
+                
+    <script>
+    //    document.documentElement.style.fontSize=  html的fontsize
+    //   document.documentElement.clientWidth/469*16+"px"      设备宽度  例如iphone6  375
+       document.documentElement.style.fontSize=
+       document.documentElement.clientWidth/469*16+"px";
+    //    375/469 = 0.799  *16=12.79px  iphone6
+    //    390/469 =        *16=13.30px  iphone12 pro
+    // 如果此时你用ps量取设计稿中网页的宽度   469px 
+    // 换算成         36.66rem        iphone6
+    //                35.26rem       iphone12
+    </script>
+                -->
+
+</html>

@@ -1,0 +1,51 @@
+[
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90",
+        "type": "XiaoMi Buds 4 Pro",
+        "dexc": "48dB智能动态降噪｜骨声纹通话降噪 | 独立空间音频",
+        "price": "1069",
+        "falsePrice":"1099"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202204211422_ce41ed00fe7fb79df35101222880121d.png?thumb=1&w=200&h=200&f=webp&q=90",
+        "type": "XiaoMi Buds 3 Pro",
+        "dexc": "40dB自适应降噪 ｜空间音频 ｜ HiFi高保真音质",
+        "price": "569",
+        "falsePrice":"699"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0b271a074e087848357aa61ae665b214.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+        "type": "XiaoMi Buds 3 ",
+        "dexc": "40dB宽频主动降噪 | HiFi高保真音质 | HRTF专业调音",
+        "price": "299",
+        "falsePrice":"499"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202205241527_fb27e27e6587254da27de5ba9c889512.png?thumb=1&w=200&h=200&f=webp&q=90",
+        "type": "Redmi Buds 4",
+        "dexc": "35dB 智能主动降噪 | AI 通话降噪 | 30小时超长续航",
+        "price": "219",
+        "falsePrice":"229元"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11570d5371f16d2d9b19f504e09d01f0.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+        "type": "Redmi Buds 3半入耳真无线蓝牙",
+        "dexc": "轻巧半入耳 | 通话降噪 | 20小时长续航",
+        "price": "179",
+        "falsePrice":"199元"
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2fcf24e40ff09a254857ac8b4ace25b8.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+        "type": "Redmi Buds 3 青春版",
+        "dexc": "轻巧真无线 | 猫耳状稳固设计 | 18小时长续航",
+        "price": "99",
+        "falsePrice":""
+    },
+    {
+        "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/861ae925d6a539b14934cbaaa03456f8.jpg?thumb=1&w=200&h=200&f=webp&q=90",
+        "type": "小米真无线蓝牙耳机Air SE",
+        "dexc": "大尺寸动圈单元 | 20小时持久续航 | 双麦克风通话降噪",
+        "price": "119",
+        "falsePrice":"169元"
+    }
+]

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    //1.通过构造方法定义法师的类模板
+    function FaShi(name,hp,mp,ap,skill){
+        //法师类的属性————血量，蓝条，法强，技能
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+        this.ap = ap;
+        this.skill = skill;
+        //自带一个属性prototype
+
+        //法师类的方法__普工，技能输出
+        this.a = function(){
+            console.log(this.name+"发起一次普通攻击..");
+        }
+
+        this.skillA = function(){
+            console.log(this.name+"发起了一次"+this.skill+"...");
+        }
+    }
+
+    //2.FaShi的原型对象的获取
+    console.log(FaShi.prototype);
+    //3.给法师的原型对象里面添加公共的属性和方法
+    FaShi.prototype.c = "脆皮";
+    FaShi.prototype.b = function(){
+        console.log("大家都称呼我是脆皮....");
+    }
+
+
+    //4.创建各种法师对象
+    let anQiLa = new FaShi("安其拉",2500,1020,250,"激光");
+
+    anQiLa.a();
+    anQiLa.skillA();
+
+    //5.实例对象安其拉，调用公共属性a
+    console.log( anQiLa.c);
+
+    //调用公共方法
+    anQiLa.b();
+
+    //总结：原型对象里面的属性和方法，可以给实例对象共享
+    // 关键点：转换
+    /*
+      构造函数对象--->原型对象   Fashi.prototype
+      构造函数对象--->实例对象   let anqila = new FaShi(xx,xx,xx,xx,xx,xxx);
+      实例对象----->原型对象     anqila.__proto__
+    
+    */
+     //当你实例对象调用属性，在实例对象里面没有找到该属性的时候会去原型对象里面找
+     //如果还没找到那就是undefined
+    
+
+
+
+</script>
+</html>

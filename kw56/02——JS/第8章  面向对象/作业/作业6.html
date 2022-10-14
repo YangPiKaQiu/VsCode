@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //   2．实现一个名为Person的类和它的子类Employee，Employee有两个子类Faculty和Staff。具体要求如下：
+    // （1）Person类中的属性有：姓名name（String类型）、地址address（String类型）、电话号码telephone（String类型）和电子邮件地址email（String类型）。
+    // （2）Employee类中的属性有：办公室office（String类型）、工资wage（double类型）和受雇日期hiredate（String类型）。
+    // （3）Faculty类中的属性有：学位degree（String类型）、级别level（String类型）。
+    // （4）Staff类中的属性有：职务称号duty（String类型）.
+
+    //父类
+    class Person {
+        constructor(name, address, telephone, email) {
+            this.name = name;
+            this.address = address;
+            this.telephone = telephone;
+            this.email = email;
+        }
+        info1() {
+            console.log(`姓名:${this.name},地址:${this.address},电话号码:${this.telephone},电子邮件地址:${this.email}`);
+        }
+    }
+    //子类 Employee
+    class Employee extends Person {
+        constructor(office, wage, hiredate) {
+            super("囍囍", "警官学院", "123456789", "21324@qq.com");
+            this.office = office;
+            this.wage = wage;
+            this.hiredate = hiredate;
+        }
+        info2() {
+            this.info1();
+            console.log(`办公室:${this.office},工资:${this.wage},受雇日期:${this.hiredate}`);
+        }
+    }
+
+    //子子类 Faculty  Staff
+    class Faculty extends Employee {
+        constructor(degree, level) {
+            super("305", "10000", "2022.09.06");
+            this.degree = degree;
+            this.level = level;
+        }
+        info3() {
+            this.info2();
+            console.log(`学位:${this.degree},级别:${this.level}`);
+
+        }
+    }
+    class Staff extends Employee {
+        constructor(duty) {
+            super("305", "10000", "2022.09.06");
+            this.duty = duty;
+        }
+        info4() {
+            this.info2();
+            console.log(`职务称号:${this.duty}`);
+
+        }
+    }
+
+
+    let bee1 = new Faculty("学士", "高级");
+    bee1.info3();
+    let bee2 = new Staff("老板");
+    bee2.info4();
+
+
+</script>
+
+</html>

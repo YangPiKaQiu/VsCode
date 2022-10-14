@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 声明一个数组，并查找字母a出现的次数
+        // 声明的数组为: var arr = ["b", 'a', 'c', 'a', 'g', j','a','c','b'];
+
+        //第一种方法：
+        var arr = ["b", 'a', 'c', 'a', 'g', "j", 'a', 'c', 'b'];
+        var count = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == "a") {
+                count++;
+            }
+        }
+        console.log("a出现的次数为" + count);
+
+        //第二种方法：
+        var arr = ["b", 'a', 'c', 'a', 'j', 'a', 'c', 'b'];
+        var count = 0;
+        // 数组里面每- 一个元素都执行一次function的方法，
+        // 每一个元素就是funciton里面的item, 索引就是indexindex
+        arr.forEach(function (item, index) {
+            if (item === "a") {
+                count++;
+            }
+        })
+        console.log("a出现的次数为" + count);
+
+
+    </script>
+</body>
+</html>

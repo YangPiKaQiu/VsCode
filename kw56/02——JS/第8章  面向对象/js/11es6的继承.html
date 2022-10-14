@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    //父类：Person
+    class Person{
+        //属性
+        head;
+        leg;
+
+
+        //构造方法
+        constructor(head,legs){
+            console.log("person类被创建了");
+            //当前对象，谁调用这个属性谁就是this
+            this.head=head;
+            this.legs = legs;      
+       }
+            //介绍
+            info(){
+                console.log(`人有${this.head}个头,${this.legs}条腿`);}
+            eat(){
+                console.log("人每天都要吃东西...")}
+            sleep(){
+                console. log("人要保证重组的睡眠...")}
+
+            
+    }
+    //子类：student
+    class Student extends Person{
+        //属性
+        stuNo;
+        stuName;
+        stuScore;
+
+        //学生类的构造方法
+        constructor(stuNo,stuName,stuScore){
+            //调用父类的构造方法进行初始化
+            //注意：super必须要放在构造方法里面，且必须是第一句
+            super(1,2);
+            this.stuNo = stuNo;
+            this.stuScore = stuScore;
+            this.stuName=stuName;
+            console.log("student被创建了");
+        }
+
+        //学生自我介绍
+        instro(){
+            console.log(`我叫${this.stuName},学号：${this.stuNo},成绩:${this.stuScore}`);
+            // console.log(`人有${this.head}个头,${this.legs}条腿`)
+            this.info();
+        }
+
+        //孩子类重新写一个吃的方法
+        eat(){
+                console.log("我们每天都点外卖吃...")}
+    }
+
+        //创建学生实例
+        let zhangSan=new Student("s1001","张三","99");
+        zhangSan.instro();
+        //?你有几个头，几条腿
+
+        //子类可以使用父类方法
+        zhangSan.eat();
+        zhangSan.sleep();
+
+        //继承：单根继承，每个类只能继承一个类，继承具有传递性
+    
+</script>
+</html>

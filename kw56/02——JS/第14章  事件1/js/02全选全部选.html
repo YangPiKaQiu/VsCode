@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        .box {
+            border: 2px solid red;
+            border-radius: 5px;
+            width: 120px;
+            padding: 20px;
+            margin: 40px auto;
+        }
+
+        hr {
+            margin: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        全选：<input type="checkbox" id="checkAll">
+        <hr>
+        <input type="checkbox" value="1">选项一<br>
+        <input type="checkbox" value="2">选项二<br>
+        <input type="checkbox" value="3">选项三<br>
+        <input type="checkbox" value="4">选项四<br>
+    </div>
+
+</body>
+<script>
+    //1.找到操作dom对象
+    let selectAll = document.querySelector("#checkAll");//全选
+    /*
+    input:nth-of-type(n+2)  从第二个开始，直到最后一个元素
+    input：nth-of-type(-n+4)  从第四个开始向前，直到最前面
+    input：nth-of-type(n+2)：nth-of-type(-n+4)  取2-4的区间
+    */
+    let checks = document.querySelectorAll("input:nth-of-type(n+2)"); //除了全选
+    //console.log(checks);
+
+    // 2.给全选复选框绑定事件
+    selectAll.onclick = function () {
+        // 获取全选是否被选中
+        console.log(this.checked);
+        let flag = this.checked;
+        // 根据全选是否选中，给下面的复选框进行传值
+        if (flag) {
+            //所有的都被选中
+            checks.forEach((item, index) => {
+                item.checked = true;
+            })
+        } else {
+            //所有的都不选中
+            checks.forEach((items, index) => {
+                items.checked = false;
+            })
+        }
+    }
+
+    //3.给下面选项的复选框绑定事件
+    for (let i = 0; i < checks.length; i++) {
+        let flag = true;
+        checks[i].onclick = function () {
+            let flag = true;
+
+            //判断每一个复选框，只要有一个checked属性为false,就要改变flag的值
+            checks.forEach((item, index) => {
+                if (!item.checked) {
+                    // 有一个没有选中
+                    flag = false;
+                }
+            })
+            //打印flag值
+            console.log(flag);
+            //将flag传递给  全选
+            selectAll.checked = flag;
+        }
+    }
+
+</script>
+
+</html>

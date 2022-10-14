@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //创建多个狗狗的实例
+    //1.通过简单工厂进行量化生化
+    function DogFactory(name, color, age) {//形参的变量，局部变量，作用范围仅限方法内
+        let dog = new Object();
+        dog.name = name;
+        dog.color = color;
+        dog.age = age;
+        dog.playDisc = function () {
+            console.log(dog.name + "会玩接飞盘的游戏...");
+        }
+        //此处的this 指向js全局对象window
+        console.log(this);
+        //返回生产的小狗实例对象
+        return dog;
+    }
+    //2.通过调用工厂方法可以获得一个小狗的实例
+    //调用方法的时候传递实参给形参接收
+    let dog1 = DogFactory("小白", "白色", "3");
+    let dog2 = DogFactory("小黑", "黑色", "7");
+    let dog3 = DogFactory("小黄", "黄色", "4");
+
+
+    //3.使用创建出来的小狗对象名.方法名来调用狗狗接飞盘的方法
+    dog1.playDisc();
+    dog2.playDisc();
+    dog3.playDisc();
+
+</script>
+
+</html>

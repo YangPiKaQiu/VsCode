@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>选择你喜欢的书：<input onclick="changePic('dog')" type="radio" name="book">狗狗
+        <input onclick="changePic('mai')" type="radio" name="book">灰霾来了
+    </p>
+    <div>
+        <img src="../img/dog.jpg" alt="">
+    </div>
+    <div>爱好: <input type="checkbox" name="ai" value="吹牛" onclick="setInput(this)">吹牛
+        <input type="checkbox" name="ai" value="睡觉" onclick="setInput(this)">睡觉
+        <input type="checkbox" name="ai" value="吃肯德基" onclick="setInput(this)">吃肯德基
+        <input type="checkbox" name="ai" value="打游戏" onclick="setInput(this)">打游戏
+        <button onclick="getHobbies()">获取爱好</button>
+    </div>
+
+</body>
+<script>
+    //如何用js脚本选择复选框
+    /*
+    1.选择要操作的元素复选框对象
+    2.改变复选框的属性checked
+    */
+    //选择第一个和第三个
+    // let inputs = document.querySelectorAll("[type='checkbox']");
+    // inputs[0].setAttribute("checked", "checked");
+    // inputs[2].setAttribute("checked", "checked");
+
+
+    //如何获取input标签里面value值的问题？
+    // console.log(inputs[0].value);
+    // console.log(inputs[0].getAttribute("value"));
+
+
+    //给input添加点击事件，当你点击的时候添加属性checked
+    function selInput(obj) {
+        //iconsole.log(obj);
+        // console.log(obj.getAttribute("checked"));
+        //如果复选框checked凤性是null, 添加一个，如果checked属性存在，改成nul1l(交替执行)
+        if (obj.getAttribute("checked") === null) {
+            obj.setAttribute("checked", "checked");
+        } else {
+            //去掉checked同性
+            // obj.setAttribute( "checked" ,null) ;
+            obj.removeAttribute("checked");
+        }
+    }
+    //获取你选中的爱好？判断input是否是checked
+    function getHobbies() {
+        //1.选中所有的复选框对象
+        let inputs = document.querySelectorAll("[type='checkbox']");
+        //2.遍历inputs,判断哪些是checked，如果checked，打印里面value值
+        for (let i = 0; i < inputs.length; i++) {
+            // console.log(inputs[i]);
+            if (inputs[i].getAttribute("checked")) {
+                console.log(inputs[i].value);
+            }
+        }
+    }
+
+
+
+
+
+    // function changePic(type) {
+    //     //1.找到被修改的img对象
+    //     let imgObj = document.querySelector("img");
+    //     //2.根据修改type，判定是改成狗狗图片还是雾霾图片
+    //     if (tyope === "dog") {
+    //         imgObj.setAttribute("scr", "../img/dog.jpg");
+    //     } else {
+    //         imgObj.setAttribute("scr", "../img/mai.jpg");
+    //     }
+    // }
+
+
+    //修改图片路径，改成狗狗的图片
+    function changDog() {
+        //1.找到被修改的img对象
+        let imgObj = document.querySelector("img");
+        //2.修改img对象的src属性
+        imgObj.setAttribute("scr", "../img/dog.jpg");
+    }
+    //修改图片路径，改成霾的图片
+    function changMai() {
+        //1.找到被修改的img对象
+        let imgObj = document.querySelector("img");
+        //2.修改img对象的src属性
+        imgObj.setAttribute("scr", "../img/mai.jpg");
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .box {
+            width: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid blue;
+        }
+
+        /* 横屏一行显示4个盒子，如果是竖屏一行显示2个盒子 */
+        .content {
+            height: 100px;
+            box-sizing: border-box;
+            border: 1px solid grey;
+            background-color: red;
+        }
+
+        /* 横屏 */
+        @media screen and (orientation:landscape) {
+            .content{width: 24%;}
+        }
+         /* 竖屏 */
+        @media screen and (orientation:portrait) {
+            .content{width: 50%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+    </div>
+</body>
+
+</html>

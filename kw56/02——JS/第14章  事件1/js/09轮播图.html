@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云轮播图</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        body {
+            height: 100vh;
+            background: radial-gradient(circle at center, grey, #ccc);
+        }
+
+        .box {
+            width: 800px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .box .img img {
+            width: 100%;
+        }
+
+        .box .pageBtn ul {
+            display: flex;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            /* 相对自己位置移动50% */
+            transform: translate(-50%);
+        }
+
+        .box .pageBtn li {
+            width: 15px;
+            height: 15px;
+            background-color: #ccc;
+            margin-left: 10px;
+            border-radius: 50%;
+        }
+
+        .pageBtn ul .active {
+            background-color: orangered;
+            /* 提升优先级  ！important */
+        }
+
+        .box .arrow {
+            width: 30px;
+            height: 50px;
+            line-height: 50px;
+            color: white;
+            font-size: 30px;
+            position: absolute;
+            bottom: calc(50% - 25px);
+        }
+
+        .box .arrow.left {
+            left: 0px;
+        }
+
+        .box .arrow.right {
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="img">
+            <img src="http://p1.music.126.net/o0rWz14wMg91goAxoiTB1g==/109951167910437806.jpg?imageView&quality=89"
+                alt="">
+        </div>
+
+        <!-- 1.对应轮播图片的按钮  分页按钮 -->
+        <div class="pageBtn">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!-- 2.左右箭头 -->
+        <div class="arrowDiv">
+            <div class="arrow left">&lt;</div>
+            <div class="arrow right">&gt;</div>
+        </div>
+    </div>
+</body>
+<script>
+
+    //图片数组，用于轮播 imgs=[]
+    let imgs = [
+        "http://p1.music.126.net/o0rWz14wMg91goAxoiTB1g==/109951167910437806.jpg?imageView&quality=89",
+        "http://p1.music.126.net/tR939G_a4tBKxT_cREx4WA==/109951167910212919.jpg?imageView&quality=89",
+        "http://p1.music.126.net/dPbrJrqz7NkyAAT7_VrobQ==/109951167910227751.jpg?imageView&quality=89",
+        "http://p1.music.126.net/NlamHrVcmTU1oQVNZbSk3Q==/109951167910226366.jpg?imageView&quality=89",
+        "http://p1.music.126.net/9Hi4LhNMl-T-6UJMx8mYIA==/109951167910232337.jpg?imageView&quality=89",
+        "http://p1.music.126.net/DeRHQu61-Y_vbQK3-lCmIA==/109951167910792262.jpg?imageView&quality=89",
+        "http://p1.music.126.net/I7yjbkLsulRowBxhfLMMMw==/109951167910234930.jpg?imageView&quality=89",
+        "http://p1.music.126.net/_7DLwMLGOx3ApEWy9nCBkg==/109951167910245692.jpg?imageView&quality=89"
+    ]
+    //当前索引
+    let pos = 0;
+
+    //获取相关dom对象
+    let imgO = document.querySelector(".box .img img");
+    let box = document.querySelector(".box");
+    let arrows = document.querySelectorAll(".arrow");
+    let pageBtns = document.querySelectorAll(".box .pageBtn li")
+
+    //分页按钮的高亮
+    function activePage(pos) {
+        //移出全部li的active样式
+        pageBtns.forEach(item => {
+            item.classList.remove("active");
+        })
+
+        pageBtns.forEach((item, index) => {
+            //如果当前的index索引等于 数组index,添加active
+            if (pos === index) {
+                item.classList.add("active");
+            }
+        })
+    }
+
+    //上一张图片
+    function pre() {
+        //如果当前index已经到0，给他重新赋值数组最大长度-1
+        if (pos <= 0) {
+            pos = imgs.length - 1
+        } else {
+            pos--;
+        }
+        imgO.setAttribute("src", imgs[pos]);
+        //分页按钮高亮
+        activePage(pos);
+    }
+
+    //下一张图片
+    function next() {
+        //根据imgs数组索引去切换
+        if (pos >= imgs.length - 1) {
+            pos = 0;
+        } else {
+            pos++;
+        }
+        //设置图片src属性     setAttribute更改元素属性
+        imgO.setAttribute("src", imgs[pos]);
+        //分页按钮高亮
+        activePage(pos);
+    }
+
+    //创建定时器
+    let t1 = setInterval(() => {
+        //将img图片的src里面切换为数组里面的元素
+        next();
+    }, 1000)
+
+    //鼠标放到box上面，定时器停止
+    box.addEventListener("mouseover", () => {
+        clearInterval(t1);
+        //隐藏的箭头显示
+        arrows.forEach(item => {
+            item.style.display = "block";
+            item.style.backgroundColor = "rgba(0,0,0,0.3)"
+        })
+    })
+
+    //鼠标移出box,定时器开始
+    box.addEventListener("mouseout", () => {
+        //箭头隐藏：
+        arrows.forEach(item => {
+            item.style.display = "none";
+        })
+        //鼠标移出，启动定时器
+        t1 = setInterval(() => {
+            next();
+        }, 1000)
+    })
+
+    //右箭头点击事件绑定
+    arrows[1].addEventListener('click', next);
+    //左箭头
+    arrows[0].addEventListener('click', pre)
+
+    //给每个小分页按钮绑定点击事件
+    pageBtns.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            //点击分页高亮
+            activePage(index);
+            //切换相应的图片
+            imgO.setAttribute("src", imgs[index])
+        })
+    })
+
+</script>
+
+</html>

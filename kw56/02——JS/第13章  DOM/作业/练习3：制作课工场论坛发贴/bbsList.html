@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>课工场论坛列表</title>
+    <link href="css/bbs.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bbs">
+        <header><span>我要发帖</span></header>
+        <section>
+            <ul>
+                <!-- <li style="display: none;" class="linone"></li> -->
+            </ul>
+        </section>
+        <div class="post">
+            <input class="title" placeholder="请输入标题（1-50个字符）" value="">
+            所属版块：<select>
+                <option>请选择版块</option>
+                <option value="电子书籍">电子书籍</option>
+                <option value="新课来了">新课来了</option>
+                <option value="新手报到">新手报到</option>
+                <option value="职业规划">职业规划</option>
+            </select>
+            <textarea class="content"></textarea>
+            <input class="btn" value="发布" onclick="addText()">
+        </div>
+    </div>
+    <script>
+        //发帖的开关  获取元素
+        let headerObj = document.querySelector("header");
+        let post = document.querySelector(".post");
+        //发帖按钮的开关
+        let flag = 0;   //创建一个变量来判断post是显示还是关闭 开启则等于1  关闭则等于0  这样可以控制单击开启和关闭
+        headerObj.onclick = () => {
+            if (flag === 0) {   //如果等于0 则开启盒子
+                post.style.display = "block";  //点击显示post盒子
+                flag = 1;
+            } else {  //否则点击盒子关闭
+                post.style.display = "none";     //点击关闭盒子
+                flag = 0;
+            }
+        }
+        //发帖模块操作
+        function addText() {  //创建函数来控制发帖操作
+            let time = new Date();  //创建时间对象
+            let date = time.toLocaleDateString();//提取年月日
+            let hour = time.toLocaleTimeString();//提取时分秒
+            //获取元素节点
+            let titleObj = document.querySelector(".title");
+            let selectObj = document.querySelector("select");
+            let contentObj = document.querySelector(".content");
+            let btnObj = document.querySelector(".btn");
+            let ul = document.querySelector("section ul");
+            //创建元素节点
+            let li = document.createElement("li");
+            let div = document.createElement("div");
+            let img = document.createElement("img");
+            let h1 = document.createElement("h1");
+            let p = document.createElement("p");
+            let span1 = document.createElement("span");
+            let span2 = document.createElement("span");
+            let imgArr = ['images/tou01.jpg', 'images/tou02.jpg', 'images/tou03.jpg', 'images/tou04.jpg']; //把图片路径变成数组元素
+            let linone = document.querySelector('.linone');
+            //插入节点
+            li.appendChild(div);//div插入li中
+            li.appendChild(h1); //h1插入li中
+            li.appendChild(p)   // p插入li中
+            div.appendChild(img);  //img插入div中
+            p.appendChild(span1);//span1插入p中
+            p.appendChild(span2); //span2插入p中
+            //h1获取值
+            h1.innerHTML = titleObj.value;  //h1中放入提交的标题内容
+            span1.innerHTML = '板块：' + selectObj.value; //第一个span 放入值
+            span2.innerHTML = '发表时间：' + date + " " + hour;  //第二个span放入值
+            // Math.floor(Math.random()*(最大数-最小数+1)+最小数)
+            let numbRand = Math.floor(Math.random() * 4);//获取随机数
+            img.setAttribute("src", imgArr[numbRand]); //修改图片属性路径
+            ul.insertBefore(li, ul.childNodes[0]);//li插入ul中
+            post.style.display = "none"; //发布完后隐藏post盒子
+            //清除盒子里面填写的类容
+            titleObj.value = "";
+            selectObj.value = "请选择版块";
+            contentObj.value = "";
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

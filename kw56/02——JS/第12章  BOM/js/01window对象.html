@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="myDiv">哈哈哈</div>
+</body>
+<script>
+    //window方法
+    // console.log(this);
+    // window.alert("1111");
+
+    //届性:文档显示区的高度，宽度
+    console.log(window.innerWidth, window.innerHeight);
+    //窗口的外部高度，包含工具条与滚动条，宽度
+    console.log(window.outerWidth, window.outerHeight);
+    //获取屏幕窗口的x坐标，y坐标
+    console.log(window.screenLeft, window.screenTop);
+    console.log(window.screenX, window.screenY);
+
+    let myObj = document.getElementById('myDiv');
+
+    window.moveByTo(100, 100);
+    // console .1log(my0bj . clientWidth , my0bj . clientHeight , my0bj. clientLeft , myObj .clientTop)
+    // let mywindow=window. open('','','width=200 , height=100');
+    // myWindow . moveTo(300, 200);
+    //窗口的左上角移动到一个指定的坐标
+    // myWindow.moveBy( 100,100); //可 相对窗口的当前坐标把它移动指定的像素
+    // myWindow.moveTo( 300,200);
+
+
+
+
+
+
+</script>
+
+</html>

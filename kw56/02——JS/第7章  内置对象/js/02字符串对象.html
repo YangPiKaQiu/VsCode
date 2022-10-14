@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //创建字符串
+    let s1 = "abc";
+    console.log(s1);
+
+    let s2 = new String("ABCdeBC");
+    console.log(s2);
+    //字符串
+    console.log(s2, length);
+    //遍历
+    for (let i = 0; i < s2.length; i++) {
+        console.log(s2[i]);
+    }
+
+    //API学习：
+    //1.返回指定位置的字符，  charAt()
+    let c1 = s2.charAt(1);
+    console.log(c1);
+
+    //2.返回某个字符首次出现的索引位置，如果字符串中不存在该字符 返回-1
+    let index1 = s2.indexOf("BC");
+    console.log(index1);
+
+    //返回某个字符或字符串最后出现的位置
+    let last = s2.lastIndexOf("BC");
+    console.log(last);
+
+    //3.查找某个字符串中是否包含某个子字符串
+    let str = "abCdEfg1234567890";
+    let isExists = str.includes("哈哈");
+    console.log(isExists);
+
+    //4.将所有字符转换成小写
+    let aaa = "abCdEfg1234567890";
+    console.log(aaa.toLowerCase());
+
+    //5.将所有字符转换成大写
+    let bbb = "abCdEfg1234567890";
+    console.log(bbb.toUpperCase());
+
+    //6.判断两个字符串是否相等
+    let s100 = "abc";
+    let s200 = " abc";
+    console.log(s100 === s200);
+
+    //7.去除字符串的两端的空格  修剪  trim()
+    let str2 = " abc def 123 "
+    console.log(str2);
+    console.log(str2.trim());
+
+    //8.返回在指定的位置的字符的Unicode编码
+    let u1 = "a";
+    let bAsC = u1.charCodeAt(0);
+    console.log(bAsC);
+
+
+    //将Unicode 编码转为字符, fromCharCode( )
+    let ch = String.fromCharCode(65);
+    console.log(ch);
+
+
+    //9.连接两个或更多字符串，并返回新的字符中concat()
+    let s1001 = "abc";
+    let s2002 = " abc";
+    let longStr = s1001.concat(s2002);
+    console.log(longStr);
+
+
+    //10.提取字符中中的字申，并在新的字符中中返回被提取的部分
+    let chuan1 = "abc1234deff";
+    let sub1 = chuan1.slice(1, 3);
+    console.log(sub1);
+    //类似的功能substring（1,3）;
+    let sub2 = chuan1.substring(1, 3);
+    console.log(sub2);
+    //如果只写一个参数，从这个参数位置一.直截取到最后
+    console.log(chuan1.substring(1));
+
+    //11.字符串转换成数组,将字符串每一个字符 转变成数组的元素
+    let chuan2 = "abcd";
+    //split(分隔符)
+    let arr1 = chuan2.split("");
+    console.log(arr1, arr1.length);
+
+    let chuan3 = "a-b-c-d";
+    //spl1it(分隔符)
+    let arr2 = chuan3.split("");
+    console.log(arr2, arr2.length);
+
+
+    // 12.从起始位置开始截取字申，指定截取的个数subStr( )
+    let chuan4 = "abcd";
+    console.log(chuan4.substr(1, 2));
+
+    //13.查找找到一个或多个正则表达式的匹配gi
+    //查找指定格式的数据在整个字符申里面出现与否，出现的次数等于返回数组的长度
+    var s1000 = "The rain in SPAIN stays mainly In the plain";
+    let regArr1 = s1000.match(/in/gi);   //g:全局查找golbal i:忽略大小写
+    console.log(regArr1);
+
+    //14.替换匹配的第一个字串
+    let s10001 = "The rain in SPAIN stays mainly In the plain";
+    let s2000 = s10001.replace("rain", "孟雨柯");
+    console.log(s2000);
+
+    //15.替换匹配的所有字串，将更新的内容返回给一个新串
+    //如果替换的子申在长申不存在，就没有效果
+    let s10010 = "The rain in SPAIN stays mainly In the plain";
+    let s2010 = s10010.replaceAll("could", "罗佳");
+    console.log(s2010);
+
+    //16.返回一个字符申
+    console.log(s1000.toString());
+    let fruit = ["apple", "orange", "banana"];
+    console.log(fruit);
+    console.log(fruit.toString());
+
+
+</script>
+
+</html>

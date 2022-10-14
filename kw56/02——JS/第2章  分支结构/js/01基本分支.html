@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var score;
+        // 需求1:如果小明考试成绩大于90分,奖励一台电动车,并且去海南旅游 
+        console.log("小明参加了考试");
+        score = 88;
+        // 分支结构:流程控制的一种,只有满足条件的需求,才能执行某些流程 
+        //  注意:if() 括号里面应该是boolean值，但是js语法只要不是 0 false “” underfined null这些
+        // 表示都为真
+        if (100) {
+            //  if控制的语句块 
+            console.log("奖励一台电动车");
+            console.log("去海南旅游!");
+        }
+        // 需求2:如果小王考试成绩大于等于60分,奖励全家桶,如果不及格,奖励皮带炒肉丝
+        var wangScore = 67;
+        if (wangScore >= 60) {
+            console.log("奖励全家桶")
+        }
+        else { console.log("奖励皮带炒肉丝") }
+    </script>
+
+</body>
+
+</html>

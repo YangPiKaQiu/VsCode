@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for(var i=0;i<=10;i++){
+            //es6模板字符串
+            console.log("========================");
+            console.log(`第${i}次`);
+          if(i===8){
+              //在循环里面遇到continue表示跳过本次循环（continue后面的语句）
+              //继续执行下一次循环
+              continue;
+          }
+          console.log("要做的事情!!!");
+          console.log("==================");
+        }
+    </script>
+</body>
+</html>

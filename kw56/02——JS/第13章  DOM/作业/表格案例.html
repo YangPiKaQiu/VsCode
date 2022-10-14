@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0px;margin: 0px;list-style: none;}
+        #add{
+            width: 250px;
+            border: 3px solid #ccc;
+            padding: 10px;
+        }
+        #add p{
+            margin: 10px 0px;
+        }
+
+        hr{margin: 20px 0px;}
+
+        table{
+            border: 2px solid black;
+            border-spacing: 0px;
+        }
+
+        th,td{
+            border: 1px solid #ccc;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="add">
+        <p>姓名: <input type="text" name="stuName" id="stuName"></p>
+        <p>班级: <input type="text" name="stuClass" id="stuClass" > </p>
+        <p>性别: <input type="radio" name="gender"  value="男">男 
+            <input type="radio" name="gender" value="女">女
+        </p>
+        <p>年龄: <input type="text" name="stuAge" id="stuAge"></p>
+        <p><button id="addBtn">增加</button></p>
+    </div>
+    <hr>
+    <div id="showInfo">
+        <table>
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>班级</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="stuContent">
+                <!-- <tr>
+                    <td>吕娜</td>
+                    <td>kw56</td>
+                    <td>12</td>
+                    <td>女</td>
+                    <td><button>删除</button></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</body>
+    <script>
+        //页面加载
+        window.onload = function(){
+            
+           
+            //鼠标移入之后，加背景色
+            function inTr(){
+                //鼠标移入事件
+                //未来元素的问题？本身页面html里面不存在的元素，不可以直接绑定
+                // for(let i = 0;i<trs.length;i++){
+                //     if(i % 2 ==0){
+                //         trs[i].style.backgroundColor = "red";
+                //     }
+                // }
+            }
+          
+
+            //隔行变色
+            function ge(){
+                let trs =  document.querySelectorAll("tbody tr");
+                for(let i = 0;i<trs.length;i++){
+                    if(i % 2 ==0){
+                        trs[i].style.backgroundColor = "red";
+                    }
+                }
+            }
+           
+            //点击按钮，获取填写的数据，创建<tr><td>....</td></tr>  , 添加到tobody里面
+            addBtn.onclick = function(){
+                //获取数据
+                let name = stuName.value;
+                let cla = stuClass.value;
+                let sex;
+                let genders =  document.querySelectorAll("[name='gender']");
+                // console.log(genders);
+                genders.forEach((item,index)=>{
+                    if(item.checked==true){
+                        sex = item.value;
+                    }
+                })
+                let age = stuAge.value;
+                // console.log(name,cla,sex,age);
+
+                //创建元素
+                let newTr = document.createElement("tr");
+                let newTd = document.createElement("td");
+                newTd.innerHTML = name;
+                newTr.appendChild(newTd);
+                newTd = document.createElement("td");
+                newTd.innerHTML = cla;
+                newTr.appendChild(newTd);
+                newTd = document.createElement("td");
+                newTd.innerHTML = age;
+                newTr.appendChild(newTd);
+                newTd = document.createElement("td");
+                newTd.innerHTML = sex;
+                newTr.appendChild(newTd);
+                newTd = document.createElement("td");
+
+                newTd.innerHTML = "<button class='delBtn' onclick='this.parentNode.parentNode.remove()'>删除</button>";
+                newTr.appendChild(newTd);
+                //tr放入tbody
+                stuContent.appendChild(newTr);
+                //隔行变色
+                // ge();
+
+              
+                // this.parentNode.parentNode.remove()
+                
+                let trs =  document.querySelectorAll("tbody tr");
+                console.log(trs);
+                trs.forEach((item,index)=>{
+                    //移入变成灰色背景
+                    item.onmouseover = function(){
+                        item.style.backgroundColor = "grey";
+                    }
+
+                    //移出变成白色背景
+                    item.onmouseout = function(){
+                        item.style.backgroundColor = "white";
+                    }
+                })
+
+              
+
+                
+               
+
+            }
+
+
+            //绑定删除按钮的点击事件
+           
+        }
+    </script>
+</html>

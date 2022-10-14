@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle at top, rgb(233, 223, 233), rgb(219, 191, 213));
+        }
+
+        .list {
+            width: 50%;
+            background: #fff;
+            margin: 0 auto;
+        }
+
+        caption {
+            font-size: 40px;
+            line-height: 50px;
+            font-weight: bold;
+            color: green;
+        }
+
+        table {
+            border-spacing: 0;
+            border: 3px solid #ccc;
+            width: 100%;
+        }
+
+        td,
+        th {
+            padding: 10px 15px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        button {
+            margin: 0px 5px;
+            width: 40px;
+            height: 25px;
+            color: blue;
+        }
+
+        button:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="list">
+        <table>
+            <caption>学生管理页面</caption>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>得分</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1001</td>
+                    <td>张三</td>
+                    <td>22</td>
+                    <td>男</td>
+                    <td>98</td>
+                    <td>
+                        <button data-index="index" data-type="update">修改</button>
+                        <button data-index="index" data-type="delete">删除</button>
+                        <button data-index="index" data-type="add">添加</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const tbody = document.querySelector('tbody');
+        tbody.onclick = function (e) {
+            let { index } = e.target.dataset;
+            let { type } = e.target.dataset;
+
+            if (type === "add") {
+                // 本地存储进入缓存
+                localStorage.setItem("index", index)
+                // 进入添加页面
+                window.location.href = "addStudent.html";
+            } else if (type === "update") {
+                //进入修改页面，传递index到修改页面
+                window.location.href = "updateStudent.html";
+            } else if (type === "delete") {
+                // http://localhost:8080/kw53test/deleteStudent?stuIndex=x
+                const xhr = new XMLHttpRequest();
+                xhr.open("get", `http://localhost:8080/kw53test/deleteStudent?stuIndex=${index}`);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        //获取响应数据
+                        let data = JSON.parse(xhr.responseText);
+                        // console.log(data);
+                        if (xhr.responseText === "1") {
+                            alert("删除成功！")
+                        } else {
+                            alert("删除失败！")
+                        }
+                        lodePage();
+                    }
+                }
+                //发送
+                xhr.send();
+            }
+        }
+        function lodePage() {
+            //http://localhost:8080/kw53test/getAllStudent
+            // 通过Ajax获取全部信息
+            const xhr = new XMLHttpRequest();
+            xhr.open("get", 'http://localhost:8080/kw53test/getAllStudent');
+
+            xhr.onreadystatechange = function () {
+
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    //获取响应数据
+                    let data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                    //页面渲染
+                    let students = data.map((item, index) => {
+                        return `
+                <tr>
+                    <td>${item.stuIndex}</td>
+                    <td>${item.stuId}</td>
+                    <td>${item.stuName}</td>
+                    <td>${item.stuAge}</td>
+                    <td>${item.stuSex}</td>
+                    <td>${item.stuScore}</td>
+                    <td>
+                        <button data-index="${item.stuId}" data-type="update">修改</button>
+                        <button data-index="${index}" data-type="delete">删除</button>
+                        <button data-index="${index}" data-type="add">添加</button>
+                    </td>
+                </tr>
+                `;
+                    })
+                    document.querySelector('tbody').innerHTML = students.join('');
+                }
+            }
+            //发送
+            xhr.send();
+        }
+        // 第一次进入调用
+        lodePage();
+    </script>
+</body>
+
+</html>

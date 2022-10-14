@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    let stuList = [{
+        "name": "张三",
+        "age": 22,
+        "score": 99
+    },
+    {
+        "name": "李四",
+        "age": 25,
+        "score": 91
+    },
+    {
+        "name": "赵六",
+        "age": 22,
+        "score": 56
+    }
+    ]
+
+    //获取对象数组stulist果面的第一个元素  放入一个变最stul果面
+    let stu1 = stuList[0];
+
+    //通过结构的方式实现以上
+    let [a] = stuList;
+    console.log(stu1);
+    console.log(a);
+
+    //继续获取stulist型面第- . 个学生的考试成绩
+    console.log(stuList[0].score);
+    //通过解构实现以上功能:
+    let [{s1}]=stuList;
+    console.log(s1);
+
+    let [{score}]=stuList;
+    console.log(score);
+
+</script>
+
+</html>
